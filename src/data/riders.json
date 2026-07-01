@@ -1,6 +1,1664 @@
 [
   {
     "id": 1,
+    "name": "Tadej Pogačar",
+    "team": "UAE Team Emirates - XRG",
+    "role": "GC",
+    "country": "SLO",
+    "age": 27,
+    "price": 8
+  },
+  {
+    "id": 2,
+    "name": "Jonas Vingegaard",
+    "team": "Team Visma | Lease a Bike",
+    "role": "GC",
+    "country": "DNK",
+    "age": 29,
+    "price": 6.5
+  },
+  {
+    "id": 3,
+    "name": "Isaac del Toro",
+    "team": "UAE Team Emirates - XRG",
+    "role": "GC",
+    "country": "MEX",
+    "age": 22,
+    "price": 5
+  },
+  {
+    "id": 4,
+    "name": "Paul Seixas",
+    "team": "Decathlon CMA CGM Team",
+    "role": "GC",
+    "country": "FRA",
+    "age": 19,
+    "price": 4.5
+  },
+  {
+    "id": 5,
+    "name": "Jasper Philipsen",
+    "team": "Alpecin-Premier Tech",
+    "role": "Sprint",
+    "country": "BEL",
+    "age": 28,
+    "price": 4
+  },
+  {
+    "id": 6,
+    "name": "Mads Pedersen",
+    "team": "Lidl - Trek",
+    "role": "Sprint",
+    "country": "DNK",
+    "age": 30,
+    "price": 3.5
+  },
+  {
+    "id": 7,
+    "name": "Florian Lipowitz",
+    "team": "Red Bull - BORA - hansgrohe",
+    "role": "GC",
+    "country": "DEU",
+    "age": 25,
+    "price": 3.5
+  },
+  {
+    "id": 8,
+    "name": "Juan Ayuso",
+    "team": "Lidl - Trek",
+    "role": "GC",
+    "country": "ESP",
+    "age": 23,
+    "price": 3
+  },
+  {
+    "id": 9,
+    "name": "Remco Evenepoel",
+    "team": "Red Bull - BORA - hansgrohe",
+    "role": "GC",
+    "country": "BEL",
+    "age": 26,
+    "price": 3
+  },
+  {
+    "id": 10,
+    "name": "Tim Merlier",
+    "team": "Soudal Quick-Step",
+    "role": "Sprint",
+    "country": "BEL",
+    "age": 33,
+    "price": 3
+  },
+  {
+    "id": 11,
+    "name": "Adam Yates",
+    "team": "UAE Team Emirates - XRG",
+    "role": "GC",
+    "country": "GBR",
+    "age": 33,
+    "price": 3
+  },
+  {
+    "id": 12,
+    "name": "Olav Kooij",
+    "team": "Decathlon CMA CGM Team",
+    "role": "Sprint",
+    "country": "NLD",
+    "age": 24,
+    "price": 2.5
+  },
+  {
+    "id": 13,
+    "name": "Tim Wellens",
+    "team": "UAE Team Emirates - XRG",
+    "role": "Knecht",
+    "country": "BEL",
+    "age": 35,
+    "price": 2.5
+  },
+  {
+    "id": 14,
+    "name": "Mathieu van der Poel",
+    "team": "Alpecin-Premier Tech",
+    "role": "Klassiek",
+    "country": "NLD",
+    "age": 31,
+    "price": 2
+  },
+  {
+    "id": 15,
+    "name": "Kévin Vauquelin",
+    "team": "INEOS Grenadiers",
+    "role": "GC",
+    "country": "FRA",
+    "age": 25,
+    "price": 2
+  },
+  {
+    "id": 16,
+    "name": "Biniam Girmay",
+    "team": "NSN Cycling Team",
+    "role": "Sprint",
+    "country": "ERI",
+    "age": 26,
+    "price": 2
+  },
+  {
+    "id": 17,
+    "name": "Matteo Jorgenson",
+    "team": "Team Visma | Lease a Bike",
+    "role": "Knecht",
+    "country": "USA",
+    "age": 27,
+    "price": 2
+  },
+  {
+    "id": 18,
+    "name": "Brandon McNulty",
+    "team": "UAE Team Emirates - XRG",
+    "role": "Knecht",
+    "country": "USA",
+    "age": 28,
+    "price": 2
+  },
+  {
+    "id": 19,
+    "name": "Florian Vermeersch",
+    "team": "UAE Team Emirates - XRG",
+    "role": "Knecht",
+    "country": "BEL",
+    "age": 27,
+    "price": 2
+  },
+  {
+    "id": 20,
+    "name": "Thomas Pidcock",
+    "team": "Pinarello-Q36.5 Pro Cycling Team",
+    "role": "Klassiek",
+    "country": "GBR",
+    "age": 26,
+    "price": 2
+  },
+  {
+    "id": 21,
+    "name": "Nils Politt",
+    "team": "UAE Team Emirates - XRG",
+    "role": "Knecht",
+    "country": "DEU",
+    "age": 32,
+    "price": 2
+  },
+  {
+    "id": 22,
+    "name": "Felix Großschartner",
+    "team": "UAE Team Emirates - XRG",
+    "role": "Knecht",
+    "country": "AUT",
+    "age": 32,
+    "price": 2
+  },
+  {
+    "id": 23,
+    "name": "Richard Carapaz",
+    "team": "EF Education - EasyPost",
+    "role": "GC",
+    "country": "ECU",
+    "age": 33,
+    "price": 1.5
+  },
+  {
+    "id": 24,
+    "name": "Arnaud De Lie",
+    "team": "Lotto Intermarché",
+    "role": "Sprint",
+    "country": "BEL",
+    "age": 24,
+    "price": 1.5
+  },
+  {
+    "id": 25,
+    "name": "Tobias Halland Johannessen",
+    "team": "Uno-X Mobility",
+    "role": "GC",
+    "country": "NOO",
+    "age": 26,
+    "price": 1.5
+  },
+  {
+    "id": 26,
+    "name": "Milan Fretin",
+    "team": "Cofidis",
+    "role": "Sprint",
+    "country": "BEL",
+    "age": 25,
+    "price": 1.5
+  },
+  {
+    "id": 27,
+    "name": "Antonio Tiberi",
+    "team": "Bahrain Victorious",
+    "role": "GC",
+    "country": "ITA",
+    "age": 25,
+    "price": 1
+  },
+  {
+    "id": 28,
+    "name": "Lenny Martinez",
+    "team": "Bahrain Victorious",
+    "role": "Klimmer",
+    "country": "FRA",
+    "age": 22,
+    "price": 1
+  },
+  {
+    "id": 29,
+    "name": "Ben Healy",
+    "team": "EF Education - EasyPost",
+    "role": "Klassiek",
+    "country": "IRL",
+    "age": 25,
+    "price": 1
+  },
+  {
+    "id": 30,
+    "name": "Dorian Godon",
+    "team": "INEOS Grenadiers",
+    "role": "Sprint",
+    "country": "FRA",
+    "age": 30,
+    "price": 1
+  },
+  {
+    "id": 31,
+    "name": "Thymen Arensman",
+    "team": "INEOS Grenadiers",
+    "role": "Klimmer",
+    "country": "NLD",
+    "age": 26,
+    "price": 1
+  },
+  {
+    "id": 32,
+    "name": "Cian Uijtdebroeks",
+    "team": "Movistar Team",
+    "role": "GC",
+    "country": "BEL",
+    "age": 23,
+    "price": 1
+  },
+  {
+    "id": 33,
+    "name": "Pascal Ackermann",
+    "team": "Team Jayco AlUla",
+    "role": "Sprint",
+    "country": "DEU",
+    "age": 32,
+    "price": 1
+  },
+  {
+    "id": 34,
+    "name": "Pavel Bittner",
+    "team": "Team Picnic PostNL",
+    "role": "Sprint",
+    "country": "CZE",
+    "age": 23,
+    "price": 1
+  },
+  {
+    "id": 35,
+    "name": "Sepp Kuss",
+    "team": "Team Visma | Lease a Bike",
+    "role": "Klimmer",
+    "country": "USA",
+    "age": 31,
+    "price": 1
+  },
+  {
+    "id": 36,
+    "name": "Davide Piganzoli",
+    "team": "Team Visma | Lease a Bike",
+    "role": "Knecht",
+    "country": "ITA",
+    "age": 23,
+    "price": 1
+  },
+  {
+    "id": 37,
+    "name": "Søren Wærenskjold",
+    "team": "Uno-X Mobility",
+    "role": "Sprint",
+    "country": "NOO",
+    "age": 26,
+    "price": 1
+  },
+  {
+    "id": 38,
+    "name": "Max Kanter",
+    "team": "XDS Astana Team",
+    "role": "Sprint",
+    "country": "DEU",
+    "age": 28,
+    "price": 1
+  },
+  {
+    "id": 39,
+    "name": "Fernando Gaviria",
+    "team": "Caja Rural - Seguros RGA",
+    "role": "Sprint",
+    "country": "COL",
+    "age": 31,
+    "price": 1
+  },
+  {
+    "id": 40,
+    "name": "Arvid De Kleijn",
+    "team": "Tudor Pro Cycling Team",
+    "role": "Sprint",
+    "country": "NLD",
+    "age": 32,
+    "price": 1
+  },
+  {
+    "id": 41,
+    "name": "Phil Bauhaus",
+    "team": "Bahrain Victorious",
+    "role": "Sprint",
+    "country": "DEU",
+    "age": 31,
+    "price": 1
+  },
+  {
+    "id": 42,
+    "name": "Filippo Ganna",
+    "team": "INEOS Grenadiers",
+    "role": "Tijdrit",
+    "country": "ITA",
+    "age": 29,
+    "price": 0.75
+  },
+  {
+    "id": 43,
+    "name": "Mattias Skjelmose",
+    "team": "Lidl - Trek",
+    "role": "Knecht",
+    "country": "DNK",
+    "age": 25,
+    "price": 0.75
+  },
+  {
+    "id": 44,
+    "name": "Maxim Van Gils",
+    "team": "Red Bull - BORA - hansgrohe",
+    "role": "Klassiek",
+    "country": "BEL",
+    "age": 26,
+    "price": 0.75
+  },
+  {
+    "id": 45,
+    "name": "Jai Hindley",
+    "team": "Red Bull - BORA - hansgrohe",
+    "role": "Knecht",
+    "country": "AUS",
+    "age": 30,
+    "price": 0.75
+  },
+  {
+    "id": 46,
+    "name": "Bruno Armirail",
+    "team": "Team Visma | Lease a Bike",
+    "role": "Knecht",
+    "country": "FRA",
+    "age": 32,
+    "price": 0.75
+  },
+  {
+    "id": 47,
+    "name": "Victor Campenaerts",
+    "team": "Team Visma | Lease a Bike",
+    "role": "Knecht",
+    "country": "BEL",
+    "age": 34,
+    "price": 0.75
+  },
+  {
+    "id": 48,
+    "name": "Edoardo Affini",
+    "team": "Team Visma | Lease a Bike",
+    "role": "Knecht",
+    "country": "ITA",
+    "age": 30,
+    "price": 0.75
+  },
+  {
+    "id": 49,
+    "name": "Matteo Trentin",
+    "team": "Tudor Pro Cycling Team",
+    "role": "Sprint",
+    "country": "ITA",
+    "age": 36,
+    "price": 0.75
+  },
+  {
+    "id": 50,
+    "name": "Rick Pluimers",
+    "team": "Tudor Pro Cycling Team",
+    "role": "Sprint",
+    "country": "NLD",
+    "age": 25,
+    "price": 0.75
+  },
+  {
+    "id": 51,
+    "name": "Jordan Jegat",
+    "team": "TotalEnergies",
+    "role": "GC",
+    "country": "FRA",
+    "age": 27,
+    "price": 0.75
+  },
+  {
+    "id": 52,
+    "name": "Ben O'Connor",
+    "team": "Team Jayco AlUla",
+    "role": "GC",
+    "country": "AUS",
+    "age": 30,
+    "price": 0.75
+  },
+  {
+    "id": 53,
+    "name": "Mauro Schmid",
+    "team": "Team Jayco AlUla",
+    "role": "Klassiek",
+    "country": "CHE",
+    "age": 26,
+    "price": 0.75
+  },
+  {
+    "id": 54,
+    "name": "Per Strand Hagenes",
+    "team": "Team Visma | Lease a Bike",
+    "role": "Knecht",
+    "country": "NOO",
+    "age": 22,
+    "price": 0.75
+  },
+  {
+    "id": 55,
+    "name": "Derek Gee",
+    "team": "Lidl - Trek",
+    "role": "Knecht",
+    "country": "CAN",
+    "age": 28,
+    "price": 0.75
+  },
+  {
+    "id": 56,
+    "name": "Matthew Riccitello",
+    "team": "Decathlon CMA CGM Team",
+    "role": "Klimmer",
+    "country": "USA",
+    "age": 24,
+    "price": 0.75
+  },
+  {
+    "id": 57,
+    "name": "Romain Grégoire",
+    "team": "Groupama - FDJ United",
+    "role": "Klassiek",
+    "country": "FRA",
+    "age": 23,
+    "price": 0.75
+  },
+  {
+    "id": 58,
+    "name": "Egan Bernal",
+    "team": "INEOS Grenadiers",
+    "role": "Knecht",
+    "country": "COL",
+    "age": 29,
+    "price": 0.75
+  },
+  {
+    "id": 59,
+    "name": "Emiel Verstrynge",
+    "team": "Alpecin-Premier Tech",
+    "role": "Knecht",
+    "country": "BEL",
+    "age": 24,
+    "price": 0.5
+  },
+  {
+    "id": 60,
+    "name": "Jonas Rickaert",
+    "team": "Alpecin-Premier Tech",
+    "role": "Knecht",
+    "country": "BEL",
+    "age": 32,
+    "price": 0.5
+  },
+  {
+    "id": 61,
+    "name": "Matej Mohorič",
+    "team": "Bahrain Victorious",
+    "role": "Knecht",
+    "country": "SLO",
+    "age": 31,
+    "price": 0.5
+  },
+  {
+    "id": 62,
+    "name": "Tiesj Benoot",
+    "team": "Decathlon CMA CGM Team",
+    "role": "Knecht",
+    "country": "BEL",
+    "age": 32,
+    "price": 0.5
+  },
+  {
+    "id": 63,
+    "name": "Daan Hoole",
+    "team": "Decathlon CMA CGM Team",
+    "role": "Knecht",
+    "country": "NLD",
+    "age": 27,
+    "price": 0.5
+  },
+  {
+    "id": 64,
+    "name": "Kasper Asgreen",
+    "team": "EF Education - EasyPost",
+    "role": "Knecht",
+    "country": "DNK",
+    "age": 31,
+    "price": 0.5
+  },
+  {
+    "id": 65,
+    "name": "Guillaume Martin",
+    "team": "Groupama - FDJ United",
+    "role": "Knecht",
+    "country": "FRA",
+    "age": 33,
+    "price": 0.5
+  },
+  {
+    "id": 66,
+    "name": "Michał Kwiatkowski",
+    "team": "INEOS Grenadiers",
+    "role": "Knecht",
+    "country": "POL",
+    "age": 36,
+    "price": 0.5
+  },
+  {
+    "id": 67,
+    "name": "Mathias Vacek",
+    "team": "Lidl - Trek",
+    "role": "Knecht",
+    "country": "CZE",
+    "age": 24,
+    "price": 0.5
+  },
+  {
+    "id": 68,
+    "name": "Quinn Simmons",
+    "team": "Lidl - Trek",
+    "role": "Knecht",
+    "country": "USA",
+    "age": 25,
+    "price": 0.5
+  },
+  {
+    "id": 69,
+    "name": "Lennert Van Eetvelt",
+    "team": "Lotto Intermarché",
+    "role": "Knecht",
+    "country": "BEL",
+    "age": 24,
+    "price": 0.5
+  },
+  {
+    "id": 70,
+    "name": "Georg Zimmermann",
+    "team": "Lotto Intermarché",
+    "role": "Knecht",
+    "country": "DEU",
+    "age": 28,
+    "price": 0.5
+  },
+  {
+    "id": 71,
+    "name": "Einer Rubio",
+    "team": "Movistar Team",
+    "role": "Knecht",
+    "country": "COL",
+    "age": 28,
+    "price": 0.5
+  },
+  {
+    "id": 72,
+    "name": "Pablo Castrillo",
+    "team": "Movistar Team",
+    "role": "Knecht",
+    "country": "ESP",
+    "age": 25,
+    "price": 0.5
+  },
+  {
+    "id": 73,
+    "name": "Jake Stewart",
+    "team": "NSN Cycling Team",
+    "role": "Knecht",
+    "country": "GBR",
+    "age": 26,
+    "price": 0.5
+  },
+  {
+    "id": 74,
+    "name": "Mattia Cattaneo",
+    "team": "Red Bull - BORA - hansgrohe",
+    "role": "Knecht",
+    "country": "ITA",
+    "age": 35,
+    "price": 0.5
+  },
+  {
+    "id": 75,
+    "name": "Nico Denz",
+    "team": "Red Bull - BORA - hansgrohe",
+    "role": "Knecht",
+    "country": "DEU",
+    "age": 32,
+    "price": 0.5
+  },
+  {
+    "id": 76,
+    "name": "Jan Tratnik",
+    "team": "Red Bull - BORA - hansgrohe",
+    "role": "Knecht",
+    "country": "SLO",
+    "age": 36,
+    "price": 0.5
+  },
+  {
+    "id": 77,
+    "name": "Valentin Paret-Peintre",
+    "team": "Soudal Quick-Step",
+    "role": "Knecht",
+    "country": "FRA",
+    "age": 25,
+    "price": 0.5
+  },
+  {
+    "id": 78,
+    "name": "Jasper Stuyven",
+    "team": "Soudal Quick-Step",
+    "role": "Knecht",
+    "country": "BEL",
+    "age": 34,
+    "price": 0.5
+  },
+  {
+    "id": 79,
+    "name": "Ilan Van Wilder",
+    "team": "Soudal Quick-Step",
+    "role": "Knecht",
+    "country": "BEL",
+    "age": 26,
+    "price": 0.5
+  },
+  {
+    "id": 80,
+    "name": "Louis Vervaeke",
+    "team": "Soudal Quick-Step",
+    "role": "Knecht",
+    "country": "BEL",
+    "age": 32,
+    "price": 0.5
+  },
+  {
+    "id": 81,
+    "name": "Michael Matthews",
+    "team": "Team Jayco AlUla",
+    "role": "Knecht",
+    "country": "AUS",
+    "age": 35,
+    "price": 0.5
+  },
+  {
+    "id": 82,
+    "name": "Luke Plapp",
+    "team": "Team Jayco AlUla",
+    "role": "Knecht",
+    "country": "AUS",
+    "age": 25,
+    "price": 0.5
+  },
+  {
+    "id": 83,
+    "name": "Warren Barguil",
+    "team": "Team Picnic PostNL",
+    "role": "Knecht",
+    "country": "FRA",
+    "age": 34,
+    "price": 0.5
+  },
+  {
+    "id": 84,
+    "name": "Frank van den Broek",
+    "team": "Team Picnic PostNL",
+    "role": "Knecht",
+    "country": "NLD",
+    "age": 25,
+    "price": 0.5
+  },
+  {
+    "id": 85,
+    "name": "Magnus Cort",
+    "team": "Uno-X Mobility",
+    "role": "Knecht",
+    "country": "DNK",
+    "age": 33,
+    "price": 0.5
+  },
+  {
+    "id": 86,
+    "name": "Mike Teunissen",
+    "team": "XDS Astana Team",
+    "role": "Knecht",
+    "country": "NLD",
+    "age": 33,
+    "price": 0.5
+  },
+  {
+    "id": 87,
+    "name": "Sergio Higuita",
+    "team": "XDS Astana Team",
+    "role": "Knecht",
+    "country": "COL",
+    "age": 28,
+    "price": 0.5
+  },
+  {
+    "id": 88,
+    "name": "Harold Tejada",
+    "team": "XDS Astana Team",
+    "role": "Knecht",
+    "country": "COL",
+    "age": 29,
+    "price": 0.5
+  },
+  {
+    "id": 89,
+    "name": "Alex Kirsch",
+    "team": "Cofidis",
+    "role": "Knecht",
+    "country": "LUX",
+    "age": 34,
+    "price": 0.5
+  },
+  {
+    "id": 90,
+    "name": "Hugo Page",
+    "team": "Cofidis",
+    "role": "Knecht",
+    "country": "FRA",
+    "age": 24,
+    "price": 0.5
+  },
+  {
+    "id": 91,
+    "name": "Alex Aranburu",
+    "team": "Cofidis",
+    "role": "Knecht",
+    "country": "ESP",
+    "age": 30,
+    "price": 0.5
+  },
+  {
+    "id": 92,
+    "name": "Ion Izagirre",
+    "team": "Cofidis",
+    "role": "Knecht",
+    "country": "ESP",
+    "age": 37,
+    "price": 0.5
+  },
+  {
+    "id": 93,
+    "name": "Julian Alaphilippe",
+    "team": "Tudor Pro Cycling Team",
+    "role": "Knecht",
+    "country": "FRA",
+    "age": 34,
+    "price": 0.5
+  },
+  {
+    "id": 94,
+    "name": "Michael Storer",
+    "team": "Tudor Pro Cycling Team",
+    "role": "Knecht",
+    "country": "AUS",
+    "age": 29,
+    "price": 0.5
+  },
+  {
+    "id": 95,
+    "name": "Alex Molenaar",
+    "team": "Caja Rural - Seguros RGA",
+    "role": "Knecht",
+    "country": "NLD",
+    "age": 26,
+    "price": 0.5
+  },
+  {
+    "id": 96,
+    "name": "Fred Wright",
+    "team": "Pinarello-Q36.5 Pro Cycling Team",
+    "role": "Knecht",
+    "country": "GBR",
+    "age": 27,
+    "price": 0.5
+  },
+  {
+    "id": 97,
+    "name": "Alex Baudin",
+    "team": "EF Education - EasyPost",
+    "role": "Knecht",
+    "country": "FRA",
+    "age": 25,
+    "price": 0.5
+  },
+  {
+    "id": 98,
+    "name": "Jenthe Biermans",
+    "team": "Cofidis",
+    "role": "Knecht",
+    "country": "BEL",
+    "age": 30,
+    "price": 0.5
+  },
+  {
+    "id": 99,
+    "name": "Piet Allegaert",
+    "team": "Cofidis",
+    "role": "Knecht",
+    "country": "BEL",
+    "age": 31,
+    "price": 0.5
+  },
+  {
+    "id": 100,
+    "name": "Bert Van Lerberghe",
+    "team": "Soudal Quick-Step",
+    "role": "Knecht",
+    "country": "BEL",
+    "age": 33,
+    "price": 0.5
+  },
+  {
+    "id": 101,
+    "name": "Dylan van Baarle",
+    "team": "Soudal Quick-Step",
+    "role": "Knecht",
+    "country": "NLD",
+    "age": 34,
+    "price": 0.5
+  },
+  {
+    "id": 102,
+    "name": "Benjamin Thomas",
+    "team": "Cofidis",
+    "role": "Knecht",
+    "country": "FRA",
+    "age": 30,
+    "price": 0.5
+  },
+  {
+    "id": 103,
+    "name": "Anders Skaarseth",
+    "team": "Uno-X Mobility",
+    "role": "Knecht",
+    "country": "NOO",
+    "age": 31,
+    "price": 0.5
+  },
+  {
+    "id": 104,
+    "name": "Anthon Charmig",
+    "team": "Uno-X Mobility",
+    "role": "Knecht",
+    "country": "DNK",
+    "age": 28,
+    "price": 0.5
+  },
+  {
+    "id": 105,
+    "name": "Jonas Abrahamsen",
+    "team": "Uno-X Mobility",
+    "role": "Klassiek",
+    "country": "NOO",
+    "age": 30,
+    "price": 0.5
+  },
+  {
+    "id": 106,
+    "name": "Torstein Træen",
+    "team": "Uno-X Mobility",
+    "role": "Knecht",
+    "country": "NOO",
+    "age": 30,
+    "price": 0.5
+  },
+  {
+    "id": 107,
+    "name": "Quinten Hermans",
+    "team": "Pinarello-Q36.5 Pro Cycling Team",
+    "role": "Klassiek",
+    "country": "BEL",
+    "age": 30,
+    "price": 0.5
+  },
+  {
+    "id": 108,
+    "name": "Lewis Askey",
+    "team": "NSN Cycling Team",
+    "role": "Knecht",
+    "country": "GBR",
+    "age": 25,
+    "price": 0.5
+  },
+  {
+    "id": 109,
+    "name": "Krists Neilands",
+    "team": "NSN Cycling Team",
+    "role": "Knecht",
+    "country": "LVA",
+    "age": 31,
+    "price": 0.5
+  },
+  {
+    "id": 110,
+    "name": "Marco Frigo",
+    "team": "NSN Cycling Team",
+    "role": "Klassiek",
+    "country": "ITA",
+    "age": 26,
+    "price": 0.5
+  },
+  {
+    "id": 111,
+    "name": "Matis Louvel",
+    "team": "NSN Cycling Team",
+    "role": "Knecht",
+    "country": "FRA",
+    "age": 26,
+    "price": 0.5
+  },
+  {
+    "id": 112,
+    "name": "George Bennett",
+    "team": "NSN Cycling Team",
+    "role": "Knecht",
+    "country": "NZL",
+    "age": 36,
+    "price": 0.5
+  },
+  {
+    "id": 113,
+    "name": "Tom Van Asbroeck",
+    "team": "NSN Cycling Team",
+    "role": "Knecht",
+    "country": "BEL",
+    "age": 36,
+    "price": 0.5
+  },
+  {
+    "id": 114,
+    "name": "Luke Durbridge",
+    "team": "Team Jayco AlUla",
+    "role": "Knecht",
+    "country": "AUS",
+    "age": 35,
+    "price": 0.5
+  },
+  {
+    "id": 115,
+    "name": "Felix Engelhardt",
+    "team": "Team Jayco AlUla",
+    "role": "Klassiek",
+    "country": "DEU",
+    "age": 25,
+    "price": 0.5
+  },
+  {
+    "id": 116,
+    "name": "Kelland O'Brien",
+    "team": "Team Jayco AlUla",
+    "role": "Tijdrit",
+    "country": "AUS",
+    "age": 28,
+    "price": 0.5
+  },
+  {
+    "id": 117,
+    "name": "Joel Nicolau",
+    "team": "Caja Rural - Seguros RGA",
+    "role": "Klassiek",
+    "country": "ESP",
+    "age": 28,
+    "price": 0.5
+  },
+  {
+    "id": 118,
+    "name": "Tim van Dijke",
+    "team": "Red Bull - BORA - hansgrohe",
+    "role": "Knecht",
+    "country": "NLD",
+    "age": 26,
+    "price": 0.5
+  },
+  {
+    "id": 119,
+    "name": "Toms Skujiņš",
+    "team": "Lidl - Trek",
+    "role": "Knecht",
+    "country": "LVA",
+    "age": 35,
+    "price": 0.5
+  },
+  {
+    "id": 120,
+    "name": "Carlos Verona",
+    "team": "Lidl - Trek",
+    "role": "Knecht",
+    "country": "ESP",
+    "age": 33,
+    "price": 0.5
+  },
+  {
+    "id": 121,
+    "name": "Cees Bol",
+    "team": "Decathlon CMA CGM Team",
+    "role": "Knecht",
+    "country": "NLD",
+    "age": 30,
+    "price": 0.5
+  },
+  {
+    "id": 122,
+    "name": "Aurélien Paret-Peintre",
+    "team": "Decathlon CMA CGM Team",
+    "role": "Knecht",
+    "country": "FRA",
+    "age": 30,
+    "price": 0.5
+  },
+  {
+    "id": 123,
+    "name": "Nicolas Prodhomme",
+    "team": "Decathlon CMA CGM Team",
+    "role": "Knecht",
+    "country": "FRA",
+    "age": 29,
+    "price": 0.5
+  },
+  {
+    "id": 124,
+    "name": "John Degenkolb",
+    "team": "Team Picnic PostNL",
+    "role": "Knecht",
+    "country": "DEU",
+    "age": 37,
+    "price": 0.5
+  },
+  {
+    "id": 125,
+    "name": "Frits Biesterbos",
+    "team": "Team Picnic PostNL",
+    "role": "Knecht",
+    "country": "NLD",
+    "age": 24,
+    "price": 0.5
+  },
+  {
+    "id": 126,
+    "name": "Niklas Märkl",
+    "team": "Team Picnic PostNL",
+    "role": "Knecht",
+    "country": "DEU",
+    "age": 27,
+    "price": 0.5
+  },
+  {
+    "id": 127,
+    "name": "Julius van den Berg",
+    "team": "Team Picnic PostNL",
+    "role": "Knecht",
+    "country": "NLD",
+    "age": 29,
+    "price": 0.5
+  },
+  {
+    "id": 128,
+    "name": "Robbe Dhondt",
+    "team": "Team Picnic PostNL",
+    "role": "Knecht",
+    "country": "BEL",
+    "age": 22,
+    "price": 0.5
+  },
+  {
+    "id": 129,
+    "name": "Thibault Guernalec",
+    "team": "TotalEnergies",
+    "role": "Knecht",
+    "country": "FRA",
+    "age": 28,
+    "price": 0.5
+  },
+  {
+    "id": 130,
+    "name": "Joris Delbove",
+    "team": "TotalEnergies",
+    "role": "Knecht",
+    "country": "FRA",
+    "age": 25,
+    "price": 0.5
+  },
+  {
+    "id": 131,
+    "name": "Nicolas Breuillard",
+    "team": "TotalEnergies",
+    "role": "Knecht",
+    "country": "FRA",
+    "age": 26,
+    "price": 0.5
+  },
+  {
+    "id": 132,
+    "name": "Mathis Le Berre",
+    "team": "TotalEnergies",
+    "role": "Knecht",
+    "country": "FRA",
+    "age": 25,
+    "price": 0.5
+  },
+  {
+    "id": 133,
+    "name": "Mattéo Vercher",
+    "team": "TotalEnergies",
+    "role": "Knecht",
+    "country": "FRA",
+    "age": 25,
+    "price": 0.5
+  },
+  {
+    "id": 134,
+    "name": "Alexandre Delettre",
+    "team": "TotalEnergies",
+    "role": "Knecht",
+    "country": "FRA",
+    "age": 28,
+    "price": 0.5
+  },
+  {
+    "id": 135,
+    "name": "Anthony Turgis",
+    "team": "TotalEnergies",
+    "role": "Sprint",
+    "country": "FRA",
+    "age": 32,
+    "price": 0.5
+  },
+  {
+    "id": 136,
+    "name": "José Félix Parra",
+    "team": "Caja Rural - Seguros RGA",
+    "role": "Knecht",
+    "country": "ESP",
+    "age": 29,
+    "price": 0.5
+  },
+  {
+    "id": 137,
+    "name": "Jakub Otruba",
+    "team": "Caja Rural - Seguros RGA",
+    "role": "Knecht",
+    "country": "CZE",
+    "age": 28,
+    "price": 0.5
+  },
+  {
+    "id": 138,
+    "name": "Stefano Oldani",
+    "team": "Caja Rural - Seguros RGA",
+    "role": "Klassiek",
+    "country": "ITA",
+    "age": 28,
+    "price": 0.5
+  },
+  {
+    "id": 139,
+    "name": "Sebastian Berwick",
+    "team": "Caja Rural - Seguros RGA",
+    "role": "Klimmer",
+    "country": "AUS",
+    "age": 26,
+    "price": 0.5
+  },
+  {
+    "id": 140,
+    "name": "Abel Balderstone",
+    "team": "Caja Rural - Seguros RGA",
+    "role": "GC",
+    "country": "ESP",
+    "age": 25,
+    "price": 0.5
+  },
+  {
+    "id": 141,
+    "name": "Yannis Voisard",
+    "team": "Tudor Pro Cycling Team",
+    "role": "Knecht",
+    "country": "CHE",
+    "age": 27,
+    "price": 0.5
+  },
+  {
+    "id": 142,
+    "name": "Marc Hirschi",
+    "team": "Tudor Pro Cycling Team",
+    "role": "Klassiek",
+    "country": "CHE",
+    "age": 27,
+    "price": 0.5
+  },
+  {
+    "id": 143,
+    "name": "Marco Haller",
+    "team": "Tudor Pro Cycling Team",
+    "role": "Knecht",
+    "country": "AUT",
+    "age": 35,
+    "price": 0.5
+  },
+  {
+    "id": 144,
+    "name": "Baptiste Veistroffer",
+    "team": "Lotto Intermarché",
+    "role": "Knecht",
+    "country": "FRA",
+    "age": 26,
+    "price": 0.5
+  },
+  {
+    "id": 145,
+    "name": "Lars Craps",
+    "team": "Lotto Intermarché",
+    "role": "Knecht",
+    "country": "BEL",
+    "age": 24,
+    "price": 0.5
+  },
+  {
+    "id": 146,
+    "name": "Liam Slock",
+    "team": "Lotto Intermarché",
+    "role": "Knecht",
+    "country": "BEL",
+    "age": 25,
+    "price": 0.5
+  },
+  {
+    "id": 147,
+    "name": "Jenno Berckmoes",
+    "team": "Lotto Intermarché",
+    "role": "Klassiek",
+    "country": "BEL",
+    "age": 25,
+    "price": 0.5
+  },
+  {
+    "id": 148,
+    "name": "Simone Velasco",
+    "team": "XDS Astana Team",
+    "role": "Knecht",
+    "country": "ITA",
+    "age": 30,
+    "price": 0.5
+  },
+  {
+    "id": 149,
+    "name": "Aaron Gate",
+    "team": "XDS Astana Team",
+    "role": "Knecht",
+    "country": "NZL",
+    "age": 35,
+    "price": 0.5
+  },
+  {
+    "id": 150,
+    "name": "Davide Ballerini",
+    "team": "XDS Astana Team",
+    "role": "Knecht",
+    "country": "ITA",
+    "age": 31,
+    "price": 0.5
+  },
+  {
+    "id": 151,
+    "name": "Tim Marsman",
+    "team": "Alpecin-Premier Tech",
+    "role": "Knecht",
+    "country": "NLD",
+    "age": 25,
+    "price": 0.5
+  },
+  {
+    "id": 152,
+    "name": "Ramses Debruyne",
+    "team": "Alpecin-Premier Tech",
+    "role": "Knecht",
+    "country": "BEL",
+    "age": 23,
+    "price": 0.5
+  },
+  {
+    "id": 153,
+    "name": "Edward Planckaert",
+    "team": "Alpecin-Premier Tech",
+    "role": "Knecht",
+    "country": "BEL",
+    "age": 31,
+    "price": 0.5
+  },
+  {
+    "id": 154,
+    "name": "Silvan Dillier",
+    "team": "Alpecin-Premier Tech",
+    "role": "Knecht",
+    "country": "CHE",
+    "age": 35,
+    "price": 0.5
+  },
+  {
+    "id": 155,
+    "name": "Robert Stannard",
+    "team": "Bahrain Victorious",
+    "role": "Knecht",
+    "country": "AUS",
+    "age": 27,
+    "price": 0.5
+  },
+  {
+    "id": 156,
+    "name": "Kamil Gradek",
+    "team": "Bahrain Victorious",
+    "role": "Knecht",
+    "country": "POL",
+    "age": 35,
+    "price": 0.5
+  },
+  {
+    "id": 157,
+    "name": "Damiano Caruso",
+    "team": "Bahrain Victorious",
+    "role": "Klimmer",
+    "country": "ITA",
+    "age": 38,
+    "price": 0.5
+  },
+  {
+    "id": 158,
+    "name": "Vlad van Mechelen",
+    "team": "Bahrain Victorious",
+    "role": "Knecht",
+    "country": "BEL",
+    "age": 22,
+    "price": 0.5
+  },
+  {
+    "id": 159,
+    "name": "Huub Artz",
+    "team": "Lotto Intermarché",
+    "role": "Knecht",
+    "country": "NLD",
+    "age": 24,
+    "price": 0.5
+  },
+  {
+    "id": 160,
+    "name": "Ewen Costiou",
+    "team": "Groupama - FDJ United",
+    "role": "Knecht",
+    "country": "FRA",
+    "age": 23,
+    "price": 0.5
+  },
+  {
+    "id": 161,
+    "name": "Clément Russo",
+    "team": "Groupama - FDJ United",
+    "role": "Knecht",
+    "country": "FRA",
+    "age": 31,
+    "price": 0.5
+  },
+  {
+    "id": 162,
+    "name": "Quentin Pacher",
+    "team": "Groupama - FDJ United",
+    "role": "Knecht",
+    "country": "FRA",
+    "age": 34,
+    "price": 0.5
+  },
+  {
+    "id": 163,
+    "name": "Lorenzo Germani",
+    "team": "Groupama - FDJ United",
+    "role": "Knecht",
+    "country": "ITA",
+    "age": 24,
+    "price": 0.5
+  },
+  {
+    "id": 164,
+    "name": "Clément Braz Afonso",
+    "team": "Groupama - FDJ United",
+    "role": "Knecht",
+    "country": "FRA",
+    "age": 26,
+    "price": 0.5
+  },
+  {
+    "id": 165,
+    "name": "Clément Berthet",
+    "team": "Groupama - FDJ United",
+    "role": "Knecht",
+    "country": "FRA",
+    "age": 28,
+    "price": 0.5
+  },
+  {
+    "id": 166,
+    "name": "Michael Valgren",
+    "team": "EF Education - EasyPost",
+    "role": "Knecht",
+    "country": "DNK",
+    "age": 34,
+    "price": 0.5
+  },
+  {
+    "id": 167,
+    "name": "Max Walker",
+    "team": "EF Education - EasyPost",
+    "role": "Knecht",
+    "country": "GBR",
+    "age": 24,
+    "price": 0.5
+  },
+  {
+    "id": 168,
+    "name": "Georg Steinhauser",
+    "team": "EF Education - EasyPost",
+    "role": "Klimmer",
+    "country": "DEU",
+    "age": 24,
+    "price": 0.5
+  },
+  {
+    "id": 169,
+    "name": "Sean Quinn",
+    "team": "EF Education - EasyPost",
+    "role": "Knecht",
+    "country": "USA",
+    "age": 26,
+    "price": 0.5
+  },
+  {
+    "id": 170,
+    "name": "Nicolas Vinokurov",
+    "team": "XDS Astana Team",
+    "role": "Knecht",
+    "country": "KAZ",
+    "age": 23,
+    "price": 0.5
+  },
+  {
+    "id": 171,
+    "name": "Anders Halland Johannessen",
+    "team": "Uno-X Mobility",
+    "role": "Knecht",
+    "country": "NOO",
+    "age": 26,
+    "price": 0.5
+  },
+  {
+    "id": 172,
+    "name": "Michel Hessmann",
+    "team": "Movistar Team",
+    "role": "Knecht",
+    "country": "DEU",
+    "age": 25,
+    "price": 0.5
+  },
+  {
+    "id": 173,
+    "name": "Jefferson Alveiro Cepeda",
+    "team": "Movistar Team",
+    "role": "Knecht",
+    "country": "ECU",
+    "age": 30,
+    "price": 0.5
+  },
+  {
+    "id": 174,
+    "name": "Nelson Oliveira",
+    "team": "Movistar Team",
+    "role": "Knecht",
+    "country": "POR",
+    "age": 37,
+    "price": 0.5
+  },
+  {
+    "id": 175,
+    "name": "Javier Romo",
+    "team": "Movistar Team",
+    "role": "Knecht",
+    "country": "ESP",
+    "age": 27,
+    "price": 0.5
+  },
+  {
+    "id": 176,
+    "name": "Raúl García Pierna",
+    "team": "Movistar Team",
+    "role": "Knecht",
+    "country": "ESP",
+    "age": 25,
+    "price": 0.5
+  },
+  {
+    "id": 177,
+    "name": "Pascal Eenkhoorn",
+    "team": "Soudal Quick-Step",
+    "role": "Knecht",
+    "country": "NLD",
+    "age": 29,
+    "price": 0.5
+  },
+  {
+    "id": 178,
+    "name": "Joshua Tarling",
+    "team": "INEOS Grenadiers",
+    "role": "Tijdrit",
+    "country": "GBR",
+    "age": 22,
+    "price": 0.5
+  },
+  {
+    "id": 179,
+    "name": "Tobias Foss",
+    "team": "INEOS Grenadiers",
+    "role": "Knecht",
+    "country": "NOO",
+    "age": 29,
+    "price": 0.5
+  },
+  {
+    "id": 180,
+    "name": "Xandro Meurisse",
+    "team": "Pinarello-Q36.5 Pro Cycling Team",
+    "role": "Knecht",
+    "country": "BEL",
+    "age": 34,
+    "price": 0.5
+  },
+  {
+    "id": 181,
+    "name": "Xabier Azparren",
+    "team": "Pinarello-Q36.5 Pro Cycling Team",
+    "role": "Knecht",
+    "country": "ESP",
+    "age": 27,
+    "price": 0.5
+  },
+  {
+    "id": 182,
+    "name": "Chris Harper",
+    "team": "Pinarello-Q36.5 Pro Cycling Team",
+    "role": "Klimmer",
+    "country": "AUS",
+    "age": 31,
+    "price": 0.5
+  },
+  {
+    "id": 183,
+    "name": "Damien Howson",
+    "team": "Pinarello-Q36.5 Pro Cycling Team",
+    "role": "Knecht",
+    "country": "AUS",
+    "age": 33,
+    "price": 0.5
+  },
+  {
+    "id": 184,
+    "name": "Brent Van Moer",
+    "team": "Pinarello-Q36.5 Pro Cycling Team",
+    "role": "Knecht",
+    "country": "BEL",
+    "age": 28,
+    "price": 0.5
+  }
+]
+[
+  {
+    "id": 1,
     "name": "Tadej Pogacar",
     "team": "UAE Team Emirates",
     "role": "GC",
