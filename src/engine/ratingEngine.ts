@@ -1,23 +1,23 @@
 import type { Rider, RiderRating, RiderRole } from '../types'
+import { expectedPoints as scoreRider } from './scoringEngine'
 
 /**
- * Scorito Pro Rating Engine (v1)
+ * Scorito Pro Rating Engine (v2)
  *
- * Placeholder heuristiek: leidt discipline-scores af uit rol en prijs.
- * De prijs (0..6 mln) fungeert als proxy voor kwaliteit tot we echte
- * historische Scorito-punten koppelen. Alles wordt genormaliseerd naar 0..100.
+ * expectedPoints komt nu uit de scoringEngine, die het ECHTE Scorito-
+ * puntensysteem gebruikt (scoring.json). De discipline-scores (gc/sprint/
+ * mountain/tt) blijven een leesbare inschatting op basis van rol en prijs,
+ * puur voor weergave en filtering in de UI.
  *
- * Deze engine staat bewust los van de UI zodat we hem later kunnen
- * uitbreiden met echte data zonder de componenten aan te passen.
+ * De engine staat los van de UI zodat we hem kunnen blijven verfijnen.
  */
 
-const MAX_PRICE = 6
+const MAX_PRICE = 8
 
 function base(price: number): number {
   return Math.round((price / MAX_PRICE) * 100)
 }
 
-// Relatieve nadruk per discipline afhankelijk van de rol.
 const roleWeights: Record<RiderRole, { gc: number; sprint: number; mountain: number; tt: number }> = {
   GC: { gc: 1.0, sprint: 0.2, mountain: 0.9, tt: 0.8 },
   Klimmer: { gc: 0.6, sprint: 0.1, mountain: 1.0, tt: 0.3 },
@@ -39,19 +39,18 @@ export function rateRider(rider: Rider): RiderRating {
   const sprint = clamp(b * w.sprint)
   const mountain = clamp(b * w.mountain)
   const timeTrial = clamp(b * w.tt)
-
   const overall = clamp((gc + sprint + mountain + timeTrial) / 4 + b * 0.4)
 
-  // Verwachte Tour-punten: grove schatting op basis van overall.
-  const expectedPoints = Math.round(overall * 3.2)
+  // Echte verwachte Scorito-punten uit het puntensysteem.
+  const expectedPoints = scoreRider(rider)
 
-  // Value = punten per miljoen (hoger is beter).
-  const value = clamp((expectedPoints / Math.max(0.3, rider.price)) / 3)
+  // Value = verwachte punten per miljoen euro.
+  const value = Math.round((expectedPoints / Math.max(0.5, rider.price)) * 10) / 10
 
-  // Captain-geschiktheid weegt overall zwaarder (kopman verdubbelt punten).
-  const captain = clamp(overall * 0.7 + value * 0.3)
+  // Captain-geschiktheid: kopman verdubbelt de etappepunten, dus renners met
+  // veel punten en hoge kwaliteit zijn de beste kopmannen.
+  const captain = Math.round(expectedPoints * (0.7 + 0.3 * (b / 100)))
 
-  // Risico: goedkope renners en jonge/oude renners zijn wisselvalliger.
   const ageRisk = Math.abs(rider.age - 28) * 1.5
   const risk = clamp(40 - b * 0.3 + ageRisk)
 
