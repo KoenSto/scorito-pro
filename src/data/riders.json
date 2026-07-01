@@ -1,0 +1,362 @@
+[
+  {
+    "id": 1,
+    "name": "Tadej Pogacar",
+    "team": "UAE Team Emirates",
+    "role": "GC",
+    "country": "SI",
+    "age": 27,
+    "price": 6
+  },
+  {
+    "id": 2,
+    "name": "Jonas Vingegaard",
+    "team": "Visma | Lease a Bike",
+    "role": "GC",
+    "country": "DK",
+    "age": 29,
+    "price": 5.5
+  },
+  {
+    "id": 3,
+    "name": "Remco Evenepoel",
+    "team": "Soudal Quick-Step",
+    "role": "GC",
+    "country": "BE",
+    "age": 26,
+    "price": 3
+  },
+  {
+    "id": 4,
+    "name": "Primoz Roglic",
+    "team": "Red Bull - BORA",
+    "role": "GC",
+    "country": "SI",
+    "age": 36,
+    "price": 2.5
+  },
+  {
+    "id": 5,
+    "name": "Juan Ayuso",
+    "team": "UAE Team Emirates",
+    "role": "GC",
+    "country": "ES",
+    "age": 23,
+    "price": 1.8
+  },
+  {
+    "id": 6,
+    "name": "Jasper Philipsen",
+    "team": "Alpecin-Deceuninck",
+    "role": "Sprint",
+    "country": "BE",
+    "age": 28,
+    "price": 2.8
+  },
+  {
+    "id": 7,
+    "name": "Jonathan Milan",
+    "team": "Lidl-Trek",
+    "role": "Sprint",
+    "country": "IT",
+    "age": 25,
+    "price": 2.4
+  },
+  {
+    "id": 8,
+    "name": "Biniam Girmay",
+    "team": "Intermarche-Wanty",
+    "role": "Sprint",
+    "country": "ER",
+    "age": 26,
+    "price": 2
+  },
+  {
+    "id": 9,
+    "name": "Mads Pedersen",
+    "team": "Lidl-Trek",
+    "role": "Klassiek",
+    "country": "DK",
+    "age": 30,
+    "price": 2.2
+  },
+  {
+    "id": 10,
+    "name": "Wout van Aert",
+    "team": "Visma | Lease a Bike",
+    "role": "Klassiek",
+    "country": "BE",
+    "age": 31,
+    "price": 2.6
+  },
+  {
+    "id": 11,
+    "name": "Mathieu van der Poel",
+    "team": "Alpecin-Deceuninck",
+    "role": "Klassiek",
+    "country": "NL",
+    "age": 31,
+    "price": 2.5
+  },
+  {
+    "id": 12,
+    "name": "Mattias Skjelmose",
+    "team": "Lidl-Trek",
+    "role": "GC",
+    "country": "DK",
+    "age": 25,
+    "price": 1.4
+  },
+  {
+    "id": 13,
+    "name": "Maxim Van Gils",
+    "team": "Red Bull - BORA",
+    "role": "Heuvel",
+    "country": "BE",
+    "age": 26,
+    "price": 1
+  },
+  {
+    "id": 14,
+    "name": "Carlos Rodriguez",
+    "team": "INEOS Grenadiers",
+    "role": "GC",
+    "country": "ES",
+    "age": 25,
+    "price": 1.6
+  },
+  {
+    "id": 15,
+    "name": "Felix Gall",
+    "team": "Decathlon AG2R",
+    "role": "Klimmer",
+    "country": "AT",
+    "age": 28,
+    "price": 1.2
+  },
+  {
+    "id": 16,
+    "name": "Ben O'Connor",
+    "team": "Jayco AlUla",
+    "role": "GC",
+    "country": "AU",
+    "age": 30,
+    "price": 1.1
+  },
+  {
+    "id": 17,
+    "name": "Santiago Buitrago",
+    "team": "Bahrain Victorious",
+    "role": "Klimmer",
+    "country": "CO",
+    "age": 26,
+    "price": 1
+  },
+  {
+    "id": 18,
+    "name": "Tom Pidcock",
+    "team": "Q36.5",
+    "role": "Heuvel",
+    "country": "GB",
+    "age": 26,
+    "price": 1.3
+  },
+  {
+    "id": 19,
+    "name": "Kevin Vauquelin",
+    "team": "Arkea-B&B",
+    "role": "Heuvel",
+    "country": "FR",
+    "age": 25,
+    "price": 0.9
+  },
+  {
+    "id": 20,
+    "name": "Enric Mas",
+    "team": "Movistar",
+    "role": "GC",
+    "country": "ES",
+    "age": 31,
+    "price": 1
+  },
+  {
+    "id": 21,
+    "name": "Adam Yates",
+    "team": "UAE Team Emirates",
+    "role": "GC",
+    "country": "GB",
+    "age": 33,
+    "price": 1.2
+  },
+  {
+    "id": 22,
+    "name": "Joao Almeida",
+    "team": "UAE Team Emirates",
+    "role": "GC",
+    "country": "PT",
+    "age": 27,
+    "price": 1.7
+  },
+  {
+    "id": 23,
+    "name": "Simon Yates",
+    "team": "Visma | Lease a Bike",
+    "role": "Klimmer",
+    "country": "GB",
+    "age": 33,
+    "price": 1.1
+  },
+  {
+    "id": 24,
+    "name": "Matteo Jorgenson",
+    "team": "Visma | Lease a Bike",
+    "role": "Heuvel",
+    "country": "US",
+    "age": 26,
+    "price": 1
+  },
+  {
+    "id": 25,
+    "name": "Dylan Groenewegen",
+    "team": "Jayco AlUla",
+    "role": "Sprint",
+    "country": "NL",
+    "age": 32,
+    "price": 1.2
+  },
+  {
+    "id": 26,
+    "name": "Arnaud De Lie",
+    "team": "Lotto",
+    "role": "Klassiek",
+    "country": "BE",
+    "age": 24,
+    "price": 1.1
+  },
+  {
+    "id": 27,
+    "name": "Fabio Jakobsen",
+    "team": "Picnic PostNL",
+    "role": "Sprint",
+    "country": "NL",
+    "age": 29,
+    "price": 0.7
+  },
+  {
+    "id": 28,
+    "name": "Tim Merlier",
+    "team": "Soudal Quick-Step",
+    "role": "Sprint",
+    "country": "BE",
+    "age": 33,
+    "price": 1.4
+  },
+  {
+    "id": 29,
+    "name": "Julian Alaphilippe",
+    "team": "Tudor",
+    "role": "Klassiek",
+    "country": "FR",
+    "age": 33,
+    "price": 0.8
+  },
+  {
+    "id": 30,
+    "name": "Romain Bardet",
+    "team": "Picnic PostNL",
+    "role": "Klimmer",
+    "country": "FR",
+    "age": 35,
+    "price": 0.6
+  },
+  {
+    "id": 31,
+    "name": "Guillaume Martin",
+    "team": "Groupama-FDJ",
+    "role": "Klimmer",
+    "country": "FR",
+    "age": 32,
+    "price": 0.7
+  },
+  {
+    "id": 32,
+    "name": "David Gaudu",
+    "team": "Groupama-FDJ",
+    "role": "GC",
+    "country": "FR",
+    "age": 29,
+    "price": 0.9
+  },
+  {
+    "id": 33,
+    "name": "Aleksandr Vlasov",
+    "team": "Red Bull - BORA",
+    "role": "GC",
+    "country": "RU",
+    "age": 29,
+    "price": 0.9
+  },
+  {
+    "id": 34,
+    "name": "Mikel Landa",
+    "team": "Soudal Quick-Step",
+    "role": "Klimmer",
+    "country": "ES",
+    "age": 36,
+    "price": 0.7
+  },
+  {
+    "id": 35,
+    "name": "Egan Bernal",
+    "team": "INEOS Grenadiers",
+    "role": "GC",
+    "country": "CO",
+    "age": 29,
+    "price": 0.9
+  },
+  {
+    "id": 36,
+    "name": "Geraint Thomas",
+    "team": "INEOS Grenadiers",
+    "role": "GC",
+    "country": "GB",
+    "age": 39,
+    "price": 0.6
+  },
+  {
+    "id": 37,
+    "name": "Stephen Williams",
+    "team": "Israel-Premier Tech",
+    "role": "Heuvel",
+    "country": "GB",
+    "age": 29,
+    "price": 0.7
+  },
+  {
+    "id": 38,
+    "name": "Michael Matthews",
+    "team": "Jayco AlUla",
+    "role": "Klassiek",
+    "country": "AU",
+    "age": 35,
+    "price": 0.8
+  },
+  {
+    "id": 39,
+    "name": "Alberto Bettiol",
+    "team": "Astana",
+    "role": "Klassiek",
+    "country": "IT",
+    "age": 32,
+    "price": 0.6
+  },
+  {
+    "id": 40,
+    "name": "Kaden Groves",
+    "team": "Alpecin-Deceuninck",
+    "role": "Sprint",
+    "country": "AU",
+    "age": 27,
+    "price": 0.9
+  }
+]\n
