@@ -9,17 +9,19 @@ export interface OptimizeResult {
 }
 
 /**
- * Team Optimizer (Sprint 2)
+ * Team Optimizer (Sprint 2.1)
  *
- * Doel: maximaliseer verwachte Scorito-punten binnen de spelregels:
+ * Maximaliseert de verwachte Scorito-punten (uit de scoringEngine, via de
+ * ratingEngine) binnen de spelregels:
  *   - exact rules.teamSize renners
  *   - totale prijs <= rules.budget
  *   - maximaal rules.maxPerTeam renners per ploeg
  *
- * Aanpak: greedy start op basis van punten-per-euro, gevolgd door
- * local search (swaps) die het team stap voor stap verbetert zolang
- * dat punten oplevert zonder de restricties te schenden. Dit draait
- * direct in de browser en benadert het optimum goed.
+ * Aanpak: start met de goedkoopste haalbare selectie van precies teamSize
+ * renners (altijd geldig binnen budget) en verbeter daarna via "best swap":
+ * vervang telkens een renner door de beste beschikbare renner die de punten
+ * verhoogt zonder een restrictie te schenden. De teamgrootte blijft zo altijd
+ * exact teamSize. Dit draait direct in de browser en benadert het optimum.
  */
 
 interface Ctx {
@@ -31,16 +33,22 @@ function teamCount(team: Rider[], t: string): number {
   return team.filter((r) => r.team === t).length
 }
 
-function isFeasibleAdd(team: Rider[], r: Rider, ctx: Ctx): boolean {
-  if (team.some((x) => x.id === r.id)) return false
-  if (teamCount(team, r.team) >= ctx.rules.maxPerTeam) return false
-  return true
-}
-
 function totals(team: Rider[], ctx: Ctx) {
   const price = team.reduce((s, r) => s + r.price, 0)
   const points = team.reduce((s, r) => s + ctx.points(r), 0)
   return { price, points }
+}
+
+/** Goedkoopste haalbare team van precies teamSize renners. */
+function seedCheapest(riders: Rider[], rules: Rules): Rider[] {
+  const byPrice = [...riders].sort((a, b) => a.price - b.price)
+  const team: Rider[] = []
+  for (const r of byPrice) {
+    if (team.length >= rules.teamSize) break
+    if (teamCount(team, r.team) >= rules.maxPerTeam) continue
+    team.push(r)
+  }
+  return team
 }
 
 export function optimizeTeam(
@@ -50,48 +58,42 @@ export function optimizeTeam(
 ): OptimizeResult {
   const ctx: Ctx = { rules, points: (r) => ratings[r.id]?.expectedPoints ?? 0 }
 
-  // 1. Greedy seed: sorteer op punten-per-euro, vul aan met restricties.
-  const byEfficiency = [...riders].sort(
-    (a, b) => ctx.points(b) / b.price - ctx.points(a) / a.price,
-  )
-  const team: Rider[] = []
-  for (const r of byEfficiency) {
-    if (team.length >= rules.teamSize) break
-    const { price } = totals(team, ctx)
-    if (price + r.price > rules.budget) continue
-    if (!isFeasibleAdd(team, r, ctx)) continue
-    team.push(r)
-  }
+  const team = seedCheapest(riders, rules)
 
-  // 2. Local search: probeer een renner in het team te vervangen door een
-  // renner erbuiten als dat punten oplevert binnen budget en ploeglimiet.
+  // Best-swap local search: teamgrootte blijft exact teamSize.
   let iterations = 0
   let improved = true
-  while (improved && iterations < 5000) {
+  const maxIterations = 50000
+  while (improved && iterations < maxIterations) {
     improved = false
     for (let i = 0; i < team.length; i++) {
       const out = team[i]
+      const rest = team.filter((_, idx) => idx !== i)
+      const restPrice = totals(rest, ctx).price
+      let best: Rider | null = null
+      let bestGain = 0
       for (const cand of riders) {
         iterations++
         if (team.some((x) => x.id === cand.id)) continue
-        const rest = team.filter((_, idx) => idx !== i)
         if (teamCount(rest, cand.team) >= rules.maxPerTeam) continue
-        const newPrice = totals(rest, ctx).price + cand.price
-        if (newPrice > rules.budget) continue
-        if (ctx.points(cand) > ctx.points(out)) {
-          team[i] = cand
-          improved = true
-          break
+        if (restPrice + cand.price > rules.budget) continue
+        const gain = ctx.points(cand) - ctx.points(out)
+        if (gain > bestGain) {
+          bestGain = gain
+          best = cand
         }
       }
-      if (improved) break
+      if (best) {
+        team[i] = best
+        improved = true
+      }
     }
   }
 
   const { price, points } = totals(team, ctx)
   const captain = team.length
-    ? team.reduce((best, r) =>
-        (ratings[r.id]?.captain ?? 0) > (ratings[best.id]?.captain ?? 0) ? r : best,
+    ? team.reduce((b, r) =>
+        (ratings[r.id]?.captain ?? 0) > (ratings[b.id]?.captain ?? 0) ? r : b,
       )
     : null
 
