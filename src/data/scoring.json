@@ -1,0 +1,137 @@
+{
+  "stageResult": [
+    50,
+    44,
+    40,
+    36,
+    32,
+    30,
+    28,
+    26,
+    24,
+    22,
+    20,
+    18,
+    16,
+    14,
+    12,
+    10,
+    8,
+    6,
+    4,
+    2
+  ],
+  "stageClassification": {
+    "algemeen": [
+      10,
+      8,
+      6,
+      4,
+      2
+    ],
+    "punten": [
+      8,
+      6,
+      4,
+      2,
+      1
+    ],
+    "berg": [
+      8,
+      6,
+      4,
+      2,
+      1
+    ],
+    "jongeren": [
+      6,
+      4,
+      3,
+      2,
+      1
+    ]
+  },
+  "teamAfterStage": {
+    "etappewinst": 10,
+    "algemeen": 8,
+    "punten": 6,
+    "berg": 6,
+    "jongeren": 3
+  },
+  "teamTimeTrialPerRider": [
+    40,
+    32,
+    28,
+    24,
+    20,
+    16,
+    12,
+    8
+  ],
+  "finalClassification": {
+    "algemeen": [
+      100,
+      80,
+      60,
+      50,
+      40,
+      36,
+      32,
+      28,
+      24,
+      22,
+      20,
+      18,
+      16,
+      14,
+      12,
+      10,
+      8,
+      6,
+      4,
+      2
+    ],
+    "punten": [
+      80,
+      60,
+      40,
+      30,
+      20,
+      10,
+      8,
+      6,
+      4,
+      2
+    ],
+    "berg": [
+      80,
+      60,
+      40,
+      30,
+      20,
+      10,
+      8,
+      6,
+      4,
+      2
+    ],
+    "jongeren": [
+      60,
+      40,
+      30,
+      20,
+      10
+    ]
+  },
+  "teamFinalClassification": {
+    "algemeen": 24,
+    "punten": 18,
+    "berg": 18,
+    "jongeren": 9
+  },
+  "rules": {
+    "stagesTotal": 21,
+    "ridersPerStage": 9,
+    "captainMultiplier": 2
+  }
+}
