@@ -1,0 +1,186 @@
+[
+  {
+    "id": 1,
+    "day": "Za 4 jul",
+    "from": "Barcelona",
+    "to": "Barcelona",
+    "distanceKm": 19,
+    "type": "Ploegentijdrit"
+  },
+  {
+    "id": 2,
+    "day": "Zo 5 jul",
+    "from": "Tarragona",
+    "to": "Barcelona",
+    "distanceKm": 178,
+    "type": "Vlak"
+  },
+  {
+    "id": 3,
+    "day": "Ma 6 jul",
+    "from": "Granollers",
+    "to": "Les Angles",
+    "distanceKm": 195,
+    "type": "Berg"
+  },
+  {
+    "id": 4,
+    "day": "Di 7 jul",
+    "from": "Carcassonne",
+    "to": "Carcassonne",
+    "distanceKm": 172,
+    "type": "Vlak"
+  },
+  {
+    "id": 5,
+    "day": "Wo 8 jul",
+    "from": "Lavelanet",
+    "to": "Foix",
+    "distanceKm": 165,
+    "type": "Heuvel"
+  },
+  {
+    "id": 6,
+    "day": "Do 9 jul",
+    "from": "Toulouse",
+    "to": "Rodez",
+    "distanceKm": 185,
+    "type": "Heuvel"
+  },
+  {
+    "id": 7,
+    "day": "Vr 10 jul",
+    "from": "Aurillac",
+    "to": "Le Lioran",
+    "distanceKm": 160,
+    "type": "Berg"
+  },
+  {
+    "id": 8,
+    "day": "Za 11 jul",
+    "from": "Clermont-Ferrand",
+    "to": "Clermont",
+    "distanceKm": 183,
+    "type": "Vlak"
+  },
+  {
+    "id": 9,
+    "day": "Zo 12 jul",
+    "from": "Roanne",
+    "to": "Lyon",
+    "distanceKm": 175,
+    "type": "Heuvel"
+  },
+  {
+    "id": 10,
+    "day": "Ma 13 jul",
+    "from": "Rustdag",
+    "to": "-",
+    "distanceKm": 0,
+    "type": "Vlak"
+  },
+  {
+    "id": 11,
+    "day": "Di 14 jul",
+    "from": "Chambery",
+    "to": "Alpe d'Huez",
+    "distanceKm": 165,
+    "type": "Berg"
+  },
+  {
+    "id": 12,
+    "day": "Wo 15 jul",
+    "from": "Bourg d'Oisans",
+    "to": "Courchevel",
+    "distanceKm": 152,
+    "type": "Berg"
+  },
+  {
+    "id": 13,
+    "day": "Do 16 jul",
+    "from": "Albertville",
+    "to": "Geneve",
+    "distanceKm": 190,
+    "type": "Vlak"
+  },
+  {
+    "id": 14,
+    "day": "Vr 17 jul",
+    "from": "Geneve",
+    "to": "Megeve",
+    "distanceKm": 33,
+    "type": "Tijdrit"
+  },
+  {
+    "id": 15,
+    "day": "Za 18 jul",
+    "from": "Annemasse",
+    "to": "Morzine",
+    "distanceKm": 168,
+    "type": "Berg"
+  },
+  {
+    "id": 16,
+    "day": "Zo 19 jul",
+    "from": "Thonon",
+    "to": "Lausanne",
+    "distanceKm": 178,
+    "type": "Heuvel"
+  },
+  {
+    "id": 17,
+    "day": "Ma 20 jul",
+    "from": "Rustdag",
+    "to": "-",
+    "distanceKm": 0,
+    "type": "Vlak"
+  },
+  {
+    "id": 18,
+    "day": "Di 21 jul",
+    "from": "Dijon",
+    "to": "Dijon",
+    "distanceKm": 165,
+    "type": "Vlak"
+  },
+  {
+    "id": 19,
+    "day": "Wo 22 jul",
+    "from": "Nevers",
+    "to": "Bourges",
+    "distanceKm": 172,
+    "type": "Vlak"
+  },
+  {
+    "id": 20,
+    "day": "Do 23 jul",
+    "from": "Orleans",
+    "to": "Chartres",
+    "distanceKm": 155,
+    "type": "Vlak"
+  },
+  {
+    "id": 21,
+    "day": "Vr 24 jul",
+    "from": "Chartres",
+    "to": "Versailles",
+    "distanceKm": 45,
+    "type": "Tijdrit"
+  },
+  {
+    "id": 22,
+    "day": "Za 25 jul",
+    "from": "Mantes",
+    "to": "Parijs",
+    "distanceKm": 135,
+    "type": "Heuvel"
+  },
+  {
+    "id": 23,
+    "day": "Zo 26 jul",
+    "from": "Parijs",
+    "to": "Champs-Elysees",
+    "distanceKm": 120,
+    "type": "Vlak"
+  }
+]\n
