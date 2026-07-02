@@ -1,5 +1,15 @@
 import { useMemo, useState } from 'react'
-import { Wallet, Users, Coins, Sparkles, Trash2, Search, Check } from 'lucide-react'
+import {
+  Wallet,
+  Users,
+  Coins,
+  Sparkles,
+  Trash2,
+  Search,
+  Check,
+  Save,
+  FolderOpen,
+} from 'lucide-react'
 import ridersData from '../data/riders.json'
 import rulesData from '../data/rules.json'
 import type { Rider, Rules, RiderRole } from '../types'
@@ -27,6 +37,7 @@ export default function Team() {
   const team = useMyTeam()
   const [query, setQuery] = useState('')
   const [roleFilter, setRoleFilter] = useState<RiderRole | 'Alle'>('Alle')
+  const [teamName, setTeamName] = useState('')
 
   const budget = summarizeBudget(team.riders, rules)
 
@@ -56,145 +67,211 @@ export default function Team() {
     team.setIds(result.team.map((r) => r.id))
   }
 
+  function handleSave() {
+    const name = teamName.trim()
+    if (!name) return
+    team.saveTeam(name)
+    setTeamName('')
+  }
+
   return (
     <div className="space-y-6">
-      <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-border bg-card p-5">
+      {/* Header met samenvatting + acties */}
+      <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-slate-200 bg-white p-4">
         <div>
-          <h2 className="flex items-center gap-2 font-semibold">
-            <Users size={18} className="text-primary" /> Mijn Team
-          </h2>
-          <p className="mt-1 text-sm text-muted">
-            Stel je team samen ({rules.teamSize} renners, max {rules.budget} mln,
-            max {rules.maxPerTeam} per ploeg). Je selectie wordt automatisch
-            bewaard.
+          <h1 className="text-xl font-bold text-slate-800">Mijn team</h1>
+          <p className="text-sm text-slate-500">
+            Stel je selectie van {rules.teamSize} renners samen (max {rules.maxPerTeam} per
+            ploeg, budget {rules.budget} mln).
           </p>
         </div>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           <button
             onClick={importOptimized}
-            className="flex items-center gap-2 rounded-lg bg-primary px-3 py-2 text-sm font-medium text-white hover:bg-primary/90"
+            className="inline-flex items-center gap-2 rounded-lg bg-primary px-3 py-2 text-sm font-medium text-white hover:bg-primary/90"
           >
-            <Sparkles size={16} /> Importeer optimizer-team
+            <Sparkles size={16} /> Optimaal team laden
           </button>
           <button
             onClick={team.clear}
-            disabled={team.ids.length === 0}
-            className="flex items-center gap-2 rounded-lg border border-border px-3 py-2 text-sm font-medium hover:bg-cardhover disabled:opacity-50"
+            className="inline-flex items-center gap-2 rounded-lg border border-slate-300 px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-50"
           >
-            <Trash2 size={16} /> Wis team
+            <Trash2 size={16} /> Leegmaken
           </button>
         </div>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-4">
+      {/* Budget stats */}
+      <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+        <StatCard
+          label="Renners"
+          value={`${budget.count} / ${rules.teamSize}`}
+          icon={<Users size={18} />}
+          accent={budget.count === rules.teamSize ? 'success' : 'primary'}
+        />
         <StatCard
           label="Besteed"
-          value={`${budget.spent} mln`}
+          value={`${budget.spent.toFixed(1)} mln`}
           icon={<Coins size={18} />}
-          accent={budget.spent > rules.budget ? 'danger' : 'success'}
         />
         <StatCard
           label="Resterend"
-          value={`${budget.remaining} mln`}
+          value={`${budget.remaining.toFixed(1)} mln`}
           icon={<Wallet size={18} />}
-          accent="primary"
+          accent={budget.remaining < 0 ? 'danger' : 'success'}
         />
         <StatCard
-          label="Renners"
-          value={`${budget.count}/${rules.teamSize}`}
-          icon={<Users size={18} />}
-          accent="warning"
-        />
-        <StatCard
-          label="Team compleet"
+          label="Geldig"
           value={budget.valid ? 'Ja' : 'Nee'}
           icon={<Check size={18} />}
-          accent={budget.valid ? 'success' : 'danger'}
+          accent={budget.valid ? 'success' : 'warning'}
         />
       </div>
 
       {budget.violations.length > 0 && (
-        <div className="rounded-lg border border-danger/40 bg-danger/10 p-3 text-sm text-danger">
-          {budget.violations.map((v) => (
-            <div key={v}>{v}</div>
-          ))}
-        </div>
-      )}
-
-      {team.riders.length > 0 && (
-        <div className="rounded-xl border border-border bg-card p-5">
-          <h3 className="mb-3 text-sm font-semibold">
-            Geselecteerd ({team.riders.length})
-          </h3>
-          <div className="flex flex-wrap gap-2">
-            {team.riders.map((r) => (
-              <button
-                key={r.id}
-                onClick={() => team.remove(r.id)}
-                className="flex items-center gap-2 rounded-full bg-primary/15 px-3 py-1 text-xs text-primary hover:bg-danger/20 hover:text-danger"
-                title="Klik om te verwijderen"
-              >
-                {r.name} &middot; {r.price.toFixed(1)}
-              </button>
+        <div className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm text-amber-800">
+          <ul className="list-inside list-disc space-y-1">
+            {budget.violations.map((v) => (
+              <li key={v}>{v}</li>
             ))}
-          </div>
+          </ul>
         </div>
       )}
 
-      <div className="flex flex-wrap items-center gap-3">
-        <div className="relative">
+      {/* Team opslaan / inladen */}
+      <div className="rounded-xl border border-slate-200 bg-white p-4">
+        <h2 className="mb-3 flex items-center gap-2 text-sm font-semibold text-slate-700">
+          <Save size={16} /> Teams opslaan &amp; inladen
+        </h2>
+        <div className="flex flex-wrap items-center gap-2">
+          <input
+            value={teamName}
+            onChange={(e) => setTeamName(e.target.value)}
+            onKeyDown={(e) => e.key === 'Enter' && handleSave()}
+            placeholder="Naam voor dit team..."
+            className="w-56 rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-primary focus:outline-none"
+          />
+          <button
+            onClick={handleSave}
+            disabled={!teamName.trim() || team.ids.length === 0}
+            className="inline-flex items-center gap-2 rounded-lg bg-primary px-3 py-2 text-sm font-medium text-white hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-50"
+          >
+            <Save size={16} /> Huidig team opslaan
+          </button>
+        </div>
+
+        {team.savedTeams.length === 0 ? (
+          <p className="mt-3 text-sm text-slate-400">
+            Nog geen opgeslagen teams. Geef je selectie een naam en sla het op.
+          </p>
+        ) : (
+          <ul className="mt-3 space-y-2">
+            {team.savedTeams.map((st) => (
+              <li
+                key={st.id}
+                className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2"
+              >
+                <div>
+                  <span className="text-sm font-medium text-slate-800">{st.name}</span>
+                  <span className="ml-2 text-xs text-slate-500">
+                    {st.ids.length} renners
+                  </span>
+                </div>
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => team.loadTeam(st.id)}
+                    className="inline-flex items-center gap-1 rounded-md border border-primary px-2 py-1 text-xs font-medium text-primary hover:bg-primary/10"
+                  >
+                    <FolderOpen size={14} /> Inladen
+                  </button>
+                  <button
+                    onClick={() => team.deleteTeam(st.id)}
+                    className="inline-flex items-center gap-1 rounded-md border border-slate-300 px-2 py-1 text-xs font-medium text-slate-600 hover:bg-slate-100"
+                  >
+                    <Trash2 size={14} /> Verwijderen
+                  </button>
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+
+      {/* Zoek + filter */}
+      <div className="flex flex-wrap items-center gap-2">
+        <div className="relative flex-1 min-w-[200px]">
           <Search
             size={16}
-            className="absolute left-3 top-1/2 -translate-y-1/2 text-muted"
+            className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
           />
           <input
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Zoek renner of ploeg..."
-            className="rounded-lg border border-border bg-cardhover py-2 pl-9 pr-3 text-sm"
+            className="w-full rounded-lg border border-slate-300 py-2 pl-9 pr-3 text-sm focus:border-primary focus:outline-none"
           />
         </div>
-        <select
-          value={roleFilter}
-          onChange={(e) => setRoleFilter(e.target.value as RiderRole | 'Alle')}
-          className="rounded-lg border border-border bg-cardhover px-3 py-2 text-sm"
-        >
+        <div className="flex flex-wrap gap-1">
           {roles.map((role) => (
-            <option key={role} value={role}>
-              {role}
-            </option>
-          ))}
-        </select>
-        <span className="text-sm text-muted">{filtered.length} renners</span>
-      </div>
-
-      <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-        {filtered.map((r) => {
-          const active = team.has(r.id)
-          const disabled = !active && !canAdd(r)
-          return (
             <button
-              key={r.id}
-              onClick={() => team.toggle(r.id)}
-              disabled={disabled}
-              className={`flex items-center justify-between rounded-lg border px-3 py-2 text-left text-sm transition-colors ${
-                active
-                  ? 'border-primary bg-primary/15'
-                  : disabled
-                  ? 'border-border bg-card opacity-40'
-                  : 'border-border bg-card hover:bg-cardhover'
+              key={role}
+              onClick={() => setRoleFilter(role)}
+              className={`rounded-lg px-3 py-1.5 text-xs font-medium ${
+                roleFilter === role
+                  ? 'bg-primary text-white'
+                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
               }`}
             >
-              <span>
-                <span className="font-medium">{r.name}</span>
-                <span className="block text-xs text-muted">
-                  {r.team} &middot; {r.role} &middot; {ratings[r.id].expectedPoints} pnt
-                </span>
-              </span>
-              <span className="font-mono">{r.price.toFixed(1)}</span>
+              {role}
             </button>
-          )
-        })}
+          ))}
+        </div>
+      </div>
+
+      {/* Rennerlijst */}
+      <div className="overflow-hidden rounded-xl border border-slate-200 bg-white">
+        <table className="w-full text-sm">
+          <thead className="bg-slate-50 text-left text-xs uppercase text-slate-500">
+            <tr>
+              <th className="px-4 py-2">Renner</th>
+              <th className="px-4 py-2">Ploeg</th>
+              <th className="px-4 py-2">Rol</th>
+              <th className="px-4 py-2 text-right">Prijs</th>
+              <th className="px-4 py-2 text-right">Actie</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-slate-100">
+            {filtered.map((r) => {
+              const active = team.has(r.id)
+              const allowed = canAdd(r)
+              return (
+                <tr key={r.id} className={active ? 'bg-primary/5' : ''}>
+                  <td className="px-4 py-2 font-medium text-slate-800">{r.name}</td>
+                  <td className="px-4 py-2 text-slate-500">{r.team}</td>
+                  <td className="px-4 py-2 text-slate-500">{r.role}</td>
+                  <td className="px-4 py-2 text-right text-slate-700">
+                    {r.price.toFixed(1)} mln
+                  </td>
+                  <td className="px-4 py-2 text-right">
+                    <button
+                      onClick={() => team.toggle(r.id)}
+                      disabled={!active && !allowed}
+                      className={`rounded-md px-3 py-1 text-xs font-medium ${
+                        active
+                          ? 'bg-rose-100 text-rose-700 hover:bg-rose-200'
+                          : allowed
+                            ? 'bg-primary text-white hover:bg-primary/90'
+                            : 'cursor-not-allowed bg-slate-100 text-slate-400'
+                      }`}
+                    >
+                      {active ? 'Verwijder' : 'Voeg toe'}
+                    </button>
+                  </td>
+                </tr>
+              )
+            })}
+          </tbody>
+        </table>
       </div>
     </div>
   )
