@@ -60,7 +60,7 @@ const pcsById = riderStats.riders as Record<string, { pcsRank: number; pcsPoints
 function quality(rider: Rider): number {
   const priceQ = Math.min(1, rider.price / MAX_PRICE)
   const stat = pcsById[String(rider.id)]
-  if (!stat) return priceQ
+  if (!stat || typeof stat.pcsPoints !== 'number') return priceQ
   const formQ = Math.min(1, stat.pcsPoints / PCS_MAX_POINTS)
   return Math.min(1, 0.5 * priceQ + 0.5 * formQ)
 }
