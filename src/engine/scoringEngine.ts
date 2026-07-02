@@ -45,7 +45,7 @@ const MAX_PRICE = 8 // duurste renner in de dataset (Pogacar)
 // Historische PCS-ranglijstpunten als vormsignaal (bron: procyclingstats.com).
 // Zie src/data/riderStats.json. Renners zonder entry vallen terug op prijs.
 const PCS_MAX_POINTS = riderStats.meta.maxPoints
-const pcsById = riderStats.riders as Record<string, { pcsRank: number; pcsPoints: number }>
+const pcsById = riderStats.riders as unknown as Record<string, { pcsRank: number; pcsPoints: number }>
 
 /**
  * Kwaliteit van een renner op een schaal 0..1.
