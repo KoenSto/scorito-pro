@@ -22,7 +22,7 @@ describe('scoringEngine met PCS-vormdata', () => {
   })
 
   it('laadt PCS-vormdata voor de topfavorieten', () => {
-    const stats = riderStats.riders as Record<string, { pcsPoints: number }>
+    const stats = riderStats.riders as unknown as Record<string, { pcsPoints: number }>
     const pog = byName('Tadej Pogačar')
     expect(stats[String(pog.id)]).toBeDefined()
     expect(stats[String(pog.id)].pcsPoints).toBeGreaterThan(0)
