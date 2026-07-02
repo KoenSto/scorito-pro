@@ -5,6 +5,7 @@ import {
   Bike,
   Map,
   Sparkles,
+  Brain,
   Settings as SettingsIcon,
 } from 'lucide-react'
 import clsx from 'clsx'
@@ -15,6 +16,7 @@ const nav = [
   { to: '/riders', label: 'Alle Renners', icon: Bike },
   { to: '/stages', label: 'Etappes', icon: Map },
   { to: '/optimizer', label: 'Optimizer', icon: Sparkles },
+  { to: '/coach', label: 'AI Coach', icon: Brain },
   { to: '/settings', label: 'Instellingen', icon: SettingsIcon },
 ]
 
