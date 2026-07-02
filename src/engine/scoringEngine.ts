@@ -2,6 +2,7 @@ import type { Rider, RiderRole } from '../types'
 import scoring from '../data/scoring.json'
 import stagesData from '../data/stages.json'
 import type { Stage } from '../types'
+import riderStats from '../data/riderStats.json'
 
 /**
  * Scoring Engine (Sprint 2.1)
@@ -41,8 +42,27 @@ const finalFit: Record<RiderRole, { algemeen: number; punten: number; berg: numb
 const MAX_PRICE = 8 // duurste renner in de dataset (Pogacar)
 
 /** Kwaliteit 0..1: hoe duurder de renner, hoe hoger de kans op punten. */
+// Historische PCS-ranglijstpunten als vormsignaal (bron: procyclingstats.com).
+// Zie src/data/riderStats.json. Renners zonder entry vallen terug op prijs.
+const PCS_MAX_POINTS = riderStats.meta.maxPoints
+const pcsById = riderStats.riders as Record<string, { pcsRank: number; pcsPoints: number }>
+
+/**
+ * Kwaliteit van een renner op een schaal 0..1.
+ *
+ * We combineren twee signalen:
+ *  - prijsQ: de Scorito-prijs (marktwaardering) genormaliseerd op de duurste renner;
+ *  - vormQ: de PCS-ranglijstpunten van de laatste 12 maanden (echte resultaten).
+ *
+ * Voor renners met PCS-data wegen we beide gelijk (50/50). Zonder PCS-data
+ * gebruiken we alleen de prijs, zodat het model altijd een waarde teruggeeft.
+ */
 function quality(rider: Rider): number {
-  return Math.min(1, rider.price / MAX_PRICE)
+  const priceQ = Math.min(1, rider.price / MAX_PRICE)
+  const stat = pcsById[String(rider.id)]
+  if (!stat) return priceQ
+  const formQ = Math.min(1, stat.pcsPoints / PCS_MAX_POINTS)
+  return Math.min(1, 0.5 * priceQ + 0.5 * formQ)
 }
 
 /**
