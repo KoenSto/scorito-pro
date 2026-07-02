@@ -3,216 +3,832 @@
     "source": "procyclingstats.com PCS individual ranking (rolling 12 months)",
     "fetchedAt": "2026-07-02",
     "maxPoints": 4744,
-    "note": "pcsPoints = PCS ranking points; hoger = beter in vorm. Gebruikt als vormsignaal in de ratingEngine. Renners zonder entry vallen terug op prijs."
+    "disciplineMaxPoints": {
+      "gc": 2978,
+      "sprint": 994,
+      "climber": 1752,
+      "oneday": 2306,
+      "timetrial": 726
+    },
+    "disciplines": [
+      "gc",
+      "sprint",
+      "climber",
+      "oneday",
+      "timetrial"
+    ],
+    "note": "PCS overall points plus per-discipline specialty ranking points (season). Discipline points are point-in-time snapshots used to derive result-based discipline strengths."
   },
   "riders": {
     "1": {
       "pcsRank": 1,
-      "pcsPoints": 4744
+      "pcsPoints": 4744,
+      "disciplines": {
+        "gc": {
+          "rank": 2,
+          "points": 2265
+        },
+        "climber": {
+          "rank": 2,
+          "points": 1558
+        },
+        "oneday": {
+          "rank": 1,
+          "points": 2306
+        },
+        "timetrial": {
+          "rank": 2,
+          "points": 700
+        }
+      }
     },
     "2": {
       "pcsRank": 2,
-      "pcsPoints": 3405
+      "pcsPoints": 3405,
+      "disciplines": {
+        "gc": {
+          "rank": 1,
+          "points": 2978
+        },
+        "climber": {
+          "rank": 1,
+          "points": 1752
+        },
+        "timetrial": {
+          "rank": 15,
+          "points": 320
+        }
+      }
     },
     "3": {
       "pcsRank": 3,
-      "pcsPoints": 2901
+      "pcsPoints": 2901,
+      "disciplines": {
+        "gc": {
+          "rank": 5,
+          "points": 1582
+        },
+        "climber": {
+          "rank": 4,
+          "points": 939
+        },
+        "oneday": {
+          "rank": 2,
+          "points": 1430
+        },
+        "timetrial": {
+          "rank": 27,
+          "points": 217
+        }
+      }
     },
     "4": {
       "pcsRank": 11,
-      "pcsPoints": 1545
+      "pcsPoints": 1545,
+      "disciplines": {
+        "gc": {
+          "rank": 63,
+          "points": 573
+        },
+        "climber": {
+          "rank": 8,
+          "points": 780
+        },
+        "oneday": {
+          "rank": 9,
+          "points": 910
+        },
+        "timetrial": {
+          "rank": 21,
+          "points": 260
+        }
+      }
     },
     "5": {
       "pcsRank": 7,
-      "pcsPoints": 1697
+      "pcsPoints": 1697,
+      "disciplines": {
+        "sprint": {
+          "rank": 4,
+          "points": 870
+        },
+        "oneday": {
+          "rank": 5,
+          "points": 1033
+        }
+      }
     },
     "6": {
       "pcsRank": 27,
-      "pcsPoints": 1091
+      "pcsPoints": 1091,
+      "disciplines": {
+        "gc": {
+          "rank": 52,
+          "points": 652
+        },
+        "sprint": {
+          "rank": 47,
+          "points": 282
+        },
+        "oneday": {
+          "rank": 42,
+          "points": 390
+        },
+        "timetrial": {
+          "rank": 61,
+          "points": 122
+        }
+      }
     },
     "7": {
       "pcsRank": 10,
-      "pcsPoints": 1559
+      "pcsPoints": 1559,
+      "disciplines": {
+        "gc": {
+          "rank": 4,
+          "points": 1820
+        },
+        "climber": {
+          "rank": 5,
+          "points": 892
+        },
+        "timetrial": {
+          "rank": 9,
+          "points": 368
+        }
+      }
     },
     "8": {
       "pcsRank": 44,
-      "pcsPoints": 885
+      "pcsPoints": 885,
+      "disciplines": {
+        "gc": {
+          "rank": 16,
+          "points": 1103
+        },
+        "climber": {
+          "rank": 34,
+          "points": 451
+        },
+        "timetrial": {
+          "rank": 80,
+          "points": 98
+        }
+      }
     },
     "9": {
       "pcsRank": 4,
-      "pcsPoints": 2426
+      "pcsPoints": 2426,
+      "disciplines": {
+        "gc": {
+          "rank": 13,
+          "points": 1185
+        },
+        "climber": {
+          "rank": 13,
+          "points": 748
+        },
+        "oneday": {
+          "rank": 3,
+          "points": 1235
+        },
+        "timetrial": {
+          "rank": 1,
+          "points": 726
+        }
+      }
     },
     "10": {
       "pcsRank": 43,
-      "pcsPoints": 889
+      "pcsPoints": 889,
+      "disciplines": {
+        "sprint": {
+          "rank": 3,
+          "points": 994
+        },
+        "oneday": {
+          "rank": 49,
+          "points": 369
+        }
+      }
     },
     "11": {
       "pcsRank": 51,
-      "pcsPoints": 817
+      "pcsPoints": 817,
+      "disciplines": {
+        "gc": {
+          "rank": 9,
+          "points": 1315
+        },
+        "climber": {
+          "rank": 33,
+          "points": 451
+        },
+        "oneday": {
+          "rank": 35,
+          "points": 410
+        },
+        "timetrial": {
+          "rank": 67,
+          "points": 114
+        }
+      }
     },
     "12": {
       "pcsRank": 69,
-      "pcsPoints": 666
+      "pcsPoints": 666,
+      "disciplines": {
+        "sprint": {
+          "rank": 6,
+          "points": 773
+        }
+      }
     },
     "13": {
       "pcsRank": 104,
-      "pcsPoints": 514
+      "pcsPoints": 514,
+      "disciplines": {
+        "gc": {
+          "rank": 41,
+          "points": 777
+        },
+        "timetrial": {
+          "rank": 86,
+          "points": 95
+        }
+      }
     },
     "14": {
       "pcsRank": 12,
-      "pcsPoints": 1503
+      "pcsPoints": 1503,
+      "disciplines": {
+        "oneday": {
+          "rank": 10,
+          "points": 845
+        },
+        "timetrial": {
+          "rank": 60,
+          "points": 122
+        }
+      }
     },
     "15": {
       "pcsRank": 46,
-      "pcsPoints": 865
+      "pcsPoints": 865,
+      "disciplines": {
+        "gc": {
+          "rank": 20,
+          "points": 1055
+        },
+        "climber": {
+          "rank": 28,
+          "points": 499
+        },
+        "timetrial": {
+          "rank": 16,
+          "points": 312
+        }
+      }
     },
     "16": {
       "pcsRank": 52,
-      "pcsPoints": 816
+      "pcsPoints": 816,
+      "disciplines": {
+        "sprint": {
+          "rank": 19,
+          "points": 533
+        },
+        "oneday": {
+          "rank": 25,
+          "points": 511
+        }
+      }
     },
     "17": {
       "pcsRank": 28,
-      "pcsPoints": 1084
+      "pcsPoints": 1084,
+      "disciplines": {
+        "gc": {
+          "rank": 10,
+          "points": 1311
+        },
+        "climber": {
+          "rank": 18,
+          "points": 632
+        },
+        "timetrial": {
+          "rank": 28,
+          "points": 210
+        }
+      }
     },
     "18": {
       "pcsRank": 20,
-      "pcsPoints": 1199
+      "pcsPoints": 1199,
+      "disciplines": {
+        "gc": {
+          "rank": 11,
+          "points": 1295
+        },
+        "climber": {
+          "rank": 52,
+          "points": 325
+        },
+        "oneday": {
+          "rank": 58,
+          "points": 342
+        },
+        "timetrial": {
+          "rank": 14,
+          "points": 338
+        }
+      }
     },
     "19": {
       "pcsRank": 100,
-      "pcsPoints": 526
+      "pcsPoints": 526,
+      "disciplines": {
+        "oneday": {
+          "rank": 33,
+          "points": 427
+        },
+        "timetrial": {
+          "rank": 52,
+          "points": 138
+        }
+      }
     },
     "20": {
       "pcsRank": 6,
-      "pcsPoints": 1709
+      "pcsPoints": 1709,
+      "disciplines": {
+        "gc": {
+          "rank": 34,
+          "points": 943
+        },
+        "sprint": {
+          "rank": 71,
+          "points": 218
+        },
+        "climber": {
+          "rank": 7,
+          "points": 803
+        },
+        "oneday": {
+          "rank": 8,
+          "points": 920
+        }
+      }
     },
     "21": {
       "pcsRank": 221,
-      "pcsPoints": 278
+      "pcsPoints": 278,
+      "disciplines": {
+        "timetrial": {
+          "rank": 57,
+          "points": 132
+        }
+      }
     },
     "23": {
       "pcsRank": 93,
-      "pcsPoints": 547
+      "pcsPoints": 547,
+      "disciplines": {
+        "gc": {
+          "rank": 25,
+          "points": 998
+        },
+        "climber": {
+          "rank": 77,
+          "points": 228
+        }
+      }
     },
     "24": {
       "pcsRank": 5,
-      "pcsPoints": 1803
+      "pcsPoints": 1803,
+      "disciplines": {
+        "gc": {
+          "rank": 72,
+          "points": 535
+        },
+        "sprint": {
+          "rank": 8,
+          "points": 704
+        },
+        "oneday": {
+          "rank": 4,
+          "points": 1062
+        }
+      }
     },
     "25": {
       "pcsRank": 17,
-      "pcsPoints": 1281
+      "pcsPoints": 1281,
+      "disciplines": {
+        "gc": {
+          "rank": 15,
+          "points": 1148
+        },
+        "climber": {
+          "rank": 6,
+          "points": 880
+        }
+      }
     },
     "26": {
       "pcsRank": 151,
-      "pcsPoints": 382
+      "pcsPoints": 382,
+      "disciplines": {
+        "sprint": {
+          "rank": 25,
+          "points": 429
+        },
+        "oneday": {
+          "rank": 65,
+          "points": 318
+        }
+      }
     },
     "27": {
       "pcsRank": 61,
-      "pcsPoints": 751
+      "pcsPoints": 751,
+      "disciplines": {
+        "gc": {
+          "rank": 21,
+          "points": 1043
+        },
+        "climber": {
+          "rank": 56,
+          "points": 294
+        },
+        "timetrial": {
+          "rank": 33,
+          "points": 190
+        }
+      }
     },
     "28": {
       "pcsRank": 21,
-      "pcsPoints": 1157
+      "pcsPoints": 1157,
+      "disciplines": {
+        "gc": {
+          "rank": 24,
+          "points": 1016
+        },
+        "climber": {
+          "rank": 12,
+          "points": 750
+        },
+        "oneday": {
+          "rank": 32,
+          "points": 427
+        }
+      }
     },
     "29": {
       "pcsRank": 39,
-      "pcsPoints": 908
+      "pcsPoints": 908,
+      "disciplines": {
+        "gc": {
+          "rank": 62,
+          "points": 573
+        },
+        "climber": {
+          "rank": 20,
+          "points": 592
+        }
+      }
     },
     "30": {
       "pcsRank": 30,
-      "pcsPoints": 991
+      "pcsPoints": 991,
+      "disciplines": {
+        "sprint": {
+          "rank": 15,
+          "points": 581
+        },
+        "oneday": {
+          "rank": 37,
+          "points": 408
+        },
+        "timetrial": {
+          "rank": 44,
+          "points": 158
+        }
+      }
     },
     "31": {
       "pcsRank": 24,
-      "pcsPoints": 1132
+      "pcsPoints": 1132,
+      "disciplines": {
+        "gc": {
+          "rank": 19,
+          "points": 1074
+        },
+        "climber": {
+          "rank": 11,
+          "points": 750
+        },
+        "timetrial": {
+          "rank": 11,
+          "points": 358
+        }
+      }
     },
     "32": {
       "pcsRank": 47,
-      "pcsPoints": 862
+      "pcsPoints": 862,
+      "disciplines": {
+        "gc": {
+          "rank": 43,
+          "points": 757
+        },
+        "climber": {
+          "rank": 32,
+          "points": 456
+        }
+      }
     },
     "33": {
       "pcsRank": 233,
-      "pcsPoints": 266
+      "pcsPoints": 266,
+      "disciplines": {
+        "sprint": {
+          "rank": 58,
+          "points": 251
+        }
+      }
     },
     "34": {
       "pcsRank": 55,
-      "pcsPoints": 786
+      "pcsPoints": 786,
+      "disciplines": {
+        "sprint": {
+          "rank": 13,
+          "points": 626
+        },
+        "oneday": {
+          "rank": 39,
+          "points": 398
+        }
+      }
     },
     "35": {
       "pcsRank": 63,
-      "pcsPoints": 730
+      "pcsPoints": 730,
+      "disciplines": {
+        "gc": {
+          "rank": 23,
+          "points": 1032
+        },
+        "climber": {
+          "rank": 24,
+          "points": 544
+        }
+      }
     },
     "36": {
       "pcsRank": 70,
-      "pcsPoints": 653
+      "pcsPoints": 653,
+      "disciplines": {
+        "gc": {
+          "rank": 42,
+          "points": 776
+        },
+        "climber": {
+          "rank": 39,
+          "points": 400
+        },
+        "oneday": {
+          "rank": 97,
+          "points": 234
+        }
+      }
     },
     "37": {
       "pcsRank": 60,
-      "pcsPoints": 756
+      "pcsPoints": 756,
+      "disciplines": {
+        "sprint": {
+          "rank": 24,
+          "points": 453
+        },
+        "oneday": {
+          "rank": 61,
+          "points": 326
+        },
+        "timetrial": {
+          "rank": 42,
+          "points": 160
+        }
+      }
     },
     "38": {
       "pcsRank": 92,
-      "pcsPoints": 556
+      "pcsPoints": 556,
+      "disciplines": {
+        "sprint": {
+          "rank": 17,
+          "points": 563
+        },
+        "oneday": {
+          "rank": 45,
+          "points": 380
+        }
+      }
     },
     "39": {
       "pcsRank": 254,
-      "pcsPoints": 256
+      "pcsPoints": 256,
+      "disciplines": {
+        "sprint": {
+          "rank": 30,
+          "points": 414
+        }
+      }
     },
     "40": {
       "pcsRank": 272,
-      "pcsPoints": 240
+      "pcsPoints": 240,
+      "disciplines": {
+        "sprint": {
+          "rank": 42,
+          "points": 330
+        }
+      }
     },
     "41": {
       "pcsRank": 270,
-      "pcsPoints": 241
+      "pcsPoints": 241,
+      "disciplines": {
+        "sprint": {
+          "rank": 50,
+          "points": 266
+        }
+      }
     },
     "42": {
       "pcsRank": 76,
-      "pcsPoints": 622
+      "pcsPoints": 622,
+      "disciplines": {
+        "oneday": {
+          "rank": 84,
+          "points": 257
+        },
+        "timetrial": {
+          "rank": 3,
+          "points": 620
+        }
+      }
     },
     "43": {
       "pcsRank": 22,
-      "pcsPoints": 1138
+      "pcsPoints": 1138,
+      "disciplines": {
+        "gc": {
+          "rank": 30,
+          "points": 968
+        },
+        "climber": {
+          "rank": 22,
+          "points": 573
+        },
+        "oneday": {
+          "rank": 17,
+          "points": 599
+        },
+        "timetrial": {
+          "rank": 59,
+          "points": 126
+        }
+      }
     },
     "44": {
       "pcsRank": 220,
-      "pcsPoints": 280
+      "pcsPoints": 280,
+      "disciplines": {
+        "climber": {
+          "rank": 81,
+          "points": 220
+        }
+      }
     },
     "45": {
       "pcsRank": 34,
-      "pcsPoints": 942
+      "pcsPoints": 942,
+      "disciplines": {
+        "gc": {
+          "rank": 22,
+          "points": 1036
+        },
+        "climber": {
+          "rank": 10,
+          "points": 757
+        }
+      }
     },
     "46": {
       "pcsRank": 150,
-      "pcsPoints": 382
+      "pcsPoints": 382,
+      "disciplines": {
+        "timetrial": {
+          "rank": 8,
+          "points": 435
+        }
+      }
     },
     "47": {
       "pcsRank": 258,
       "pcsPoints": 252
     },
+    "48": {
+      "disciplines": {
+        "timetrial": {
+          "rank": 41,
+          "points": 160
+        }
+      }
+    },
     "49": {
       "pcsRank": 72,
-      "pcsPoints": 642
+      "pcsPoints": 642,
+      "disciplines": {
+        "oneday": {
+          "rank": 26,
+          "points": 510
+        }
+      }
     },
     "50": {
       "pcsRank": 245,
-      "pcsPoints": 261
+      "pcsPoints": 261,
+      "disciplines": {
+        "sprint": {
+          "rank": 78,
+          "points": 203
+        }
+      }
     },
     "51": {
       "pcsRank": 75,
-      "pcsPoints": 627
+      "pcsPoints": 627,
+      "disciplines": {
+        "gc": {
+          "rank": 59,
+          "points": 617
+        },
+        "climber": {
+          "rank": 41,
+          "points": 380
+        }
+      }
     },
     "52": {
       "pcsRank": 68,
-      "pcsPoints": 679
+      "pcsPoints": 679,
+      "disciplines": {
+        "gc": {
+          "rank": 12,
+          "points": 1260
+        },
+        "climber": {
+          "rank": 23,
+          "points": 547
+        }
+      }
     },
     "53": {
       "pcsRank": 15,
-      "pcsPoints": 1307
+      "pcsPoints": 1307,
+      "disciplines": {
+        "gc": {
+          "rank": 66,
+          "points": 559
+        },
+        "climber": {
+          "rank": 46,
+          "points": 353
+        },
+        "oneday": {
+          "rank": 15,
+          "points": 685
+        },
+        "timetrial": {
+          "rank": 26,
+          "points": 218
+        }
+      }
     },
     "54": {
       "pcsRank": 177,
-      "pcsPoints": 336
+      "pcsPoints": 336,
+      "disciplines": {
+        "oneday": {
+          "rank": 68,
+          "points": 311
+        }
+      }
     },
     "55": {
       "pcsRank": 113,
@@ -220,23 +836,77 @@
     },
     "56": {
       "pcsRank": 31,
-      "pcsPoints": 981
+      "pcsPoints": 981,
+      "disciplines": {
+        "gc": {
+          "rank": 32,
+          "points": 955
+        },
+        "climber": {
+          "rank": 26,
+          "points": 522
+        }
+      }
     },
     "57": {
       "pcsRank": 16,
-      "pcsPoints": 1289
+      "pcsPoints": 1289,
+      "disciplines": {
+        "gc": {
+          "rank": 57,
+          "points": 620
+        },
+        "climber": {
+          "rank": 29,
+          "points": 484
+        },
+        "oneday": {
+          "rank": 12,
+          "points": 752
+        }
+      }
     },
     "58": {
       "pcsRank": 38,
-      "pcsPoints": 919
+      "pcsPoints": 919,
+      "disciplines": {
+        "gc": {
+          "rank": 33,
+          "points": 953
+        },
+        "climber": {
+          "rank": 17,
+          "points": 662
+        },
+        "oneday": {
+          "rank": 74,
+          "points": 296
+        }
+      }
     },
     "59": {
       "pcsRank": 222,
-      "pcsPoints": 276
+      "pcsPoints": 276,
+      "disciplines": {
+        "climber": {
+          "rank": 97,
+          "points": 186
+        }
+      }
     },
     "61": {
       "pcsRank": 178,
-      "pcsPoints": 333
+      "pcsPoints": 333,
+      "disciplines": {
+        "gc": {
+          "rank": 100,
+          "points": 444
+        },
+        "oneday": {
+          "rank": 86,
+          "points": 252
+        }
+      }
     },
     "62": {
       "pcsRank": 230,
@@ -244,11 +914,27 @@
     },
     "63": {
       "pcsRank": 364,
-      "pcsPoints": 183
+      "pcsPoints": 183,
+      "disciplines": {
+        "timetrial": {
+          "rank": 25,
+          "points": 220
+        }
+      }
     },
     "65": {
       "pcsRank": 156,
-      "pcsPoints": 369
+      "pcsPoints": 369,
+      "disciplines": {
+        "gc": {
+          "rank": 39,
+          "points": 819
+        },
+        "climber": {
+          "rank": 84,
+          "points": 212
+        }
+      }
     },
     "66": {
       "pcsRank": 390,
@@ -256,47 +942,153 @@
     },
     "67": {
       "pcsRank": 144,
-      "pcsPoints": 410
+      "pcsPoints": 410,
+      "disciplines": {
+        "gc": {
+          "rank": 99,
+          "points": 450
+        },
+        "timetrial": {
+          "rank": 29,
+          "points": 208
+        }
+      }
     },
     "68": {
       "pcsRank": 102,
-      "pcsPoints": 519
+      "pcsPoints": 519,
+      "disciplines": {
+        "climber": {
+          "rank": 68,
+          "points": 244
+        },
+        "oneday": {
+          "rank": 56,
+          "points": 347
+        }
+      }
     },
     "69": {
       "pcsRank": 324,
-      "pcsPoints": 209
+      "pcsPoints": 209,
+      "disciplines": {
+        "gc": {
+          "rank": 51,
+          "points": 657
+        }
+      }
     },
     "70": {
       "pcsRank": 191,
-      "pcsPoints": 307
+      "pcsPoints": 307,
+      "disciplines": {
+        "oneday": {
+          "rank": 78,
+          "points": 277
+        }
+      }
     },
     "71": {
       "pcsRank": 335,
-      "pcsPoints": 204
+      "pcsPoints": 204,
+      "disciplines": {
+        "gc": {
+          "rank": 73,
+          "points": 530
+        },
+        "climber": {
+          "rank": 57,
+          "points": 293
+        }
+      }
     },
     "72": {
       "pcsRank": 248,
-      "pcsPoints": 258
+      "pcsPoints": 258,
+      "disciplines": {
+        "gc": {
+          "rank": 90,
+          "points": 481
+        },
+        "climber": {
+          "rank": 73,
+          "points": 233
+        },
+        "timetrial": {
+          "rank": 58,
+          "points": 128
+        }
+      }
     },
     "77": {
       "pcsRank": 114,
-      "pcsPoints": 495
+      "pcsPoints": 495,
+      "disciplines": {
+        "gc": {
+          "rank": 83,
+          "points": 494
+        },
+        "climber": {
+          "rank": 40,
+          "points": 385
+        }
+      }
     },
     "78": {
       "pcsRank": 62,
-      "pcsPoints": 730
+      "pcsPoints": 730,
+      "disciplines": {
+        "oneday": {
+          "rank": 30,
+          "points": 455
+        }
+      }
     },
     "79": {
       "pcsRank": 99,
-      "pcsPoints": 531
+      "pcsPoints": 531,
+      "disciplines": {
+        "gc": {
+          "rank": 29,
+          "points": 973
+        },
+        "climber": {
+          "rank": 78,
+          "points": 226
+        },
+        "timetrial": {
+          "rank": 18,
+          "points": 298
+        }
+      }
     },
     "81": {
       "pcsRank": 147,
-      "pcsPoints": 392
+      "pcsPoints": 392,
+      "disciplines": {
+        "oneday": {
+          "rank": 66,
+          "points": 318
+        }
+      }
     },
     "82": {
       "pcsRank": 56,
-      "pcsPoints": 781
+      "pcsPoints": 781,
+      "disciplines": {
+        "gc": {
+          "rank": 67,
+          "points": 554
+        },
+        "climber": {
+          "rank": 43,
+          "points": 368
+        },
+        "timetrial": {
+          "rank": 10,
+          "points": 368
+        }
+      }
     },
     "84": {
       "pcsRank": 265,
@@ -308,31 +1100,97 @@
     },
     "86": {
       "pcsRank": 157,
-      "pcsPoints": 368
+      "pcsPoints": 368,
+      "disciplines": {
+        "oneday": {
+          "rank": 92,
+          "points": 244
+        }
+      }
     },
     "87": {
       "pcsRank": 96,
-      "pcsPoints": 544
+      "pcsPoints": 544,
+      "disciplines": {
+        "gc": {
+          "rank": 56,
+          "points": 624
+        },
+        "climber": {
+          "rank": 53,
+          "points": 322
+        }
+      }
     },
     "88": {
       "pcsRank": 71,
-      "pcsPoints": 650
+      "pcsPoints": 650,
+      "disciplines": {
+        "gc": {
+          "rank": 46,
+          "points": 705
+        },
+        "climber": {
+          "rank": 25,
+          "points": 532
+        }
+      }
     },
     "91": {
       "pcsRank": 58,
-      "pcsPoints": 770
+      "pcsPoints": 770,
+      "disciplines": {
+        "climber": {
+          "rank": 54,
+          "points": 317
+        },
+        "oneday": {
+          "rank": 23,
+          "points": 529
+        }
+      }
     },
     "92": {
       "pcsRank": 36,
-      "pcsPoints": 934
+      "pcsPoints": 934,
+      "disciplines": {
+        "climber": {
+          "rank": 27,
+          "points": 504
+        },
+        "oneday": {
+          "rank": 22,
+          "points": 547
+        }
+      }
     },
     "93": {
       "pcsRank": 82,
-      "pcsPoints": 602
+      "pcsPoints": 602,
+      "disciplines": {
+        "oneday": {
+          "rank": 53,
+          "points": 355
+        }
+      }
     },
     "94": {
       "pcsRank": 42,
-      "pcsPoints": 898
+      "pcsPoints": 898,
+      "disciplines": {
+        "gc": {
+          "rank": 18,
+          "points": 1075
+        },
+        "climber": {
+          "rank": 21,
+          "points": 590
+        },
+        "oneday": {
+          "rank": 50,
+          "points": 369
+        }
+      }
     },
     "95": {
       "pcsRank": 271,
@@ -340,15 +1198,41 @@
     },
     "96": {
       "pcsRank": 94,
-      "pcsPoints": 546
+      "pcsPoints": 546,
+      "disciplines": {
+        "oneday": {
+          "rank": 59,
+          "points": 336
+        }
+      }
     },
     "97": {
       "pcsRank": 66,
-      "pcsPoints": 702
+      "pcsPoints": 702,
+      "disciplines": {
+        "gc": {
+          "rank": 75,
+          "points": 525
+        },
+        "climber": {
+          "rank": 36,
+          "points": 437
+        },
+        "oneday": {
+          "rank": 46,
+          "points": 377
+        }
+      }
     },
     "98": {
       "pcsRank": 237,
-      "pcsPoints": 264
+      "pcsPoints": 264,
+      "disciplines": {
+        "sprint": {
+          "rank": 82,
+          "points": 199
+        }
+      }
     },
     "102": {
       "pcsRank": 251,
@@ -360,15 +1244,33 @@
     },
     "105": {
       "pcsRank": 85,
-      "pcsPoints": 582
+      "pcsPoints": 582,
+      "disciplines": {
+        "oneday": {
+          "rank": 18,
+          "points": 598
+        }
+      }
     },
     "106": {
       "pcsRank": 175,
-      "pcsPoints": 339
+      "pcsPoints": 339,
+      "disciplines": {
+        "climber": {
+          "rank": 69,
+          "points": 242
+        }
+      }
     },
     "107": {
       "pcsRank": 119,
-      "pcsPoints": 482
+      "pcsPoints": 482,
+      "disciplines": {
+        "oneday": {
+          "rank": 51,
+          "points": 363
+        }
+      }
     },
     "108": {
       "pcsRank": 148,
@@ -390,13 +1292,33 @@
       "pcsRank": 184,
       "pcsPoints": 320
     },
+    "116": {
+      "disciplines": {
+        "timetrial": {
+          "rank": 74,
+          "points": 104
+        }
+      }
+    },
     "118": {
       "pcsRank": 189,
-      "pcsPoints": 309
+      "pcsPoints": 309,
+      "disciplines": {
+        "oneday": {
+          "rank": 95,
+          "points": 238
+        }
+      }
     },
     "119": {
       "pcsRank": 125,
-      "pcsPoints": 459
+      "pcsPoints": 459,
+      "disciplines": {
+        "oneday": {
+          "rank": 77,
+          "points": 279
+        }
+      }
     },
     "121": {
       "pcsRank": 392,
@@ -408,15 +1330,39 @@
     },
     "123": {
       "pcsRank": 162,
-      "pcsPoints": 355
+      "pcsPoints": 355,
+      "disciplines": {
+        "gc": {
+          "rank": 97,
+          "points": 454
+        }
+      }
     },
     "125": {
       "pcsRank": 226,
-      "pcsPoints": 271
+      "pcsPoints": 271,
+      "disciplines": {
+        "sprint": {
+          "rank": 83,
+          "points": 197
+        },
+        "oneday": {
+          "rank": 94,
+          "points": 238
+        }
+      }
     },
     "127": {
       "pcsRank": 357,
       "pcsPoints": 189
+    },
+    "129": {
+      "disciplines": {
+        "timetrial": {
+          "rank": 70,
+          "points": 110
+        }
+      }
     },
     "130": {
       "pcsRank": 195,
@@ -432,11 +1378,27 @@
     },
     "134": {
       "pcsRank": 81,
-      "pcsPoints": 606
+      "pcsPoints": 606,
+      "disciplines": {
+        "oneday": {
+          "rank": 57,
+          "points": 346
+        }
+      }
     },
     "135": {
       "pcsRank": 124,
-      "pcsPoints": 461
+      "pcsPoints": 461,
+      "disciplines": {
+        "sprint": {
+          "rank": 79,
+          "points": 202
+        },
+        "oneday": {
+          "rank": 48,
+          "points": 376
+        }
+      }
     },
     "136": {
       "pcsRank": 289,
@@ -444,7 +1406,13 @@
     },
     "138": {
       "pcsRank": 400,
-      "pcsPoints": 158
+      "pcsPoints": 158,
+      "disciplines": {
+        "sprint": {
+          "rank": 86,
+          "points": 187
+        }
+      }
     },
     "139": {
       "pcsRank": 134,
@@ -456,11 +1424,31 @@
     },
     "141": {
       "pcsRank": 133,
-      "pcsPoints": 433
+      "pcsPoints": 433,
+      "disciplines": {
+        "gc": {
+          "rank": 84,
+          "points": 490
+        },
+        "climber": {
+          "rank": 88,
+          "points": 208
+        }
+      }
     },
     "142": {
       "pcsRank": 122,
-      "pcsPoints": 473
+      "pcsPoints": 473,
+      "disciplines": {
+        "gc": {
+          "rank": 96,
+          "points": 457
+        },
+        "oneday": {
+          "rank": 44,
+          "points": 381
+        }
+      }
     },
     "146": {
       "pcsRank": 290,
@@ -468,27 +1456,75 @@
     },
     "147": {
       "pcsRank": 116,
-      "pcsPoints": 490
+      "pcsPoints": 490,
+      "disciplines": {
+        "oneday": {
+          "rank": 55,
+          "points": 354
+        }
+      }
     },
     "148": {
       "pcsRank": 160,
-      "pcsPoints": 363
+      "pcsPoints": 363,
+      "disciplines": {
+        "oneday": {
+          "rank": 90,
+          "points": 245
+        }
+      }
     },
     "149": {
       "pcsRank": 332,
-      "pcsPoints": 204
+      "pcsPoints": 204,
+      "disciplines": {
+        "sprint": {
+          "rank": 91,
+          "points": 182
+        }
+      }
     },
     "150": {
       "pcsRank": 136,
-      "pcsPoints": 424
+      "pcsPoints": 424,
+      "disciplines": {
+        "sprint": {
+          "rank": 55,
+          "points": 258
+        }
+      }
     },
     "152": {
       "pcsRank": 325,
-      "pcsPoints": 209
+      "pcsPoints": 209,
+      "disciplines": {
+        "climber": {
+          "rank": 83,
+          "points": 216
+        }
+      }
     },
     "157": {
       "pcsRank": 185,
-      "pcsPoints": 317
+      "pcsPoints": 317,
+      "disciplines": {
+        "gc": {
+          "rank": 77,
+          "points": 517
+        },
+        "climber": {
+          "rank": 63,
+          "points": 260
+        }
+      }
+    },
+    "159": {
+      "disciplines": {
+        "timetrial": {
+          "rank": 36,
+          "points": 184
+        }
+      }
     },
     "160": {
       "pcsRank": 138,
@@ -496,7 +1532,13 @@
     },
     "164": {
       "pcsRank": 276,
-      "pcsPoints": 239
+      "pcsPoints": 239,
+      "disciplines": {
+        "climber": {
+          "rank": 75,
+          "points": 229
+        }
+      }
     },
     "165": {
       "pcsRank": 342,
@@ -504,7 +1546,13 @@
     },
     "166": {
       "pcsRank": 158,
-      "pcsPoints": 367
+      "pcsPoints": 367,
+      "disciplines": {
+        "climber": {
+          "rank": 92,
+          "points": 202
+        }
+      }
     },
     "168": {
       "pcsRank": 213,
@@ -512,7 +1560,13 @@
     },
     "170": {
       "pcsRank": 126,
-      "pcsPoints": 453
+      "pcsPoints": 453,
+      "disciplines": {
+        "timetrial": {
+          "rank": 87,
+          "points": 95
+        }
+      }
     },
     "171": {
       "pcsRank": 212,
@@ -520,19 +1574,47 @@
     },
     "173": {
       "pcsRank": 252,
-      "pcsPoints": 257
+      "pcsPoints": 257,
+      "disciplines": {
+        "gc": {
+          "rank": 93,
+          "points": 468
+        }
+      }
     },
     "174": {
       "pcsRank": 338,
-      "pcsPoints": 203
+      "pcsPoints": 203,
+      "disciplines": {
+        "timetrial": {
+          "rank": 20,
+          "points": 275
+        }
+      }
     },
     "175": {
       "pcsRank": 204,
-      "pcsPoints": 294
+      "pcsPoints": 294,
+      "disciplines": {
+        "gc": {
+          "rank": 74,
+          "points": 529
+        },
+        "climber": {
+          "rank": 62,
+          "points": 260
+        }
+      }
     },
     "176": {
       "pcsRank": 183,
-      "pcsPoints": 325
+      "pcsPoints": 325,
+      "disciplines": {
+        "climber": {
+          "rank": 58,
+          "points": 283
+        }
+      }
     },
     "177": {
       "pcsRank": 370,
@@ -540,19 +1622,49 @@
     },
     "178": {
       "pcsRank": 341,
-      "pcsPoints": 201
+      "pcsPoints": 201,
+      "disciplines": {
+        "timetrial": {
+          "rank": 30,
+          "points": 206
+        }
+      }
     },
     "179": {
       "pcsRank": 267,
-      "pcsPoints": 245
+      "pcsPoints": 245,
+      "disciplines": {
+        "timetrial": {
+          "rank": 43,
+          "points": 158
+        }
+      }
     },
     "180": {
       "pcsRank": 227,
       "pcsPoints": 270
     },
+    "181": {
+      "disciplines": {
+        "timetrial": {
+          "rank": 62,
+          "points": 122
+        }
+      }
+    },
     "182": {
       "pcsRank": 201,
-      "pcsPoints": 294
+      "pcsPoints": 294,
+      "disciplines": {
+        "gc": {
+          "rank": 87,
+          "points": 485
+        },
+        "climber": {
+          "rank": 89,
+          "points": 206
+        }
+      }
     },
     "184": {
       "pcsRank": 305,
