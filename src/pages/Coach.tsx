@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { Brain, Crown, Trophy, ArrowLeftRight, Users } from 'lucide-react'
+import { Brain, Crown, Trophy, ArrowLeftRight, Users, Info } from 'lucide-react'
 import ridersData from '../data/riders.json'
 import rulesData from '../data/rules.json'
 import stagesData from '../data/stages.json'
@@ -7,6 +7,7 @@ import type { Rider, Rules, Stage } from '../types'
 import { rateAll } from '../engine/ratingEngine'
 import { optimizeTeam } from '../engine/optimizerEngine'
 import { recommendLineup, transferAdvice } from '../engine/coachEngine'
+import { useMyTeam } from '../store/teamStore'
 import StatCard from '../components/common/StatCard'
 
 const riders = ridersData as Rider[]
@@ -14,9 +15,8 @@ const rules = rulesData as Rules
 const stages = (stagesData as Stage[]).filter((s) => s.from !== 'Rustdag')
 const ratings = rateAll(riders)
 
-// De coach adviseert op basis van je (geoptimaliseerde) team van 20 renners.
-const optimized = optimizeTeam(riders, ratings, rules)
-const myTeam = optimized.team
+// Fallback wanneer je zelf nog geen team hebt samengesteld.
+const optimizedTeam = optimizeTeam(riders, ratings, rules).team
 
 const typeColor: Record<string, string> = {
   Vlak: 'bg-success/20 text-success',
@@ -27,17 +27,25 @@ const typeColor: Record<string, string> = {
 }
 
 export default function Coach() {
+  const saved = useMyTeam()
   const [stageId, setStageId] = useState<number>(stages[0]?.id ?? 1)
+
+  // Gebruik jouw opgeslagen team; val terug op het optimizer-team als leeg.
+  const usingSaved = saved.riders.length > 0
+  const myTeam = usingSaved ? saved.riders : optimizedTeam
 
   const stage = useMemo(
     () => stages.find((s) => s.id === stageId) ?? stages[0],
     [stageId],
   )
 
-  const advice = useMemo(() => recommendLineup(myTeam, stage), [stage])
+  const advice = useMemo(
+    () => recommendLineup(myTeam, stage),
+    [stage, myTeam],
+  )
   const transfers = useMemo(
     () => transferAdvice(myTeam, riders, ratings, rules, 5),
-    [],
+    [myTeam],
   )
 
   return (
@@ -50,6 +58,19 @@ export default function Coach() {
           Advies per etappe: beste 9 renners uit je team van {myTeam.length},
           plus kopmankeuze en transfertips.
         </p>
+
+        <div
+          className={`mt-3 flex items-center gap-2 rounded-lg border p-2 text-xs ${
+            usingSaved
+              ? 'border-success/40 bg-success/10 text-success'
+              : 'border-warning/40 bg-warning/10 text-warning'
+          }`}
+        >
+          <Info size={14} />
+          {usingSaved
+            ? 'Advies op basis van jouw opgeslagen team (pagina Mijn Team).'
+            : 'Je hebt nog geen team opgeslagen - advies op basis van het optimizer-team. Stel een team samen bij Mijn Team.'}
+        </div>
 
         <div className="mt-4 flex flex-wrap items-center gap-3">
           <label className="text-sm text-muted">Kies etappe:</label>
