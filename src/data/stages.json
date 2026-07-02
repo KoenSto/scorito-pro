@@ -4,7 +4,7 @@
     "day": "Za 4 jul",
     "from": "Barcelona",
     "to": "Barcelona",
-    "distanceKm": 19,
+    "distanceKm": 20,
     "type": "Ploegentijdrit"
   },
   {
@@ -12,63 +12,63 @@
     "day": "Zo 5 jul",
     "from": "Tarragona",
     "to": "Barcelona",
-    "distanceKm": 178,
-    "type": "Vlak"
+    "distanceKm": 169,
+    "type": "Heuvel"
   },
   {
     "id": 3,
     "day": "Ma 6 jul",
     "from": "Granollers",
     "to": "Les Angles",
-    "distanceKm": 195,
+    "distanceKm": 196,
     "type": "Berg"
   },
   {
     "id": 4,
     "day": "Di 7 jul",
     "from": "Carcassonne",
-    "to": "Carcassonne",
-    "distanceKm": 172,
-    "type": "Vlak"
+    "to": "Foix",
+    "distanceKm": 182,
+    "type": "Heuvel"
   },
   {
     "id": 5,
     "day": "Wo 8 jul",
-    "from": "Lavelanet",
-    "to": "Foix",
-    "distanceKm": 165,
-    "type": "Heuvel"
+    "from": "Lannemezan",
+    "to": "Pau",
+    "distanceKm": 158,
+    "type": "Vlak"
   },
   {
     "id": 6,
     "day": "Do 9 jul",
-    "from": "Toulouse",
-    "to": "Rodez",
-    "distanceKm": 185,
-    "type": "Heuvel"
+    "from": "Pau",
+    "to": "Gavarnie-Gèdre",
+    "distanceKm": 186,
+    "type": "Berg"
   },
   {
     "id": 7,
     "day": "Vr 10 jul",
-    "from": "Aurillac",
-    "to": "Le Lioran",
-    "distanceKm": 160,
-    "type": "Berg"
+    "from": "Hagetmau",
+    "to": "Bordeaux",
+    "distanceKm": 175,
+    "type": "Vlak"
   },
   {
     "id": 8,
     "day": "Za 11 jul",
-    "from": "Clermont-Ferrand",
-    "to": "Clermont",
-    "distanceKm": 183,
+    "from": "Périgueux",
+    "to": "Bergerac",
+    "distanceKm": 180,
     "type": "Vlak"
   },
   {
     "id": 9,
     "day": "Zo 12 jul",
-    "from": "Roanne",
-    "to": "Lyon",
-    "distanceKm": 175,
+    "from": "Malemort",
+    "to": "Ussel",
+    "distanceKm": 186,
     "type": "Heuvel"
   },
   {
@@ -82,50 +82,50 @@
   {
     "id": 11,
     "day": "Di 14 jul",
-    "from": "Chambery",
-    "to": "Alpe d'Huez",
-    "distanceKm": 165,
+    "from": "Aurillac",
+    "to": "Le Lioran",
+    "distanceKm": 167,
     "type": "Berg"
   },
   {
     "id": 12,
     "day": "Wo 15 jul",
-    "from": "Bourg d'Oisans",
-    "to": "Courchevel",
-    "distanceKm": 152,
-    "type": "Berg"
+    "from": "Vichy",
+    "to": "Nevers",
+    "distanceKm": 161,
+    "type": "Vlak"
   },
   {
     "id": 13,
     "day": "Do 16 jul",
-    "from": "Albertville",
-    "to": "Geneve",
-    "distanceKm": 190,
+    "from": "Circuit Nevers Magny-Cours",
+    "to": "Chalon-sur-Saône",
+    "distanceKm": 179,
     "type": "Vlak"
   },
   {
     "id": 14,
     "day": "Vr 17 jul",
-    "from": "Geneve",
-    "to": "Megeve",
-    "distanceKm": 33,
-    "type": "Tijdrit"
+    "from": "Dole",
+    "to": "Belfort",
+    "distanceKm": 206,
+    "type": "Heuvel"
   },
   {
     "id": 15,
     "day": "Za 18 jul",
-    "from": "Annemasse",
-    "to": "Morzine",
-    "distanceKm": 168,
+    "from": "Mulhouse",
+    "to": "Le Markstein Fellering",
+    "distanceKm": 155,
     "type": "Berg"
   },
   {
     "id": 16,
     "day": "Zo 19 jul",
-    "from": "Thonon",
-    "to": "Lausanne",
-    "distanceKm": 178,
-    "type": "Heuvel"
+    "from": "Champagnole",
+    "to": "Plateau de Solaison",
+    "distanceKm": 184,
+    "type": "Berg"
   },
   {
     "id": 17,
@@ -138,49 +138,49 @@
   {
     "id": 18,
     "day": "Di 21 jul",
-    "from": "Dijon",
-    "to": "Dijon",
-    "distanceKm": 165,
-    "type": "Vlak"
+    "from": "Évian-les-Bains",
+    "to": "Thonon-les-Bains",
+    "distanceKm": 26,
+    "type": "Tijdrit"
   },
   {
     "id": 19,
     "day": "Wo 22 jul",
-    "from": "Nevers",
-    "to": "Bourges",
-    "distanceKm": 172,
+    "from": "Chambéry",
+    "to": "Voiron",
+    "distanceKm": 175,
     "type": "Vlak"
   },
   {
     "id": 20,
     "day": "Do 23 jul",
-    "from": "Orleans",
-    "to": "Chartres",
-    "distanceKm": 155,
-    "type": "Vlak"
+    "from": "Voiron",
+    "to": "Orcières-Merlette",
+    "distanceKm": 185,
+    "type": "Berg"
   },
   {
     "id": 21,
     "day": "Vr 24 jul",
-    "from": "Chartres",
-    "to": "Versailles",
-    "distanceKm": 45,
-    "type": "Tijdrit"
+    "from": "Gap",
+    "to": "Alpe d'Huez",
+    "distanceKm": 128,
+    "type": "Berg"
   },
   {
     "id": 22,
     "day": "Za 25 jul",
-    "from": "Mantes",
-    "to": "Parijs",
-    "distanceKm": 135,
-    "type": "Heuvel"
+    "from": "Le Bourg d'Oisans",
+    "to": "Alpe d'Huez",
+    "distanceKm": 171,
+    "type": "Berg"
   },
   {
     "id": 23,
     "day": "Zo 26 jul",
-    "from": "Parijs",
-    "to": "Champs-Elysees",
-    "distanceKm": 120,
+    "from": "Thoiry",
+    "to": "Paris Champs-Élysées",
+    "distanceKm": 133,
     "type": "Vlak"
   }
 ]
