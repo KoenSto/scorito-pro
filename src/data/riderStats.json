@@ -1,0 +1,562 @@
+{
+  "meta": {
+    "source": "procyclingstats.com PCS individual ranking (rolling 12 months)",
+    "fetchedAt": "2026-07-02",
+    "maxPoints": 4744,
+    "note": "pcsPoints = PCS ranking points; hoger = beter in vorm. Gebruikt als vormsignaal in de ratingEngine. Renners zonder entry vallen terug op prijs."
+  },
+  "riders": {
+    "1": {
+      "pcsRank": 1,
+      "pcsPoints": 4744
+    },
+    "2": {
+      "pcsRank": 2,
+      "pcsPoints": 3405
+    },
+    "3": {
+      "pcsRank": 3,
+      "pcsPoints": 2901
+    },
+    "4": {
+      "pcsRank": 11,
+      "pcsPoints": 1545
+    },
+    "5": {
+      "pcsRank": 7,
+      "pcsPoints": 1697
+    },
+    "6": {
+      "pcsRank": 27,
+      "pcsPoints": 1091
+    },
+    "7": {
+      "pcsRank": 10,
+      "pcsPoints": 1559
+    },
+    "8": {
+      "pcsRank": 44,
+      "pcsPoints": 885
+    },
+    "9": {
+      "pcsRank": 4,
+      "pcsPoints": 2426
+    },
+    "10": {
+      "pcsRank": 43,
+      "pcsPoints": 889
+    },
+    "11": {
+      "pcsRank": 51,
+      "pcsPoints": 817
+    },
+    "12": {
+      "pcsRank": 69,
+      "pcsPoints": 666
+    },
+    "13": {
+      "pcsRank": 104,
+      "pcsPoints": 514
+    },
+    "14": {
+      "pcsRank": 12,
+      "pcsPoints": 1503
+    },
+    "15": {
+      "pcsRank": 46,
+      "pcsPoints": 865
+    },
+    "16": {
+      "pcsRank": 52,
+      "pcsPoints": 816
+    },
+    "17": {
+      "pcsRank": 28,
+      "pcsPoints": 1084
+    },
+    "18": {
+      "pcsRank": 20,
+      "pcsPoints": 1199
+    },
+    "19": {
+      "pcsRank": 100,
+      "pcsPoints": 526
+    },
+    "20": {
+      "pcsRank": 6,
+      "pcsPoints": 1709
+    },
+    "21": {
+      "pcsRank": 221,
+      "pcsPoints": 278
+    },
+    "23": {
+      "pcsRank": 93,
+      "pcsPoints": 547
+    },
+    "24": {
+      "pcsRank": 5,
+      "pcsPoints": 1803
+    },
+    "25": {
+      "pcsRank": 17,
+      "pcsPoints": 1281
+    },
+    "26": {
+      "pcsRank": 151,
+      "pcsPoints": 382
+    },
+    "27": {
+      "pcsRank": 61,
+      "pcsPoints": 751
+    },
+    "28": {
+      "pcsRank": 21,
+      "pcsPoints": 1157
+    },
+    "29": {
+      "pcsRank": 39,
+      "pcsPoints": 908
+    },
+    "30": {
+      "pcsRank": 30,
+      "pcsPoints": 991
+    },
+    "31": {
+      "pcsRank": 24,
+      "pcsPoints": 1132
+    },
+    "32": {
+      "pcsRank": 47,
+      "pcsPoints": 862
+    },
+    "33": {
+      "pcsRank": 233,
+      "pcsPoints": 266
+    },
+    "34": {
+      "pcsRank": 55,
+      "pcsPoints": 786
+    },
+    "35": {
+      "pcsRank": 63,
+      "pcsPoints": 730
+    },
+    "36": {
+      "pcsRank": 70,
+      "pcsPoints": 653
+    },
+    "37": {
+      "pcsRank": 60,
+      "pcsPoints": 756
+    },
+    "38": {
+      "pcsRank": 92,
+      "pcsPoints": 556
+    },
+    "39": {
+      "pcsRank": 254,
+      "pcsPoints": 256
+    },
+    "40": {
+      "pcsRank": 272,
+      "pcsPoints": 240
+    },
+    "41": {
+      "pcsRank": 270,
+      "pcsPoints": 241
+    },
+    "42": {
+      "pcsRank": 76,
+      "pcsPoints": 622
+    },
+    "43": {
+      "pcsRank": 22,
+      "pcsPoints": 1138
+    },
+    "44": {
+      "pcsRank": 220,
+      "pcsPoints": 280
+    },
+    "45": {
+      "pcsRank": 34,
+      "pcsPoints": 942
+    },
+    "46": {
+      "pcsRank": 150,
+      "pcsPoints": 382
+    },
+    "47": {
+      "pcsRank": 258,
+      "pcsPoints": 252
+    },
+    "49": {
+      "pcsRank": 72,
+      "pcsPoints": 642
+    },
+    "50": {
+      "pcsRank": 245,
+      "pcsPoints": 261
+    },
+    "51": {
+      "pcsRank": 75,
+      "pcsPoints": 627
+    },
+    "52": {
+      "pcsRank": 68,
+      "pcsPoints": 679
+    },
+    "53": {
+      "pcsRank": 15,
+      "pcsPoints": 1307
+    },
+    "54": {
+      "pcsRank": 177,
+      "pcsPoints": 336
+    },
+    "55": {
+      "pcsRank": 113,
+      "pcsPoints": 496
+    },
+    "56": {
+      "pcsRank": 31,
+      "pcsPoints": 981
+    },
+    "57": {
+      "pcsRank": 16,
+      "pcsPoints": 1289
+    },
+    "58": {
+      "pcsRank": 38,
+      "pcsPoints": 919
+    },
+    "59": {
+      "pcsRank": 222,
+      "pcsPoints": 276
+    },
+    "61": {
+      "pcsRank": 178,
+      "pcsPoints": 333
+    },
+    "62": {
+      "pcsRank": 230,
+      "pcsPoints": 268
+    },
+    "63": {
+      "pcsRank": 364,
+      "pcsPoints": 183
+    },
+    "65": {
+      "pcsRank": 156,
+      "pcsPoints": 369
+    },
+    "66": {
+      "pcsRank": 390,
+      "pcsPoints": 165
+    },
+    "67": {
+      "pcsRank": 144,
+      "pcsPoints": 410
+    },
+    "68": {
+      "pcsRank": 102,
+      "pcsPoints": 519
+    },
+    "69": {
+      "pcsRank": 324,
+      "pcsPoints": 209
+    },
+    "70": {
+      "pcsRank": 191,
+      "pcsPoints": 307
+    },
+    "71": {
+      "pcsRank": 335,
+      "pcsPoints": 204
+    },
+    "72": {
+      "pcsRank": 248,
+      "pcsPoints": 258
+    },
+    "77": {
+      "pcsRank": 114,
+      "pcsPoints": 495
+    },
+    "78": {
+      "pcsRank": 62,
+      "pcsPoints": 730
+    },
+    "79": {
+      "pcsRank": 99,
+      "pcsPoints": 531
+    },
+    "81": {
+      "pcsRank": 147,
+      "pcsPoints": 392
+    },
+    "82": {
+      "pcsRank": 56,
+      "pcsPoints": 781
+    },
+    "84": {
+      "pcsRank": 265,
+      "pcsPoints": 246
+    },
+    "85": {
+      "pcsRank": 360,
+      "pcsPoints": 184
+    },
+    "86": {
+      "pcsRank": 157,
+      "pcsPoints": 368
+    },
+    "87": {
+      "pcsRank": 96,
+      "pcsPoints": 544
+    },
+    "88": {
+      "pcsRank": 71,
+      "pcsPoints": 650
+    },
+    "91": {
+      "pcsRank": 58,
+      "pcsPoints": 770
+    },
+    "92": {
+      "pcsRank": 36,
+      "pcsPoints": 934
+    },
+    "93": {
+      "pcsRank": 82,
+      "pcsPoints": 602
+    },
+    "94": {
+      "pcsRank": 42,
+      "pcsPoints": 898
+    },
+    "95": {
+      "pcsRank": 271,
+      "pcsPoints": 241
+    },
+    "96": {
+      "pcsRank": 94,
+      "pcsPoints": 546
+    },
+    "97": {
+      "pcsRank": 66,
+      "pcsPoints": 702
+    },
+    "98": {
+      "pcsRank": 237,
+      "pcsPoints": 264
+    },
+    "102": {
+      "pcsRank": 251,
+      "pcsPoints": 257
+    },
+    "104": {
+      "pcsRank": 159,
+      "pcsPoints": 366
+    },
+    "105": {
+      "pcsRank": 85,
+      "pcsPoints": 582
+    },
+    "106": {
+      "pcsRank": 175,
+      "pcsPoints": 339
+    },
+    "107": {
+      "pcsRank": 119,
+      "pcsPoints": 482
+    },
+    "108": {
+      "pcsRank": 148,
+      "pcsPoints": 390
+    },
+    "109": {
+      "pcsRank": 376,
+      "pcsPoints": 175
+    },
+    "110": {
+      "pcsRank": 172,
+      "pcsPoints": 340
+    },
+    "112": {
+      "pcsRank": 391,
+      "pcsPoints": 164
+    },
+    "115": {
+      "pcsRank": 184,
+      "pcsPoints": 320
+    },
+    "118": {
+      "pcsRank": 189,
+      "pcsPoints": 309
+    },
+    "119": {
+      "pcsRank": 125,
+      "pcsPoints": 459
+    },
+    "121": {
+      "pcsRank": 392,
+      "pcsPoints": 164
+    },
+    "122": {
+      "pcsRank": 176,
+      "pcsPoints": 337
+    },
+    "123": {
+      "pcsRank": 162,
+      "pcsPoints": 355
+    },
+    "125": {
+      "pcsRank": 226,
+      "pcsPoints": 271
+    },
+    "127": {
+      "pcsRank": 357,
+      "pcsPoints": 189
+    },
+    "130": {
+      "pcsRank": 195,
+      "pcsPoints": 304
+    },
+    "131": {
+      "pcsRank": 352,
+      "pcsPoints": 191
+    },
+    "133": {
+      "pcsRank": 296,
+      "pcsPoints": 223
+    },
+    "134": {
+      "pcsRank": 81,
+      "pcsPoints": 606
+    },
+    "135": {
+      "pcsRank": 124,
+      "pcsPoints": 461
+    },
+    "136": {
+      "pcsRank": 289,
+      "pcsPoints": 227
+    },
+    "138": {
+      "pcsRank": 400,
+      "pcsPoints": 158
+    },
+    "139": {
+      "pcsRank": 134,
+      "pcsPoints": 428
+    },
+    "140": {
+      "pcsRank": 355,
+      "pcsPoints": 190
+    },
+    "141": {
+      "pcsRank": 133,
+      "pcsPoints": 433
+    },
+    "142": {
+      "pcsRank": 122,
+      "pcsPoints": 473
+    },
+    "146": {
+      "pcsRank": 290,
+      "pcsPoints": 227
+    },
+    "147": {
+      "pcsRank": 116,
+      "pcsPoints": 490
+    },
+    "148": {
+      "pcsRank": 160,
+      "pcsPoints": 363
+    },
+    "149": {
+      "pcsRank": 332,
+      "pcsPoints": 204
+    },
+    "150": {
+      "pcsRank": 136,
+      "pcsPoints": 424
+    },
+    "152": {
+      "pcsRank": 325,
+      "pcsPoints": 209
+    },
+    "157": {
+      "pcsRank": 185,
+      "pcsPoints": 317
+    },
+    "160": {
+      "pcsRank": 138,
+      "pcsPoints": 423
+    },
+    "164": {
+      "pcsRank": 276,
+      "pcsPoints": 239
+    },
+    "165": {
+      "pcsRank": 342,
+      "pcsPoints": 200
+    },
+    "166": {
+      "pcsRank": 158,
+      "pcsPoints": 367
+    },
+    "168": {
+      "pcsRank": 213,
+      "pcsPoints": 288
+    },
+    "170": {
+      "pcsRank": 126,
+      "pcsPoints": 453
+    },
+    "171": {
+      "pcsRank": 212,
+      "pcsPoints": 289
+    },
+    "173": {
+      "pcsRank": 252,
+      "pcsPoints": 257
+    },
+    "174": {
+      "pcsRank": 338,
+      "pcsPoints": 203
+    },
+    "175": {
+      "pcsRank": 204,
+      "pcsPoints": 294
+    },
+    "176": {
+      "pcsRank": 183,
+      "pcsPoints": 325
+    },
+    "177": {
+      "pcsRank": 370,
+      "pcsPoints": 179
+    },
+    "178": {
+      "pcsRank": 341,
+      "pcsPoints": 201
+    },
+    "179": {
+      "pcsRank": 267,
+      "pcsPoints": 245
+    },
+    "180": {
+      "pcsRank": 227,
+      "pcsPoints": 270
+    },
+    "182": {
+      "pcsRank": 201,
+      "pcsPoints": 294
+    },
+    "184": {
+      "pcsRank": 305,
+      "pcsPoints": 218
+    }
+  }
+}
