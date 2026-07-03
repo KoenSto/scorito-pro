@@ -6,6 +6,7 @@ import Riders from './pages/Riders'
 import Stages from './pages/Stages'
 import Optimizer from './pages/Optimizer'
 import Coach from './pages/Coach'
+import Favourites from './pages/Favourites'
 import Settings from './pages/Settings'
 
 export const router = createHashRouter([
@@ -18,6 +19,7 @@ export const router = createHashRouter([
       { path: '/stages', element: <Stages /> },
       { path: '/optimizer', element: <Optimizer /> },
       { path: '/coach', element: <Coach /> },
+      { path: '/favourites', element: <Favourites /> },
       { path: '/settings', element: <Settings /> },
     ],
   },
