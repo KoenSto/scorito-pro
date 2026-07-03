@@ -3,6 +3,7 @@ import scoring from '../data/scoring.json'
 import stagesData from '../data/stages.json'
 import type { Stage } from '../types'
 import riderStats from '../data/riderStats.json'
+import { marketScore } from './bookmakerEngine'
 
 /**
  * Scoring Engine (Sprint 2.1)
@@ -45,6 +46,9 @@ const MAX_PRICE = 8 // duurste renner in de dataset (Pogacar)
 // Historische PCS-ranglijstpunten als vormsignaal (bron: procyclingstats.com).
 // Zie src/data/riderStats.json. Renners zonder entry vallen terug op prijs.
 const PCS_MAX_POINTS = riderStats.meta.maxPoints
+// Max relative boost applied to a rider's quality from the bookmaker market
+// snapshot (0.08 = up to +8% for the clearest market favourite).
+const MARKET_BOOST = 0.08
 const pcsById = riderStats.riders as unknown as Record<string, { pcsRank: number; pcsPoints: number }>
 
 /**
@@ -60,9 +64,13 @@ const pcsById = riderStats.riders as unknown as Record<string, { pcsRank: number
 function quality(rider: Rider): number {
   const priceQ = Math.min(1, rider.price / MAX_PRICE)
   const stat = pcsById[String(rider.id)]
-  if (!stat || typeof stat.pcsPoints !== 'number') return priceQ
-  const formQ = Math.min(1, stat.pcsPoints / PCS_MAX_POINTS)
-  return Math.min(1, 0.5 * priceQ + 0.5 * formQ)
+  const baseQ =
+    !stat || typeof stat.pcsPoints !== 'number'
+      ? priceQ
+      : Math.min(1, 0.5 * priceQ + 0.5 * Math.min(1, stat.pcsPoints / PCS_MAX_POINTS))
+  // Light, capped nudge for riders the bookmaker market rates as favourites.
+  const boost = 1 + MARKET_BOOST * marketScore(rider.id)
+  return Math.min(1, baseQ * boost)
 }
 
 /**
