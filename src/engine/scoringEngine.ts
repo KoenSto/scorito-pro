@@ -19,6 +19,7 @@ import { marketScore } from './bookmakerEngine'
 
 const MAX_PRICE = 8
 const MARKET_BOOST = 0.08
+const NO_DATA_FACTOR = 0.85
 
 type StageTypeKey = 'Vlak' | 'Heuvel' | 'Berg' | 'Tijdrit' | 'Ploegentijdrit'
 type DisciplineKey = 'gc' | 'sprint' | 'climber' | 'oneday' | 'timetrial'
@@ -104,10 +105,11 @@ function disciplineQuality(rider: Rider, disc: DisciplineKey): number {
   const entry = statsById[String(rider.id)]
   const discPoints = entry?.disciplines?.[disc]?.points
   const discMax = statsMeta?.disciplineMaxPoints?.[disc]
+  const floor = priceQ * NO_DATA_FACTOR
   const base =
     typeof discPoints !== 'number' || !discMax
-      ? priceQ
-      : Math.min(1, 0.45 * priceQ + 0.55 * Math.min(1, discPoints / discMax))
+      ? floor
+      : Math.max(floor, Math.min(1, 0.45 * priceQ + 0.55 * Math.min(1, discPoints / discMax)))
   const boost = 1 + MARKET_BOOST * marketScore(rider.id)
   return Math.min(1, base * boost)
 }
