@@ -62,7 +62,7 @@ const finalFit: Record<RiderRole, { algemeen: number; punten: number; berg: numb
 }
 
 const stages = stagesData as Stage[]
-const pcsById = riderStats as unknown as Record<string, { pcsRank: number; pcsPoints: number }>
+const pcsById = (riderStats as { riders: Record<string, { pcsRank: number; pcsPoints: number }> }).riders
 
 function quality(rider: Rider): number {
   const priceQ = Math.min(1, rider.price / MAX_PRICE)
