@@ -1,70 +1,133 @@
 import type { Rider, RiderRole, Stage, Rules, RiderRating } from '../types'
 import scoring from '../data/scoring.json'
+import riderStats from '../data/riderStats.json'
 
 /**
- * Coach Engine (Sprint 3)
+ * Coach Engine (Sprint 3.1 - realistische etappeprojectie)
  *
- * De AI-coach adviseert per etappe:
- *  - welke 9 van je 20 renners je opstelt (grootste kans op punten die dag)
- *  - wie je als kopman aanwijst (kopman = dubbele etappepunten)
- *  - en geeft transferadvies: welke renner uit je team het beste vervangen
- *    kan worden door een beschikbare renner voor meer verwachte punten.
+ * De AI-coach adviseert per etappe welke 9 van je 20 renners je opstelt,
+ * wie je als kopman kiest (dubbele etappepunten) en geeft transferadvies.
  *
- * Alles is transparant en gebaseerd op rol x etappetype (stageFit) en de
- * prijs als kwaliteitsproxy. Pas de gewichten aan als je betere data hebt.
+ * Nieuw: de verwachte dagpunten komen uit een expliciet kansmodel per renner.
+ * We schatten de kans op een dagzege, top-10 en top-20 finish op basis van
+ * (a) een DISCIPLINE-specifieke kwaliteit (sprint/klim/tijdrit/eendaags via PCS)
+ * en (b) hoe goed het etappetype bij de renner past. Die kansen vertalen we
+ * naar de echte Scorito-etappepuntentabel, zodat topfavorieten realistische
+ * (hogere) dagpunten krijgen i.p.v. een sterk afgevlakte verwachting.
  */
 
-// Aantal renners dat je per etappe opstelt (Scorito: 9 van de 20).
 export const LINEUP_SIZE = 9
-
-// Kopman verdubbelt de etappepunten van die ene renner.
 export const CAPTAIN_MULTIPLIER = 2
 
 const MAX_PRICE = 8
 
-// Hoe goed past een rol bij een etappetype (0..1). Zelfde logica als de
-// scoringEngine, maar hier per losse etappe zodat we per dag kunnen kiezen.
-const stageFit: Record<RiderRole, Record<string, number>> = {
-  Sprint: { Vlak: 1.0, Heuvel: 0.3, Berg: 0.0, Tijdrit: 0.1, Ploegentijdrit: 0.2 },
-  Klassiek: { Vlak: 0.5, Heuvel: 1.0, Berg: 0.2, Tijdrit: 0.3, Ploegentijdrit: 0.2 },
-  Klimmer: { Vlak: 0.0, Heuvel: 0.5, Berg: 1.0, Tijdrit: 0.1, Ploegentijdrit: 0.2 },
-  GC: { Vlak: 0.2, Heuvel: 0.6, Berg: 1.0, Tijdrit: 0.9, Ploegentijdrit: 0.4 },
-  Tijdrit: { Vlak: 0.3, Heuvel: 0.3, Berg: 0.1, Tijdrit: 1.0, Ploegentijdrit: 0.6 },
-  Knecht: { Vlak: 0.1, Heuvel: 0.1, Berg: 0.1, Tijdrit: 0.1, Ploegentijdrit: 0.3 },
+type StageTypeKey = 'Vlak' | 'Heuvel' | 'Berg' | 'Tijdrit' | 'Ploegentijdrit'
+
+// Hoe goed past een rol bij een etappetype (0..1) - kans om mee te strijden.
+const stageFit: Record<RiderRole, Record<StageTypeKey, number>> = {
+  Sprint:   { Vlak: 1,   Heuvel: 0.55, Berg: 0.05, Tijdrit: 0.1, Ploegentijdrit: 0.2 },
+  Klassiek: { Vlak: 0.6, Heuvel: 1,    Berg: 0.25, Tijdrit: 0.3, Ploegentijdrit: 0.2 },
+  Klimmer:  { Vlak: 0,   Heuvel: 0.5,  Berg: 1,    Tijdrit: 0.1, Ploegentijdrit: 0.2 },
+  GC:       { Vlak: 0.2, Heuvel: 0.6,  Berg: 1,    Tijdrit: 0.9, Ploegentijdrit: 0.4 },
+  Tijdrit:  { Vlak: 0.3, Heuvel: 0.3,  Berg: 0.1,  Tijdrit: 1,   Ploegentijdrit: 0.6 },
+  Knecht:   { Vlak: 0.1, Heuvel: 0.1,  Berg: 0.1,  Tijdrit: 0.1, Ploegentijdrit: 0.3 },
 }
 
-function quality(rider: Rider): number {
-  return Math.min(1, rider.price / MAX_PRICE)
+// Welk PCS-specialisme telt voor de dagzege per etappetype.
+const typeDiscipline: Record<StageTypeKey, 'gc' | 'sprint' | 'climber' | 'oneday' | 'timetrial'> = {
+  Vlak: 'sprint',
+  Heuvel: 'oneday',
+  Berg: 'climber',
+  Tijdrit: 'timetrial',
+  Ploegentijdrit: 'timetrial',
 }
 
-/** Verwacht puntengemiddelde uit een tabel, gegeven kwaliteit q en kans. */
-function expectedFromTable(table: number[], q: number, opportunity: number): number {
-  if (opportunity <= 0) return 0
-  const contention = q * opportunity
-  let sum = 0
-  for (let pos = 0; pos < table.length; pos++) {
-    const posWeight = Math.pow(1 - 1 / (table.length + 1), pos)
-    const prob = contention * posWeight * (1 - 0.5 * (1 - q))
-    sum += prob * table[pos]
-  }
-  return sum * 0.12
+interface DisciplineEntry { rank: number; points: number }
+interface RiderStatEntry {
+  pcsRank: number
+  pcsPoints: number
+  disciplines?: Partial<Record<'gc' | 'sprint' | 'climber' | 'oneday' | 'timetrial', DisciplineEntry>>
 }
+
+const statsMeta = (riderStats as { meta: { disciplineMaxPoints: Record<string, number> } }).meta
+const statsById = (riderStats as unknown as { riders: Record<string, RiderStatEntry> }).riders
 
 /**
- * Verwachte etappepunten voor EEN renner op EEN specifieke etappe.
- * Rustdagen (from === 'Rustdag') leveren 0 punten op.
+ * Discipline-specifieke kwaliteit (0..1) voor de dagzege op DIT etappetype.
+ * Een topsprinter scoort op een vlakke etappe hoog, ook al is zijn totale
+ * PCS-ranking bescheiden. We blenden prijs met de PCS-specialismepunten,
+ * genormaliseerd naar het maximum binnen dat specialisme.
  */
+function stageQuality(rider: Rider, stageType: StageTypeKey): number {
+  const priceQ = Math.min(1, rider.price / MAX_PRICE)
+  const entry = statsById[String(rider.id)]
+  const disc = typeDiscipline[stageType]
+  const discPoints = entry?.disciplines?.[disc]?.points
+  const discMax = statsMeta?.disciplineMaxPoints?.[disc]
+  if (typeof discPoints !== 'number' || !discMax) return priceQ
+  const discQ = Math.min(1, discPoints / discMax)
+  return Math.min(1, 0.45 * priceQ + 0.55 * discQ)
+}
+
+export interface StageProjection {
+  pWin: number
+  pTop10: number
+  pTop20: number
+  points: number
+}
+
+const STAGE_TABLE = scoring.stageResult as number[]
+
+/**
+ * Zet een 'contention' (kwaliteit x etappe-fit, 0..1) om in geneste kansen
+ * op een dagzege, top-10 en top-20, plus de verwachte etappepunten uit de
+ * echte Scorito-uitslagtabel.
+ */
+function project(contention: number): StageProjection {
+  const c = Math.min(1, Math.max(0, contention))
+  if (c <= 0) return { pWin: 0, pTop10: 0, pTop20: 0, points: 0 }
+
+  const pTop20 = Math.min(0.97, 0.15 + 0.85 * Math.pow(c, 0.7))
+  const pTop10 = pTop20 * Math.min(1, 0.25 + 0.75 * Math.pow(c, 0.9))
+  const pWin = pTop10 * Math.min(1, 0.05 + 0.85 * Math.pow(c, 1.6))
+
+  // Verdeel de kansmassa over de 20 puntenposities voor de verwachting.
+  const posP = new Array(STAGE_TABLE.length).fill(0)
+  posP[0] = pWin
+  const midMass = pTop10 - pWin
+  let midSum = 0
+  for (let i = 1; i < 10; i++) midSum += Math.exp(-0.3 * (i - 1))
+  for (let i = 1; i < 10; i++) posP[i] = (midMass * Math.exp(-0.3 * (i - 1))) / midSum
+  const lowMass = pTop20 - pTop10
+  let lowSum = 0
+  for (let i = 10; i < 20; i++) lowSum += Math.exp(-0.15 * (i - 10))
+  for (let i = 10; i < 20; i++) posP[i] = (lowMass * Math.exp(-0.15 * (i - 10))) / lowSum
+
+  let points = 0
+  for (let i = 0; i < STAGE_TABLE.length; i++) points += posP[i] * STAGE_TABLE[i]
+  return { pWin, pTop10, pTop20, points }
+}
+
+/** Volledige etappeprojectie (kansen + verwachte punten) voor een renner. */
+export function stageProjection(rider: Rider, stage: Stage): StageProjection {
+  if (stage.from === 'Rustdag') return { pWin: 0, pTop10: 0, pTop20: 0, points: 0 }
+  const type = stage.type as StageTypeKey
+  const q = stageQuality(rider, type)
+  const opp = (stageFit[rider.role] ?? stageFit.Knecht)[type] ?? 0
+  return project(q * opp)
+}
+
+/** Verwachte etappepunten voor EEN renner op EEN etappe. */
 export function expectedStagePoints(rider: Rider, stage: Stage): number {
-  if (stage.from === 'Rustdag') return 0
-  const q = quality(rider)
-  const fit = stageFit[rider.role] ?? stageFit.Knecht
-  const opp = fit[stage.type] ?? 0
-  return expectedFromTable(scoring.stageResult, q, opp)
+  return stageProjection(rider, stage).points
 }
 
 export interface LineupPick {
   rider: Rider
   points: number
+  pWin: number
+  pTop10: number
+  pTop20: number
   isCaptain: boolean
 }
 
@@ -82,13 +145,22 @@ export interface StageAdvice {
  */
 export function recommendLineup(team: Rider[], stage: Stage): StageAdvice {
   const scored = team
-    .map((rider) => ({ rider, points: expectedStagePoints(rider, stage), isCaptain: false }))
+    .map((rider) => {
+      const p = stageProjection(rider, stage)
+      return {
+        rider,
+        points: p.points,
+        pWin: p.pWin,
+        pTop10: p.pTop10,
+        pTop20: p.pTop20,
+        isCaptain: false,
+      }
+    })
     .sort((a, b) => b.points - a.points)
 
   const lineup = scored.slice(0, LINEUP_SIZE)
   const bench = scored.slice(LINEUP_SIZE)
 
-  // Kopman = renner met de meeste verwachte etappepunten in de opstelling.
   const captain = lineup.length ? lineup[0].rider : null
   if (lineup.length) lineup[0].isCaptain = true
 
@@ -127,7 +199,6 @@ function teamCount(team: Rider[], t: string): number {
  * Transferadvies over de HELE Tour: welke renner in je team kun je het beste
  * inruilen voor een beschikbare renner om je totale verwachte seizoenspunten
  * te verhogen, zonder de spelregels te schenden (budget + max per ploeg).
- * Geeft de beste suggesties gesorteerd op winst.
  */
 export function transferAdvice(
   team: Rider[],
@@ -154,7 +225,6 @@ export function transferAdvice(
     }
   }
 
-  // Beste per uit-renner, daarna gesorteerd op winst.
   const bestPerOut = new Map<number, TransferSuggestion>()
   for (const s of suggestions) {
     const cur = bestPerOut.get(s.out.id)
