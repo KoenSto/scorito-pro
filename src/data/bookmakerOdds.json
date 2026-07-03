@@ -1,0 +1,258 @@
+{
+  "meta": {
+    "source": "Manual bookmaker-favourites snapshot (aggregated market view). NOT live odds.",
+    "snapshotDate": "2026-07-03",
+    "note": "Weights are implied-probability estimates (0..1) derived from a point-in-time market view, cross-checked with PCS discipline form. Riders not listed are treated as non-favourites (weight 0). Odds move constantly; update this file manually to refresh.",
+    "classifications": [
+      "geel",
+      "groen",
+      "bergtrui",
+      "wit",
+      "eindzege"
+    ],
+    "stageTypes": [
+      "Vlak",
+      "Heuvel",
+      "Berg",
+      "Tijdrit"
+    ]
+  },
+  "classifications": {
+    "geel": [
+      {
+        "riderId": 1,
+        "weight": 0.261
+      },
+      {
+        "riderId": 2,
+        "weight": 0.244
+      },
+      {
+        "riderId": 7,
+        "weight": 0.149
+      },
+      {
+        "riderId": 3,
+        "weight": 0.13
+      },
+      {
+        "riderId": 11,
+        "weight": 0.108
+      },
+      {
+        "riderId": 17,
+        "weight": 0.108
+      }
+    ],
+    "groen": [
+      {
+        "riderId": 10,
+        "weight": 0.219
+      },
+      {
+        "riderId": 5,
+        "weight": 0.191
+      },
+      {
+        "riderId": 12,
+        "weight": 0.17
+      },
+      {
+        "riderId": 24,
+        "weight": 0.155
+      },
+      {
+        "riderId": 34,
+        "weight": 0.138
+      },
+      {
+        "riderId": 30,
+        "weight": 0.128
+      }
+    ],
+    "bergtrui": [
+      {
+        "riderId": 2,
+        "weight": 0.257
+      },
+      {
+        "riderId": 1,
+        "weight": 0.228
+      },
+      {
+        "riderId": 3,
+        "weight": 0.138
+      },
+      {
+        "riderId": 7,
+        "weight": 0.131
+      },
+      {
+        "riderId": 25,
+        "weight": 0.129
+      },
+      {
+        "riderId": 20,
+        "weight": 0.118
+      }
+    ],
+    "wit": [
+      {
+        "riderId": 7,
+        "weight": 0.239
+      },
+      {
+        "riderId": 3,
+        "weight": 0.208
+      },
+      {
+        "riderId": 8,
+        "weight": 0.145
+      },
+      {
+        "riderId": 15,
+        "weight": 0.138
+      },
+      {
+        "riderId": 27,
+        "weight": 0.137
+      },
+      {
+        "riderId": 28,
+        "weight": 0.133
+      }
+    ],
+    "eindzege": [
+      {
+        "riderId": 1,
+        "weight": 0.279
+      },
+      {
+        "riderId": 2,
+        "weight": 0.2
+      },
+      {
+        "riderId": 3,
+        "weight": 0.171
+      },
+      {
+        "riderId": 9,
+        "weight": 0.143
+      },
+      {
+        "riderId": 24,
+        "weight": 0.106
+      },
+      {
+        "riderId": 20,
+        "weight": 0.101
+      }
+    ]
+  },
+  "stageTypes": {
+    "Vlak": [
+      {
+        "riderId": 10,
+        "weight": 0.219
+      },
+      {
+        "riderId": 5,
+        "weight": 0.191
+      },
+      {
+        "riderId": 12,
+        "weight": 0.17
+      },
+      {
+        "riderId": 24,
+        "weight": 0.155
+      },
+      {
+        "riderId": 34,
+        "weight": 0.138
+      },
+      {
+        "riderId": 30,
+        "weight": 0.128
+      }
+    ],
+    "Heuvel": [
+      {
+        "riderId": 1,
+        "weight": 0.289
+      },
+      {
+        "riderId": 3,
+        "weight": 0.179
+      },
+      {
+        "riderId": 9,
+        "weight": 0.155
+      },
+      {
+        "riderId": 24,
+        "weight": 0.133
+      },
+      {
+        "riderId": 5,
+        "weight": 0.129
+      },
+      {
+        "riderId": 20,
+        "weight": 0.115
+      }
+    ],
+    "Berg": [
+      {
+        "riderId": 2,
+        "weight": 0.257
+      },
+      {
+        "riderId": 1,
+        "weight": 0.228
+      },
+      {
+        "riderId": 3,
+        "weight": 0.138
+      },
+      {
+        "riderId": 7,
+        "weight": 0.131
+      },
+      {
+        "riderId": 25,
+        "weight": 0.129
+      },
+      {
+        "riderId": 20,
+        "weight": 0.118
+      }
+    ],
+    "Tijdrit": [
+      {
+        "riderId": 9,
+        "weight": 0.226
+      },
+      {
+        "riderId": 1,
+        "weight": 0.218
+      },
+      {
+        "riderId": 42,
+        "weight": 0.193
+      },
+      {
+        "riderId": 46,
+        "weight": 0.135
+      },
+      {
+        "riderId": 7,
+        "weight": 0.114
+      },
+      {
+        "riderId": 82,
+        "weight": 0.114
+      }
+    ]
+  }
+}
