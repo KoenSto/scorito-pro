@@ -9,6 +9,7 @@ import {
   Check,
   Save,
   FolderOpen,
+  Trophy,
 } from 'lucide-react'
 import ridersData from '../data/riders.json'
 import rulesData from '../data/rules.json'
@@ -40,6 +41,12 @@ export default function Team() {
   const [teamName, setTeamName] = useState('')
 
   const budget = summarizeBudget(team.riders, rules)
+
+  // Potentieel: som van de verwachte Scorito-punten (scoringEngine) van de selectie.
+  const potentialPoints = useMemo(
+    () => team.riders.reduce((sum, r) => sum + (ratings[r.id]?.expectedPoints ?? 0), 0),
+    [team.riders],
+  )
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase()
@@ -102,12 +109,18 @@ export default function Team() {
       </div>
 
       {/* Budget stats */}
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+      <div className="grid grid-cols-2 gap-4 md:grid-cols-5">
         <StatCard
           label="Renners"
           value={`${budget.count} / ${rules.teamSize}`}
           icon={<Users size={18} />}
           accent={budget.count === rules.teamSize ? 'success' : 'primary'}
+        />
+        <StatCard
+          label="Potentiële punten"
+          value={Math.round(potentialPoints).toLocaleString('nl-NL')}
+          icon={<Trophy size={18} />}
+          accent="primary"
         />
         <StatCard
           label="Besteed"
