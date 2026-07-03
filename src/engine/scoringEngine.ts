@@ -6,61 +6,64 @@ import riderStats from '../data/riderStats.json'
 import { marketScore } from './bookmakerEngine'
 
 /**
- * Scoring Engine (Sprint 2.1)
+ * Scoring Engine (Sprint 2.2 - herziene puntenverdeling)
  *
  * Berekent verwachte Scorito-punten per renner op basis van het ECHTE
- * puntensysteem uit scoring.json (etappe-uitslagen, klassementen,
- * eindklassement en ploegentijdrit).
+ * puntensysteem uit scoring.json.
  *
- * Omdat we geen echte uitslagen kunnen voorspellen, gebruiken we de prijs
- * als proxy voor kwaliteit (kans op een hoge klassering) en de rol om te
- * bepalen in welke etappetypes en klassementen een renner scoort. Alles is
- * transparant en aanpasbaar: pas de gewichten aan als je betere data hebt.
+ * Belangrijkste herziening: de dagklassementen (met name het puntenklassement /
+ * groene trui) worden nu PER ETAPPE opgebouwd en gewogen naar etappetype. Daardoor
+ * komen sprinters op de vele vlakke en heuveletappes veel beter tot hun recht,
+ * i.p.v. een eenmalige, te lage bijdrage. Alles blijft transparant en aanpasbaar.
  */
 
-const stages = stagesData as Stage[]
+const MAX_PRICE = 8
+const MARKET_BOOST = 0.08
+const PCS_MAX_POINTS = 4744
 
-// Aandeel etappetypes waarin een rol kans maakt op een topklassering.
-const stageFit: Record<RiderRole, Record<string, number>> = {
-  Sprint:   { Vlak: 1.0, Heuvel: 0.3, Berg: 0.0, Tijdrit: 0.1, Ploegentijdrit: 0.0 },
-  Klassiek: { Vlak: 0.5, Heuvel: 1.0, Berg: 0.2, Tijdrit: 0.3, Ploegentijdrit: 0.0 },
-  Klimmer:  { Vlak: 0.0, Heuvel: 0.5, Berg: 1.0, Tijdrit: 0.1, Ploegentijdrit: 0.0 },
-  GC:       { Vlak: 0.2, Heuvel: 0.6, Berg: 1.0, Tijdrit: 0.9, Ploegentijdrit: 0.0 },
-  Tijdrit:  { Vlak: 0.3, Heuvel: 0.3, Berg: 0.1, Tijdrit: 1.0, Ploegentijdrit: 0.0 },
-  Knecht:   { Vlak: 0.1, Heuvel: 0.1, Berg: 0.1, Tijdrit: 0.1, Ploegentijdrit: 0.0 },
+type StageTypeKey = 'Vlak' | 'Heuvel' | 'Berg' | 'Tijdrit' | 'Ploegentijdrit'
+
+/** Kans dat een renner van een bepaalde rol meestrijdt om de dagzege per etappetype. */
+const stageFit: Record<RiderRole, Record<StageTypeKey, number>> = {
+  Sprint:   { Vlak: 1,    Heuvel: 0.55, Berg: 0.05, Tijdrit: 0.1, Ploegentijdrit: 0 },
+  Klassiek: { Vlak: 0.6,  Heuvel: 1,    Berg: 0.25, Tijdrit: 0.3, Ploegentijdrit: 0 },
+  Klimmer:  { Vlak: 0,    Heuvel: 0.5,  Berg: 1,    Tijdrit: 0.1, Ploegentijdrit: 0 },
+  GC:       { Vlak: 0.2,  Heuvel: 0.6,  Berg: 1,    Tijdrit: 0.9, Ploegentijdrit: 0 },
+  Tijdrit:  { Vlak: 0.3,  Heuvel: 0.3,  Berg: 0.1,  Tijdrit: 1,   Ploegentijdrit: 0 },
+  Knecht:   { Vlak: 0.15, Heuvel: 0.15, Berg: 0.1,  Tijdrit: 0.1, Ploegentijdrit: 0 },
 }
 
-// Kans dat een rol meetelt voor de eindklassementen.
-const finalFit: Record<RiderRole, { algemeen: number; punten: number; berg: number; jongeren: number }> = {
-  GC:       { algemeen: 1.0, punten: 0.1, berg: 0.3, jongeren: 0.4 },
-  Klimmer:  { algemeen: 0.4, punten: 0.1, berg: 1.0, jongeren: 0.3 },
-  Sprint:   { algemeen: 0.0, punten: 1.0, berg: 0.0, jongeren: 0.2 },
-  Klassiek: { algemeen: 0.1, punten: 0.5, berg: 0.2, jongeren: 0.2 },
-  Tijdrit:  { algemeen: 0.3, punten: 0.1, berg: 0.1, jongeren: 0.2 },
+/** Hoeveel een etappetype meetelt voor elk DAGKLASSEMENT (per etappe toegekend). */
+const dailyClassStageFit: Record<'algemeen' | 'punten' | 'berg' | 'jongeren', Record<StageTypeKey, number>> = {
+  algemeen: { Vlak: 0.2, Heuvel: 0.5, Berg: 1,    Tijdrit: 0.8, Ploegentijdrit: 0 },
+  punten:   { Vlak: 1,   Heuvel: 0.7, Berg: 0.15, Tijdrit: 0.1, Ploegentijdrit: 0 },
+  berg:     { Vlak: 0,   Heuvel: 0.5, Berg: 1,    Tijdrit: 0,   Ploegentijdrit: 0 },
+  jongeren: { Vlak: 0.2, Heuvel: 0.5, Berg: 1,    Tijdrit: 0.8, Ploegentijdrit: 0 },
+}
+
+/** Hoe sterk een rol meestrijdt in elk dagklassement (los van etappetype). */
+const dailyRoleFit: Record<RiderRole, { algemeen: number; punten: number; berg: number; jongeren: number }> = {
+  GC:       { algemeen: 1,    punten: 0.1,  berg: 0.35, jongeren: 0.5 },
+  Klimmer:  { algemeen: 0.4,  punten: 0.05, berg: 1,    jongeren: 0.3 },
+  Sprint:   { algemeen: 0,    punten: 1,    berg: 0,    jongeren: 0.15 },
+  Klassiek: { algemeen: 0.15, punten: 0.6,  berg: 0.15, jongeren: 0.2 },
+  Tijdrit:  { algemeen: 0.3,  punten: 0.1,  berg: 0.05, jongeren: 0.2 },
   Knecht:   { algemeen: 0.05, punten: 0.05, berg: 0.05, jongeren: 0.1 },
 }
 
-const MAX_PRICE = 8 // duurste renner in de dataset (Pogacar)
+/** Bijdrage van elke rol aan de EINDklassementen. */
+const finalFit: Record<RiderRole, { algemeen: number; punten: number; berg: number; jongeren: number }> = {
+  GC:       { algemeen: 1,    punten: 0.15, berg: 0.35, jongeren: 0.4 },
+  Klimmer:  { algemeen: 0.4,  punten: 0.1,  berg: 1,    jongeren: 0.3 },
+  Sprint:   { algemeen: 0,    punten: 1,    berg: 0,    jongeren: 0.25 },
+  Klassiek: { algemeen: 0.15, punten: 0.6,  berg: 0.2,  jongeren: 0.25 },
+  Tijdrit:  { algemeen: 0.3,  punten: 0.1,  berg: 0.1,  jongeren: 0.2 },
+  Knecht:   { algemeen: 0.05, punten: 0.05, berg: 0.05, jongeren: 0.1 },
+}
 
-/** Kwaliteit 0..1: hoe duurder de renner, hoe hoger de kans op punten. */
-// Historische PCS-ranglijstpunten als vormsignaal (bron: procyclingstats.com).
-// Zie src/data/riderStats.json. Renners zonder entry vallen terug op prijs.
-const PCS_MAX_POINTS = riderStats.meta.maxPoints
-// Max relative boost applied to a rider's quality from the bookmaker market
-// snapshot (0.08 = up to +8% for the clearest market favourite).
-const MARKET_BOOST = 0.08
-const pcsById = riderStats.riders as unknown as Record<string, { pcsRank: number; pcsPoints: number }>
+const stages = stagesData as Stage[]
+const pcsById = riderStats as unknown as Record<string, { pcsRank: number; pcsPoints: number }>
 
-/**
- * Kwaliteit van een renner op een schaal 0..1.
- *
- * We combineren twee signalen:
- *  - prijsQ: de Scorito-prijs (marktwaardering) genormaliseerd op de duurste renner;
- *  - vormQ: de PCS-ranglijstpunten van de laatste 12 maanden (echte resultaten).
- *
- * Voor renners met PCS-data wegen we beide gelijk (50/50). Zonder PCS-data
- * gebruiken we alleen de prijs, zodat het model altijd een waarde teruggeeft.
- */
 function quality(rider: Rider): number {
   const priceQ = Math.min(1, rider.price / MAX_PRICE)
   const stat = pcsById[String(rider.id)]
@@ -74,23 +77,44 @@ function quality(rider: Rider): number {
 }
 
 /**
- * Verwacht puntengemiddelde uit een puntentabel, gegeven een kwaliteit q.
- * We modelleren de kans dat de renner in de tabel eindigt als een
- * exponentieel aflopende verdeling die naar de top schuift naarmate q hoger is.
+ * Verwacht puntengemiddelde uit een puntentabel, gegeven kwaliteit q en de
+ * kans (opportunity) dat de renner meestrijdt. Betere renners (hoge q) hebben
+ * meer kansmassa op de eerste posities.
  */
 function expectedFromTable(table: number[], q: number, opportunity: number): number {
   if (opportunity <= 0) return 0
-  // Kans op deelname aan de "strijd": schaalt met kwaliteit en kans (fit).
   const contention = q * opportunity
   let sum = 0
   for (let pos = 0; pos < table.length; pos++) {
-    // Betere renners (hoge q) hebben meer massa op de eerste posities.
     const posWeight = Math.pow(1 - 1 / (table.length + 1), pos)
-    const prob = contention * posWeight * (1 - 0.5 * (1 - q))
+    const prob = contention * posWeight * (0.5 + 0.5 * q)
     sum += prob * table[pos]
   }
-  // Normaliseer zodat waarden realistisch blijven.
   return sum * 0.12
+}
+
+type ClassKey = 'algemeen' | 'punten' | 'berg' | 'jongeren'
+
+/**
+ * Dagklassement-punten opgebouwd PER ETAPPE. Per etappe krijgt elk dagklassement
+ * een kans die afhangt van (a) hoe sterk de rol dat klassement bevecht en (b) hoe
+ * relevant het etappetype is voor dat klassement. Zo verzamelt een sprinter over
+ * de vele vlakke/heuveletappes flink wat groene-trui-punten.
+ */
+function dailyClassificationPoints(rider: Rider, q: number): number {
+  const roleFit = dailyRoleFit[rider.role] ?? dailyRoleFit.Knecht
+  const classKeys: ClassKey[] = ['algemeen', 'punten', 'berg', 'jongeren']
+  let total = 0
+  for (const st of stages) {
+    const type = st.type as StageTypeKey
+    for (const key of classKeys) {
+      const typeFit = dailyClassStageFit[key][type] ?? 0
+      const opp = roleFit[key] * typeFit
+      if (opp <= 0) continue
+      total += expectedFromTable(scoring.stageClassification[key], q, opp)
+    }
+  }
+  return total
 }
 
 export function expectedPoints(rider: Rider): number {
@@ -101,25 +125,21 @@ export function expectedPoints(rider: Rider): number {
   // 1. Etappepunten: som over alle etappes, gewogen naar etappetype-fit.
   let stagePts = 0
   for (const st of stages) {
-    const opp = fit[st.type] ?? 0
+    const opp = fit[st.type as StageTypeKey] ?? 0
     stagePts += expectedFromTable(scoring.stageResult, q, opp)
   }
 
-  // 2. Klassementspunten per etappe (dagelijkse leiders): kleine bijdrage.
-  const dailyClass =
-    expectedFromTable(scoring.stageClassification.algemeen, q, ffit.algemeen) +
-    expectedFromTable(scoring.stageClassification.berg, q, ffit.berg) +
-    expectedFromTable(scoring.stageClassification.punten, q, ffit.punten) +
-    expectedFromTable(scoring.stageClassification.jongeren, q, ffit.jongeren)
+  // 2. Dagklassementen: nu PER ETAPPE opgebouwd (zie hierboven).
+  const dailyClass = dailyClassificationPoints(rider, q)
 
-  // 3. Eindklassement (telt zwaar in Scorito).
+  // 3. Eindklassement telt zwaar in Scorito.
   const finalPts =
     expectedFromTable(scoring.finalClassification.algemeen, q, ffit.algemeen) +
     expectedFromTable(scoring.finalClassification.berg, q, ffit.berg) +
     expectedFromTable(scoring.finalClassification.punten, q, ffit.punten) +
     expectedFromTable(scoring.finalClassification.jongeren, q, ffit.jongeren)
 
-  const total = stagePts + dailyClass * 3 + finalPts
+  const total = stagePts + dailyClass + finalPts
   return Math.round(total)
 }
 
