@@ -126,27 +126,33 @@ export interface StageProjection {
  * dagzege, top-10 en top-20, plus de verwachte etappepunten uit de echte
  * Scorito-uitslagtabel.
  */
-function project(contention: number): StageProjection {
+function project(contention: number, table: number[]): StageProjection {
   const c = Math.min(1, Math.max(0, contention))
-  if (c <= 0) return { pWin: 0, pTop10: 0, pTop20: 0, points: 0 }
+  const n = table.length
+  if (c <= 0 || n === 0) return { pWin: 0, pTop10: 0, pTop20: 0, points: 0 }
 
   const pTop20 = Math.min(0.97, 0.15 + 0.85 * Math.pow(c, 0.7))
   const pTop10 = pTop20 * Math.min(1, 0.25 + 0.75 * Math.pow(c, 0.9))
   const pWin = pTop10 * Math.min(1, 0.05 + 0.85 * Math.pow(c, 1.6))
 
-  const posP = new Array(STAGE_TABLE.length).fill(0)
+  // Verdeel de kansmassa over de posities van DEZE tabel (etappe- of
+  // klassementstabel, wisselende lengte). Kortere tabellen krijgen minder
+  // top-10/top-20 posities.
+  const top10n = Math.min(10, n)
+  const top20n = Math.min(20, n)
+  const posP = new Array(n).fill(0)
   posP[0] = pWin
   const midMass = pTop10 - pWin
   let midSum = 0
-  for (let i = 1; i < 10; i++) midSum += Math.exp(-0.3 * (i - 1))
-  for (let i = 1; i < 10; i++) posP[i] = (midMass * Math.exp(-0.3 * (i - 1))) / midSum
+  for (let i = 1; i < top10n; i++) midSum += Math.exp(-0.3 * (i - 1))
+  if (midSum > 0) for (let i = 1; i < top10n; i++) posP[i] = (midMass * Math.exp(-0.3 * (i - 1))) / midSum
   const lowMass = pTop20 - pTop10
   let lowSum = 0
-  for (let i = 10; i < 20; i++) lowSum += Math.exp(-0.15 * (i - 10))
-  for (let i = 10; i < 20; i++) posP[i] = (lowMass * Math.exp(-0.15 * (i - 10))) / lowSum
+  for (let i = top10n; i < top20n; i++) lowSum += Math.exp(-0.15 * (i - top10n))
+  if (lowSum > 0) for (let i = top10n; i < top20n; i++) posP[i] = (lowMass * Math.exp(-0.15 * (i - top10n))) / lowSum
 
   let points = 0
-  for (let i = 0; i < STAGE_TABLE.length; i++) points += posP[i] * STAGE_TABLE[i]
+  for (let i = 0; i < n; i++) points += posP[i] * table[i]
   return { pWin, pTop10, pTop20, points }
 }
 
@@ -156,7 +162,7 @@ export function stageProjection(rider: Rider, stage: Stage): StageProjection {
   const type = stage.type as StageTypeKey
   const q = disciplineQuality(rider, typeDiscipline[type])
   const opp = (stageFit[rider.role] ?? stageFit.Knecht)[type] ?? 0
-  return project(q * opp)
+  return project(q * opp, STAGE_TABLE)
 }
 
 /**
@@ -165,7 +171,7 @@ export function stageProjection(rider: Rider, stage: Stage): StageProjection {
  */
 function expectedFromTable(table: number[], q: number, opportunity: number): number {
   if (opportunity <= 0) return 0
-  return project(q * opportunity).points
+  return project(q * opportunity, table).points
 }
 
 /**
