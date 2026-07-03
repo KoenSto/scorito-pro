@@ -123,6 +123,9 @@ export default function Coach() {
               <th className="px-4 py-3 text-left font-medium">Renner</th>
               <th className="px-4 py-3 text-left font-medium">Ploeg</th>
               <th className="px-4 py-3 text-left font-medium">Rol</th>
+              <th className="px-4 py-3 text-right font-medium">Winst</th>
+              <th className="px-4 py-3 text-right font-medium">Top-10</th>
+              <th className="px-4 py-3 text-right font-medium">Top-20</th>
               <th className="px-4 py-3 text-right font-medium">Dagpunten</th>
             </tr>
           </thead>
@@ -141,6 +144,9 @@ export default function Coach() {
                 </td>
                 <td className="px-4 py-2 text-muted">{pick.rider.team}</td>
                 <td className="px-4 py-2 text-muted">{pick.rider.role}</td>
+                <td className="px-4 py-2 text-right text-muted">{Math.round(pick.pWin * 100)}%</td>
+                <td className="px-4 py-2 text-right text-muted">{Math.round(pick.pTop10 * 100)}%</td>
+                <td className="px-4 py-2 text-right text-muted">{Math.round(pick.pTop20 * 100)}%</td>
                 <td className="px-4 py-2 text-right font-mono text-success">
                   {pick.points.toFixed(1)}
                   {pick.isCaptain && <span className="text-warning"> x2</span>}
