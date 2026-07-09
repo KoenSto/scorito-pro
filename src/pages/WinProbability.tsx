@@ -118,10 +118,10 @@ export default function WinProbability() {
             id: 'winprob-select',
             className: 'mt-1 w-full rounded-lg border border-border bg-background px-3 py-2 text-sm',
             value: selectedKey,
-            onChange: (e) => setSelectedKey(e.target.value),
+        onChange: (e: { target: { value: string } }) => setSelectedKey(e.target.value),
           },
-          h(
-            'optgroup',
+                    h(
+                      'optgroup',
             { label: 'Klassementen' },
             CLASSIFICATION_OPTIONS.map((o) => h('option', { key: o.key, value: o.key }, o.label)),
           ),
