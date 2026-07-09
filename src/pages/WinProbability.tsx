@@ -10,6 +10,7 @@ import {
   lastUpdated,
   type Classification,
 } from '../engine/bookmakerEngine'
+import { formFavouritesForClassification, formFavouritesForStage } from '../engine/formEngine'
 import scoringData from '../data/scoring.json'
 import stageResultsData from '../data/stageResults.json'
 
@@ -63,9 +64,15 @@ function pointsTableFor(option: Option): number[] {
   }
 }
 
-function favouritesFor(option: Option) {
+function realFavouritesFor(option: Option) {
   if (option.kind === 'stage' && option.stageNumber != null) return favouritesForStage(option.stageNumber)
   if (option.kind === 'classification' && option.classification) return favouritesForClassification(option.classification)
+  return []
+}
+
+function modelFavouritesFor(option: Option) {
+  if (option.kind === 'stage' && option.stageNumber != null) return formFavouritesForStage(option.stageNumber)
+  if (option.kind === 'classification' && option.classification) return formFavouritesForClassification(option.classification)
   return []
 }
 
@@ -83,16 +90,25 @@ export default function WinProbability() {
   const [selectedKey, setSelectedKey] = useState(defaultOption.key)
   const selected = ALL_OPTIONS.find((o) => o.key === selectedKey) ?? ALL_OPTIONS[0]
 
-  const list = favouritesFor(selected)
+  const realList = realFavouritesFor(selected)
+  const usingRealOdds = realList.length > 0
   const points = pointsTableFor(selected)
 
-  const rows = list.map((f, idx) => ({
-    rank: idx + 1,
-    riderId: f.riderId,
-    rider: riderById.get(f.riderId),
-    weight: f.weight,
-    projectedPoints: points[idx] ?? 0,
-  }))
+  const rows = usingRealOdds
+    ? realList.map((f, idx) => ({
+        rank: idx + 1,
+        riderId: f.riderId,
+        rider: riderById.get(f.riderId),
+        weight: f.weight,
+        projectedPoints: points[idx] ?? 0,
+      }))
+    : modelFavouritesFor(selected).map((f, idx) => ({
+        rank: idx + 1,
+        riderId: f.riderId,
+        rider: riderById.get(f.riderId),
+        weight: f.weight,
+        projectedPoints: Math.round(f.points),
+      }))
 
   const headerCell = (label: string) =>
     h('th', { key: label, className: 'px-3 py-2 text-left text-xs font-semibold uppercase text-muted' }, label)
@@ -118,10 +134,10 @@ export default function WinProbability() {
             id: 'winprob-select',
             className: 'mt-1 w-full rounded-lg border border-border bg-background px-3 py-2 text-sm',
             value: selectedKey,
-        onChange: (e: { target: { value: string } }) => setSelectedKey(e.target.value),
+            onChange: (e: { target: { value: string } }) => setSelectedKey(e.target.value),
           },
-                    h(
-                      'optgroup',
+          h(
+            'optgroup',
             { label: 'Klassementen' },
             CLASSIFICATION_OPTIONS.map((o) => h('option', { key: o.key, value: o.key }, o.label)),
           ),
@@ -135,20 +151,22 @@ export default function WinProbability() {
       h(
         'div',
         { className: 'mt-3 text-sm text-muted' },
-        'Bron: bookmaker-odds (implied probability). Laatst bijgewerkt: ' + (lastUpdated() ?? snapshotDate()),
+        usingRealOdds
+          ? 'Bron: bookmaker-odds (implied probability). Laatst bijgewerkt: ' + (lastUpdated() ?? snapshotDate())
+          : 'Bron: model op basis van prijs, rol en tot-nu-toe behaalde resultaten (geen actuele bookmaker-odds beschikbaar voor deze selectie).',
       ),
-      h('div', { className: 'mt-2 text-xs text-muted' }, snapshotNote()),
+      usingRealOdds ? h('div', { className: 'mt-2 text-xs text-muted' }, snapshotNote()) : null,
       h(
         'div',
         { className: 'mt-2 text-xs text-muted' },
-        'Let op: dit zijn kansen zoals ingeprijsd door bookmakers, geen garanties. De kolom "Verwachte punten" toont de Scorito-punten die bij deze rangorde horen, als de renner exact op deze marktpositie zou eindigen.',
+        'Let op: dit zijn kansindicaties (bookmaker-odds of statistisch model), geen garanties. De kolom "Verwachte punten" toont een schatting van de Scorito-punten bij dit scenario.',
       ),
     ),
     rows.length === 0
       ? h(
           'div',
           { className: 'rounded-xl border border-border bg-card p-5 text-sm text-muted' },
-          'Nog geen odds-data beschikbaar voor deze selectie.',
+          'Nog geen data beschikbaar voor deze selectie.',
         )
       : h(
           'div',
