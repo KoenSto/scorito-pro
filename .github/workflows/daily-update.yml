@@ -1,0 +1,50 @@
+name: Daily data update
+
+# Haalt elke ochtend automatisch etappe-uitslagen (letour.fr) en
+# bookmaker-odds (oddschecker.com) op en commit ze naar de repo.
+# Kan ook handmatig gestart worden via 'Run workflow' in de Actions tab.
+#
+# Vereist: Settings > Actions > General > Workflow permissions =
+# 'Read and write permissions', zodat deze workflow mag committen/pushen.
+
+on:
+  schedule:
+    # 06:00 CEST (Nederlandse zomertijd, van toepassing tijdens de Tour
+    # in juli) = 04:00 UTC. Pas dit aan als je liever een andere tijd wil.
+    - cron: '0 4 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch stage results (letour.fr)
+        run: node scripts/fetchStageResults.mjs
+        continue-on-error: true
+
+      - name: Fetch bookmaker odds (oddschecker.com)
+        run: node scripts/fetchBookmakerOdds.mjs
+        continue-on-error: true
+
+      - name: Commit changes if any
+        run: |
+          git config user.name "scorito-pro-bot"
+          git config user.email "actions@github.com"
+          git add src/data/stageResults.json src/data/bookmakerOdds.json
+          if git diff --cached --quiet; then
+            echo "Geen wijzigingen om te committen."
+          else
+            git commit -m "Automatische dagelijkse update: uitslagen en bookmaker-odds"
+            git push
+          fi
