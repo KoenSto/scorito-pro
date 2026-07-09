@@ -40,7 +40,7 @@ export interface FormWeight {
   points: number
 }
 
-const MAX_ROWS = 8
+const MAX_ROWS = 50
 
 function normalize(scored: { riderId: number; pWin: number; points: number }[]): FormWeight[] {
   const sum = scored.reduce((s, x) => s + x.pWin, 0)
