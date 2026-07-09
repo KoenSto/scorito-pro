@@ -39,6 +39,7 @@ export function snapshotNote(): string {
 
 export function lastUpdated(): string | null {
     return odds.meta.lastUpdated ?? null
+}
 
 // Ordered favourites (highest weight first) for a classification.
 export function favouritesForClassification(c: Classification): FavouriteWeight[] {
