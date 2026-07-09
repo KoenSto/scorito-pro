@@ -22,9 +22,8 @@ const MARKET_BOOST = 0.08
 const NO_DATA_FACTOR = 0.85
 
 type StageTypeKey = 'Vlak' | 'Heuvel' | 'Berg' | 'Tijdrit' | 'Ploegentijdrit'
-type DisciplineKey = 'gc' | 'sprint' | 'climber' | 'oneday' | 'timetrial'
-type ClassKey = 'algemeen' | 'punten' | 'berg' | 'jongeren'
-
+export type DisciplineKey = 'gc' | 'sprint' | 'climber' | 'oneday' | 'timetrial'
+export type ClassKey = 'algemeen' | 'punten' | 'berg' | 'jongeren'
 /** Kans dat een renner van een bepaalde rol meestrijdt om de dagzege per etappetype. */
 const stageFit: Record<RiderRole, Record<StageTypeKey, number>> = {
   Sprint:   { Vlak: 1,    Heuvel: 0.55, Berg: 0.05, Tijdrit: 0.1, Ploegentijdrit: 0 },
@@ -45,8 +44,8 @@ const typeDiscipline: Record<StageTypeKey, DisciplineKey> = {
 }
 
 /** Welk PCS-specialisme telt voor elk dagklassement / eindklassement. */
-const classDiscipline: Record<ClassKey, DisciplineKey> = {
-  algemeen: 'gc',
+export const classDiscipline: Record<ClassKey, DisciplineKey> = {
+    algemeen: 'gc',
   punten: 'sprint',
   berg: 'climber',
   jongeren: 'gc',
@@ -71,8 +70,8 @@ const dailyRoleFit: Record<RiderRole, { algemeen: number; punten: number; berg: 
 }
 
 /** Bijdrage van elke rol aan de EINDklassementen. */
-const finalFit: Record<RiderRole, { algemeen: number; punten: number; berg: number; jongeren: number }> = {
-  GC:       { algemeen: 1,    punten: 0.15, berg: 0.35, jongeren: 0.4 },
+export const finalFit: Record<RiderRole, { algemeen: number; punten: number; berg: number; jongeren: number }> = {
+    GC:       { algemeen: 1,    punten: 0.15, berg: 0.35, jongeren: 0.4 },
   Klimmer:  { algemeen: 0.4,  punten: 0.1,  berg: 1,    jongeren: 0.3 },
   Sprint:   { algemeen: 0,    punten: 1,    berg: 0,    jongeren: 0.25 },
   Klassiek: { algemeen: 0.15, punten: 0.6,  berg: 0.2,  jongeren: 0.25 },
@@ -100,9 +99,9 @@ const STAGE_TABLE = scoring.stageResult as number[]
  * bescheiden. We blenden prijs met de genormaliseerde specialisme-punten en
  * geven favorieten van de bookmakers een lichte boost.
  */
-function disciplineQuality(rider: Rider, disc: DisciplineKey): number {
-  const priceQ = Math.min(1, rider.price / MAX_PRICE)
-  const entry = statsById[String(rider.id)]
+export function disciplineQuality(rider: Rider, disc: DisciplineKey): number {
+    const priceQ = Math.min(1, rider.price / MAX_PRICE)
+      const entry = statsById[String(rider.id)]
   const discPoints = entry?.disciplines?.[disc]?.points
   const discMax = statsMeta?.disciplineMaxPoints?.[disc]
   const floor = priceQ * NO_DATA_FACTOR
@@ -126,8 +125,8 @@ export interface StageProjection {
  * dagzege, top-10 en top-20, plus de verwachte etappepunten uit de echte
  * Scorito-uitslagtabel.
  */
-function project(contention: number, table: number[]): StageProjection {
-  const c = Math.min(1, Math.max(0, contention))
+export function project(contention: number, table: number[]): StageProjection {
+    const c = Math.min(1, Math.max(0, contention))
   const n = table.length
   if (c <= 0 || n === 0) return { pWin: 0, pTop10: 0, pTop20: 0, points: 0 }
 
