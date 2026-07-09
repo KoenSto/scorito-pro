@@ -1,8 +1,600 @@
 {
-    "meta": {
-          "source": "https://www.letour.fr/en/rankings en https://www.letour.fr/en/withdrawal",
-          "lastUpdated": null,
-          "note": "Automatisch bijgewerkt door .github/workflows/daily-update.yml (scripts/fetchStageResults.mjs). Bevat per etappe de uitslag (etappe-, algemeen-, punten-, berg- en jongerenklassement) en uitvallers/niet-gestarte renners."
+  "meta": {
+    "source": "https://www.letour.fr/en/rankings en https://www.letour.fr/en/withdrawal",
+    "lastUpdated": "2026-07-09T13:50:09.516Z",
+    "note": "Automatisch bijgewerkt door .github/workflows/daily-update.yml (scripts/fetchStageResults.mjs). Bevat per etappe de uitslag (etappe-, algemeen-, punten-, berg- en jongerenklassement) en uitvallers/niet-gestarte renners."
+  },
+  "stages": [
+    {
+      "stageNumber": 1,
+      "date": "2026-07-04",
+      "stageTop": [
+        {
+          "rank": 1,
+          "riderId": 2,
+          "name": "Jonas Vingegaard",
+          "team": "Team Visma | Lease a Bike",
+          "gap": "-"
+        },
+        {
+          "rank": 2,
+          "riderId": 42,
+          "name": "Filippo Ganna",
+          "team": "INEOS Grenadiers",
+          "gap": "-"
+        },
+        {
+          "rank": 3,
+          "riderId": 1,
+          "name": "Tadej Pogačar",
+          "team": "UAE Team Emirates - XRG",
+          "gap": "-"
+        },
+        {
+          "rank": 4,
+          "riderId": 8,
+          "name": "Juan Ayuso",
+          "team": "Lidl - Trek",
+          "gap": "-"
+        },
+        {
+          "rank": 5,
+          "riderId": 9,
+          "name": "Remco Evenepoel",
+          "team": "Red Bull - BORA - hansgrohe",
+          "gap": "-"
+        },
+        {
+          "rank": 6,
+          "riderId": 3,
+          "name": "Isaac del Toro",
+          "team": "UAE Team Emirates - XRG",
+          "gap": "-"
+        },
+        {
+          "rank": 7,
+          "riderId": 36,
+          "name": "Davide Piganzoli",
+          "team": "Team Visma | Lease a Bike",
+          "gap": "-"
+        },
+        {
+          "rank": 8,
+          "riderId": 7,
+          "name": "Florian Lipowitz",
+          "team": "Red Bull - BORA - hansgrohe",
+          "gap": "-"
+        },
+        {
+          "rank": 9,
+          "riderId": 179,
+          "name": "Tobias Foss",
+          "team": "INEOS Grenadiers",
+          "gap": "-"
+        },
+        {
+          "rank": 10,
+          "riderId": 4,
+          "name": "Paul Seixas",
+          "team": "Decathlon CMA CGM Team",
+          "gap": "-"
+        }
+      ],
+      "gcTop": [],
+      "pointsTop": [],
+      "mountainsTop": [],
+      "youthTop": [],
+      "withdrawals": []
     },
-    "stages": []
+    {
+      "stageNumber": 2,
+      "date": "2026-07-05",
+      "stageTop": [
+        {
+          "rank": 1,
+          "riderId": 3,
+          "name": "Isaac del Toro",
+          "team": "UAE Team Emirates - XRG",
+          "gap": "-"
+        },
+        {
+          "rank": 2,
+          "riderId": 1,
+          "name": "Tadej Pogačar",
+          "team": "UAE Team Emirates - XRG",
+          "gap": "-"
+        },
+        {
+          "rank": 3,
+          "riderId": 9,
+          "name": "Remco Evenepoel",
+          "team": "Red Bull - BORA - hansgrohe",
+          "gap": "-"
+        },
+        {
+          "rank": 4,
+          "riderId": 2,
+          "name": "Jonas Vingegaard",
+          "team": "Team Visma | Lease a Bike",
+          "gap": "-"
+        },
+        {
+          "rank": 5,
+          "riderId": 43,
+          "name": "Mattias Skjelmose",
+          "team": "Lidl - Trek",
+          "gap": "-"
+        },
+        {
+          "rank": 6,
+          "riderId": null,
+          "name": "&nbsp; T. JOHANNESSEN",
+          "team": "UNO-X MOBILITY",
+          "gap": "-"
+        },
+        {
+          "rank": 7,
+          "riderId": 57,
+          "name": "Romain Grégoire",
+          "team": "Groupama - FDJ United",
+          "gap": "-"
+        },
+        {
+          "rank": 8,
+          "riderId": 28,
+          "name": "Lenny Martinez",
+          "team": "Bahrain Victorious",
+          "gap": "-"
+        },
+        {
+          "rank": 9,
+          "riderId": 4,
+          "name": "Paul Seixas",
+          "team": "Decathlon CMA CGM Team",
+          "gap": "-"
+        },
+        {
+          "rank": 10,
+          "riderId": 20,
+          "name": "Thomas Pidcock",
+          "team": "Pinarello-Q36.5 Pro Cycling Team",
+          "gap": "-"
+        }
+      ],
+      "gcTop": [],
+      "pointsTop": [],
+      "mountainsTop": [],
+      "youthTop": [],
+      "withdrawals": [
+        {
+          "bib": 182,
+          "riderId": 165,
+          "name": "Clément Berthet",
+          "team": "Groupama - FDJ United",
+          "status": "DNS"
+        }
+      ]
+    },
+    {
+      "stageNumber": 3,
+      "date": "2026-07-06",
+      "stageTop": [
+        {
+          "rank": 1,
+          "riderId": 1,
+          "name": "Tadej Pogačar",
+          "team": "UAE Team Emirates - XRG",
+          "gap": "-"
+        },
+        {
+          "rank": 2,
+          "riderId": 2,
+          "name": "Jonas Vingegaard",
+          "team": "Team Visma | Lease a Bike",
+          "gap": "-"
+        },
+        {
+          "rank": 3,
+          "riderId": 23,
+          "name": "Richard Carapaz",
+          "team": "EF Education - EasyPost",
+          "gap": "-"
+        },
+        {
+          "rank": 4,
+          "riderId": 4,
+          "name": "Paul Seixas",
+          "team": "Decathlon CMA CGM Team",
+          "gap": "-"
+        },
+        {
+          "rank": 5,
+          "riderId": null,
+          "name": "&nbsp; T. JOHANNESSEN",
+          "team": "UNO-X MOBILITY",
+          "gap": "-"
+        },
+        {
+          "rank": 6,
+          "riderId": 69,
+          "name": "Lennert Van Eetvelt",
+          "team": "Lotto Intermarché",
+          "gap": "-"
+        },
+        {
+          "rank": 7,
+          "riderId": 7,
+          "name": "Florian Lipowitz",
+          "team": "Red Bull - BORA - hansgrohe",
+          "gap": "-"
+        },
+        {
+          "rank": 8,
+          "riderId": 9,
+          "name": "Remco Evenepoel",
+          "team": "Red Bull - BORA - hansgrohe",
+          "gap": "-"
+        },
+        {
+          "rank": 9,
+          "riderId": 3,
+          "name": "Isaac del Toro",
+          "team": "UAE Team Emirates - XRG",
+          "gap": "-"
+        },
+        {
+          "rank": 10,
+          "riderId": 8,
+          "name": "Juan Ayuso",
+          "team": "Lidl - Trek",
+          "gap": "-"
+        }
+      ],
+      "gcTop": [],
+      "pointsTop": [],
+      "mountainsTop": [],
+      "youthTop": [],
+      "withdrawals": [
+        {
+          "bib": 151,
+          "riderId": 24,
+          "name": "Arnaud De Lie",
+          "team": "Lotto Intermarché",
+          "status": "withdrawal"
+        }
+      ]
+    },
+    {
+      "stageNumber": 4,
+      "date": "2026-07-07",
+      "stageTop": [
+        {
+          "rank": 1,
+          "riderId": 6,
+          "name": "Mads Pedersen",
+          "team": "Lidl - Trek",
+          "gap": "-"
+        },
+        {
+          "rank": 2,
+          "riderId": 68,
+          "name": "Quinn Simmons",
+          "team": "Lidl - Trek",
+          "gap": "-"
+        },
+        {
+          "rank": 3,
+          "riderId": null,
+          "name": "&nbsp; R. GARCIA",
+          "team": "MOVISTAR TEAM",
+          "gap": "-"
+        },
+        {
+          "rank": 4,
+          "riderId": 110,
+          "name": "Marco Frigo",
+          "team": "NSN Cycling Team",
+          "gap": "-"
+        },
+        {
+          "rank": 5,
+          "riderId": 152,
+          "name": "Ramses Debruyne",
+          "team": "Alpecin-Premier Tech",
+          "gap": "-"
+        },
+        {
+          "rank": 6,
+          "riderId": 15,
+          "name": "Kévin Vauquelin",
+          "team": "INEOS Grenadiers",
+          "gap": "-"
+        },
+        {
+          "rank": 7,
+          "riderId": 169,
+          "name": "Sean Quinn",
+          "team": "EF Education - EasyPost",
+          "gap": "-"
+        },
+        {
+          "rank": 8,
+          "riderId": 106,
+          "name": "Torstein Træen",
+          "team": "Uno-X Mobility",
+          "gap": "-"
+        },
+        {
+          "rank": 9,
+          "riderId": 72,
+          "name": "Pablo Castrillo",
+          "team": "Movistar Team",
+          "gap": "-"
+        },
+        {
+          "rank": 10,
+          "riderId": 67,
+          "name": "Mathias Vacek",
+          "team": "Lidl - Trek",
+          "gap": "-"
+        }
+      ],
+      "gcTop": [],
+      "pointsTop": [],
+      "mountainsTop": [],
+      "youthTop": [],
+      "withdrawals": [
+        {
+          "bib": 116,
+          "riderId": 116,
+          "name": "Kelland O'Brien",
+          "team": "Team Jayco AlUla",
+          "status": "outside the time limit"
+        }
+      ]
+    },
+    {
+      "stageNumber": 5,
+      "date": "2026-07-08",
+      "stageTop": [
+        {
+          "rank": 1,
+          "riderId": 12,
+          "name": "Olav Kooij",
+          "team": "Decathlon CMA CGM Team",
+          "gap": "-"
+        },
+        {
+          "rank": 2,
+          "riderId": 38,
+          "name": "Max Kanter",
+          "team": "XDS Astana Team",
+          "gap": "-"
+        },
+        {
+          "rank": 3,
+          "riderId": 10,
+          "name": "Tim Merlier",
+          "team": "Soudal Quick-Step",
+          "gap": "-"
+        },
+        {
+          "rank": 4,
+          "riderId": 159,
+          "name": "Huub Artz",
+          "team": "Lotto Intermarché",
+          "gap": "-"
+        },
+        {
+          "rank": 5,
+          "riderId": 5,
+          "name": "Jasper Philipsen",
+          "team": "Alpecin-Premier Tech",
+          "gap": "-"
+        },
+        {
+          "rank": 6,
+          "riderId": 16,
+          "name": "Biniam Girmay",
+          "team": "NSN Cycling Team",
+          "gap": "-"
+        },
+        {
+          "rank": 7,
+          "riderId": 6,
+          "name": "Mads Pedersen",
+          "team": "Lidl - Trek",
+          "gap": "-"
+        },
+        {
+          "rank": 8,
+          "riderId": 26,
+          "name": "Milan Fretin",
+          "team": "Cofidis",
+          "gap": "-"
+        },
+        {
+          "rank": 9,
+          "riderId": 135,
+          "name": "Anthony Turgis",
+          "team": "TotalEnergies",
+          "gap": "-"
+        },
+        {
+          "rank": 10,
+          "riderId": null,
+          "name": "&nbsp; S. WAERENSKJOLD",
+          "team": "UNO-X MOBILITY",
+          "gap": "-"
+        }
+      ],
+      "gcTop": [],
+      "pointsTop": [],
+      "mountainsTop": [],
+      "youthTop": [],
+      "withdrawals": []
+    },
+    {
+      "stageNumber": 22,
+      "date": "2026-07-25",
+      "stageTop": [
+        {
+          "rank": 1,
+          "riderId": null,
+          "name": "&nbsp; M. GARIN",
+          "team": "TDF 1903 ***",
+          "gap": "-"
+        },
+        {
+          "rank": 2,
+          "riderId": null,
+          "name": "&nbsp; E. PAGIE",
+          "team": "TDF 1903 ***",
+          "gap": "-"
+        },
+        {
+          "rank": 3,
+          "riderId": null,
+          "name": "&nbsp; L. GEORGET",
+          "team": "TDF 1903 ***",
+          "gap": "-"
+        },
+        {
+          "rank": 4,
+          "riderId": null,
+          "name": "&nbsp; F. AUGEREAU",
+          "team": "TDF 1903 ***",
+          "gap": "-"
+        },
+        {
+          "rank": 5,
+          "riderId": null,
+          "name": "&nbsp; J-B. FISCHER",
+          "team": "TDF 1903 ***",
+          "gap": "-"
+        },
+        {
+          "rank": 6,
+          "riderId": null,
+          "name": "&nbsp; M. KERFF",
+          "team": "TDF 1903 ***",
+          "gap": "-"
+        },
+        {
+          "rank": 7,
+          "riderId": null,
+          "name": "&nbsp; A. CATTEAU",
+          "team": "TDF 1903 ***",
+          "gap": "-"
+        },
+        {
+          "rank": 8,
+          "riderId": null,
+          "name": "&nbsp; E. PIVIN",
+          "team": "TDF 1903 ***",
+          "gap": "-"
+        },
+        {
+          "rank": 9,
+          "riderId": null,
+          "name": "&nbsp; L. HABETS",
+          "team": "TDF 1903 ***",
+          "gap": "-"
+        },
+        {
+          "rank": 10,
+          "riderId": null,
+          "name": "&nbsp; F. BEAUGENDRE",
+          "team": "TDF 1903 ***",
+          "gap": "-"
+        }
+      ],
+      "gcTop": [],
+      "pointsTop": [],
+      "mountainsTop": [],
+      "youthTop": [],
+      "withdrawals": []
+    },
+    {
+      "stageNumber": 23,
+      "date": "2026-07-26",
+      "stageTop": [
+        {
+          "rank": 1,
+          "riderId": null,
+          "name": "&nbsp; M. GARIN",
+          "team": "TDF 1903 ***",
+          "gap": "-"
+        },
+        {
+          "rank": 2,
+          "riderId": null,
+          "name": "&nbsp; E. PAGIE",
+          "team": "TDF 1903 ***",
+          "gap": "-"
+        },
+        {
+          "rank": 3,
+          "riderId": null,
+          "name": "&nbsp; L. GEORGET",
+          "team": "TDF 1903 ***",
+          "gap": "-"
+        },
+        {
+          "rank": 4,
+          "riderId": null,
+          "name": "&nbsp; F. AUGEREAU",
+          "team": "TDF 1903 ***",
+          "gap": "-"
+        },
+        {
+          "rank": 5,
+          "riderId": null,
+          "name": "&nbsp; J-B. FISCHER",
+          "team": "TDF 1903 ***",
+          "gap": "-"
+        },
+        {
+          "rank": 6,
+          "riderId": null,
+          "name": "&nbsp; M. KERFF",
+          "team": "TDF 1903 ***",
+          "gap": "-"
+        },
+        {
+          "rank": 7,
+          "riderId": null,
+          "name": "&nbsp; A. CATTEAU",
+          "team": "TDF 1903 ***",
+          "gap": "-"
+        },
+        {
+          "rank": 8,
+          "riderId": null,
+          "name": "&nbsp; E. PIVIN",
+          "team": "TDF 1903 ***",
+          "gap": "-"
+        },
+        {
+          "rank": 9,
+          "riderId": null,
+          "name": "&nbsp; L. HABETS",
+          "team": "TDF 1903 ***",
+          "gap": "-"
+        },
+        {
+          "rank": 10,
+          "riderId": null,
+          "name": "&nbsp; F. BEAUGENDRE",
+          "team": "TDF 1903 ***",
+          "gap": "-"
+        }
+      ],
+      "gcTop": [],
+      "pointsTop": [],
+      "mountainsTop": [],
+      "youthTop": [],
+      "withdrawals": []
+    }
+  ]
 }
