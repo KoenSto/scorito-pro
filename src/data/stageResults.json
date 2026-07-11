@@ -1,7 +1,7 @@
 {
   "meta": {
     "source": "https://www.letour.fr/en/rankings en https://www.letour.fr/en/withdrawal",
-    "lastUpdated": "2026-07-10T12:38:55.931Z",
+    "lastUpdated": "2026-07-11T09:10:57.182Z",
     "note": "Automatisch bijgewerkt door .github/workflows/daily-update.yml (scripts/fetchStageResults.mjs). Bevat per etappe de uitslag (etappe-, algemeen-, punten-, berg- en jongerenklassement) en uitvallers/niet-gestarte renners."
   },
   "stages": [
@@ -540,6 +540,95 @@
           "riderId": 95,
           "name": "Alex Molenaar",
           "team": "Caja Rural - Seguros RGA",
+          "status": "DNS"
+        }
+      ]
+    },
+    {
+      "stageNumber": 7,
+      "date": "2026-07-10",
+      "stageTop": [
+        {
+          "rank": 1,
+          "riderId": 10,
+          "name": "Tim Merlier",
+          "team": "Soudal Quick-Step",
+          "gap": "-"
+        },
+        {
+          "rank": 2,
+          "riderId": null,
+          "name": "&nbsp; S. WAERENSKJOLD",
+          "team": "UNO-X MOBILITY",
+          "gap": "-"
+        },
+        {
+          "rank": 3,
+          "riderId": 16,
+          "name": "Biniam Girmay",
+          "team": "NSN Cycling Team",
+          "gap": "-"
+        },
+        {
+          "rank": 4,
+          "riderId": 38,
+          "name": "Max Kanter",
+          "team": "XDS Astana Team",
+          "gap": "-"
+        },
+        {
+          "rank": 5,
+          "riderId": 5,
+          "name": "Jasper Philipsen",
+          "team": "Alpecin-Premier Tech",
+          "gap": "-"
+        },
+        {
+          "rank": 6,
+          "riderId": 41,
+          "name": "Phil Bauhaus",
+          "team": "Bahrain Victorious",
+          "gap": "-"
+        },
+        {
+          "rank": 7,
+          "riderId": 159,
+          "name": "Huub Artz",
+          "team": "Lotto Intermarché",
+          "gap": "-"
+        },
+        {
+          "rank": 8,
+          "riderId": 30,
+          "name": "Dorian Godon",
+          "team": "INEOS Grenadiers",
+          "gap": "-"
+        },
+        {
+          "rank": 9,
+          "riderId": 6,
+          "name": "Mads Pedersen",
+          "team": "Lidl - Trek",
+          "gap": "-"
+        },
+        {
+          "rank": 10,
+          "riderId": 113,
+          "name": "Tom Van Asbroeck",
+          "team": "NSN Cycling Team",
+          "gap": "-"
+        }
+      ],
+      "gcTop": [],
+      "pointsTop": [],
+      "mountainsTop": [],
+      "youthTop": [],
+      "withdrawals": [
+        {
+          "bib": 127,
+          "riderId": 106,
+          "name": "Torstein Træen",
+          "team": "Uno-X Mobility",
           "status": "DNS"
         }
       ]
