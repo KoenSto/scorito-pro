@@ -1,7 +1,7 @@
 {
   "meta": {
     "source": "https://www.letour.fr/en/rankings en https://www.letour.fr/en/withdrawal",
-    "lastUpdated": "2026-07-11T09:10:57.182Z",
+    "lastUpdated": "2026-07-12T10:13:18.137Z",
     "note": "Automatisch bijgewerkt door .github/workflows/daily-update.yml (scripts/fetchStageResults.mjs). Bevat per etappe de uitslag (etappe-, algemeen-, punten-, berg- en jongerenklassement) en uitvallers/niet-gestarte renners."
   },
   "stages": [
@@ -632,6 +632,87 @@
           "status": "DNS"
         }
       ]
+    },
+    {
+      "stageNumber": 8,
+      "date": "2026-07-11",
+      "stageTop": [
+        {
+          "rank": 1,
+          "riderId": 10,
+          "name": "Tim Merlier",
+          "team": "Soudal Quick-Step",
+          "gap": "-"
+        },
+        {
+          "rank": 2,
+          "riderId": 16,
+          "name": "Biniam Girmay",
+          "team": "NSN Cycling Team",
+          "gap": "-"
+        },
+        {
+          "rank": 3,
+          "riderId": 12,
+          "name": "Olav Kooij",
+          "team": "Decathlon CMA CGM Team",
+          "gap": "-"
+        },
+        {
+          "rank": 4,
+          "riderId": 5,
+          "name": "Jasper Philipsen",
+          "team": "Alpecin-Premier Tech",
+          "gap": "-"
+        },
+        {
+          "rank": 5,
+          "riderId": 34,
+          "name": "Pavel Bittner",
+          "team": "Team Picnic PostNL",
+          "gap": "-"
+        },
+        {
+          "rank": 6,
+          "riderId": 50,
+          "name": "Rick Pluimers",
+          "team": "Tudor Pro Cycling Team",
+          "gap": "-"
+        },
+        {
+          "rank": 7,
+          "riderId": 33,
+          "name": "Pascal Ackermann",
+          "team": "Team Jayco AlUla",
+          "gap": "-"
+        },
+        {
+          "rank": 8,
+          "riderId": 161,
+          "name": "Clément Russo",
+          "team": "Groupama - FDJ United",
+          "gap": "-"
+        },
+        {
+          "rank": 9,
+          "riderId": 38,
+          "name": "Max Kanter",
+          "team": "XDS Astana Team",
+          "gap": "-"
+        },
+        {
+          "rank": 10,
+          "riderId": 26,
+          "name": "Milan Fretin",
+          "team": "Cofidis",
+          "gap": "-"
+        }
+      ],
+      "gcTop": [],
+      "pointsTop": [],
+      "mountainsTop": [],
+      "youthTop": [],
+      "withdrawals": []
     },
     {
       "stageNumber": 22,
