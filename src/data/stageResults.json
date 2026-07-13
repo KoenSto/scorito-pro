@@ -1,7 +1,7 @@
 {
   "meta": {
     "source": "https://www.letour.fr/en/rankings en https://www.letour.fr/en/withdrawal",
-    "lastUpdated": "2026-07-12T10:13:18.137Z",
+    "lastUpdated": "2026-07-13T12:44:22.366Z",
     "note": "Automatisch bijgewerkt door .github/workflows/daily-update.yml (scripts/fetchStageResults.mjs). Bevat per etappe de uitslag (etappe-, algemeen-, punten-, berg- en jongerenklassement) en uitvallers/niet-gestarte renners."
   },
   "stages": [
@@ -705,6 +705,87 @@
           "riderId": 26,
           "name": "Milan Fretin",
           "team": "Cofidis",
+          "gap": "-"
+        }
+      ],
+      "gcTop": [],
+      "pointsTop": [],
+      "mountainsTop": [],
+      "youthTop": [],
+      "withdrawals": []
+    },
+    {
+      "stageNumber": 9,
+      "date": "2026-07-12",
+      "stageTop": [
+        {
+          "rank": 1,
+          "riderId": 14,
+          "name": "Mathieu van der Poel",
+          "team": "Alpecin-Premier Tech",
+          "gap": "-"
+        },
+        {
+          "rank": 2,
+          "riderId": null,
+          "name": "&nbsp; T. JOHANNESSEN",
+          "team": "UNO-X MOBILITY",
+          "gap": "-"
+        },
+        {
+          "rank": 3,
+          "riderId": 20,
+          "name": "Thomas Pidcock",
+          "team": "Pinarello-Q36.5 Pro Cycling Team",
+          "gap": "-"
+        },
+        {
+          "rank": 4,
+          "riderId": 97,
+          "name": "Alex Baudin",
+          "team": "EF Education - EasyPost",
+          "gap": "-"
+        },
+        {
+          "rank": 5,
+          "riderId": 42,
+          "name": "Filippo Ganna",
+          "team": "INEOS Grenadiers",
+          "gap": "-"
+        },
+        {
+          "rank": 6,
+          "riderId": 6,
+          "name": "Mads Pedersen",
+          "team": "Lidl - Trek",
+          "gap": "-"
+        },
+        {
+          "rank": 7,
+          "riderId": 81,
+          "name": "Michael Matthews",
+          "team": "Team Jayco AlUla",
+          "gap": "-"
+        },
+        {
+          "rank": 8,
+          "riderId": 131,
+          "name": "Nicolas Breuillard",
+          "team": "TotalEnergies",
+          "gap": "-"
+        },
+        {
+          "rank": 9,
+          "riderId": 51,
+          "name": "Jordan Jegat",
+          "team": "TotalEnergies",
+          "gap": "-"
+        },
+        {
+          "rank": 10,
+          "riderId": 169,
+          "name": "Sean Quinn",
+          "team": "EF Education - EasyPost",
           "gap": "-"
         }
       ],
