@@ -1,7 +1,7 @@
 {
   "meta": {
     "source": "https://www.letour.fr/en/rankings en https://www.letour.fr/en/withdrawal",
-    "lastUpdated": "2026-07-14T10:23:58.003Z",
+    "lastUpdated": "2026-07-15T10:30:16.065Z",
     "note": "Automatisch bijgewerkt door .github/workflows/daily-update.yml (scripts/fetchStageResults.mjs). Bevat per etappe de uitslag (etappe-, algemeen-, punten-, berg- en jongerenklassement) en uitvallers/niet-gestarte renners."
   },
   "stages": [
@@ -794,6 +794,95 @@
       "mountainsTop": [],
       "youthTop": [],
       "withdrawals": []
+    },
+    {
+      "stageNumber": 10,
+      "date": "2026-07-13",
+      "stageTop": [
+        {
+          "rank": 1,
+          "riderId": 1,
+          "name": "Tadej Pogačar",
+          "team": "UAE Team Emirates - XRG",
+          "gap": "-"
+        },
+        {
+          "rank": 2,
+          "riderId": 9,
+          "name": "Remco Evenepoel",
+          "team": "Red Bull - BORA - hansgrohe",
+          "gap": "-"
+        },
+        {
+          "rank": 3,
+          "riderId": 4,
+          "name": "Paul Seixas",
+          "team": "Decathlon CMA CGM Team",
+          "gap": "-"
+        },
+        {
+          "rank": 4,
+          "riderId": 7,
+          "name": "Florian Lipowitz",
+          "team": "Red Bull - BORA - hansgrohe",
+          "gap": "-"
+        },
+        {
+          "rank": 5,
+          "riderId": 8,
+          "name": "Juan Ayuso",
+          "team": "Lidl - Trek",
+          "gap": "-"
+        },
+        {
+          "rank": 6,
+          "riderId": 43,
+          "name": "Mattias Skjelmose",
+          "team": "Lidl - Trek",
+          "gap": "-"
+        },
+        {
+          "rank": 7,
+          "riderId": 2,
+          "name": "Jonas Vingegaard",
+          "team": "Team Visma | Lease a Bike",
+          "gap": "-"
+        },
+        {
+          "rank": 8,
+          "riderId": 3,
+          "name": "Isaac del Toro",
+          "team": "UAE Team Emirates - XRG",
+          "gap": "-"
+        },
+        {
+          "rank": 9,
+          "riderId": 20,
+          "name": "Thomas Pidcock",
+          "team": "Pinarello-Q36.5 Pro Cycling Team",
+          "gap": "-"
+        },
+        {
+          "rank": 10,
+          "riderId": 28,
+          "name": "Lenny Martinez",
+          "team": "Bahrain Victorious",
+          "gap": "-"
+        }
+      ],
+      "gcTop": [],
+      "pointsTop": [],
+      "mountainsTop": [],
+      "youthTop": [],
+      "withdrawals": [
+        {
+          "bib": 197,
+          "riderId": 49,
+          "name": "Matteo Trentin",
+          "team": "Tudor Pro Cycling Team",
+          "status": "DNS"
+        }
+      ]
     },
     {
       "stageNumber": 22,
