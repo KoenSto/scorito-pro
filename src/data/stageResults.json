@@ -1,7 +1,7 @@
 {
   "meta": {
     "source": "https://www.letour.fr/en/rankings en https://www.letour.fr/en/withdrawal",
-    "lastUpdated": "2026-07-15T10:30:16.065Z",
+    "lastUpdated": "2026-07-16T11:14:12.547Z",
     "note": "Automatisch bijgewerkt door .github/workflows/daily-update.yml (scripts/fetchStageResults.mjs). Bevat per etappe de uitslag (etappe-, algemeen-, punten-, berg- en jongerenklassement) en uitvallers/niet-gestarte renners."
   },
   "stages": [
@@ -880,6 +880,95 @@
           "riderId": 49,
           "name": "Matteo Trentin",
           "team": "Tudor Pro Cycling Team",
+          "status": "DNS"
+        }
+      ]
+    },
+    {
+      "stageNumber": 11,
+      "date": "2026-07-14",
+      "stageTop": [
+        {
+          "rank": 1,
+          "riderId": null,
+          "name": "&nbsp; S. WAERENSKJOLD",
+          "team": "UNO-X MOBILITY",
+          "gap": "-"
+        },
+        {
+          "rank": 2,
+          "riderId": 12,
+          "name": "Olav Kooij",
+          "team": "Decathlon CMA CGM Team",
+          "gap": "-"
+        },
+        {
+          "rank": 3,
+          "riderId": 5,
+          "name": "Jasper Philipsen",
+          "team": "Alpecin-Premier Tech",
+          "gap": "-"
+        },
+        {
+          "rank": 4,
+          "riderId": 26,
+          "name": "Milan Fretin",
+          "team": "Cofidis",
+          "gap": "-"
+        },
+        {
+          "rank": 5,
+          "riderId": 159,
+          "name": "Huub Artz",
+          "team": "Lotto Intermarché",
+          "gap": "-"
+        },
+        {
+          "rank": 6,
+          "riderId": 16,
+          "name": "Biniam Girmay",
+          "team": "NSN Cycling Team",
+          "gap": "-"
+        },
+        {
+          "rank": 7,
+          "riderId": 135,
+          "name": "Anthony Turgis",
+          "team": "TotalEnergies",
+          "gap": "-"
+        },
+        {
+          "rank": 8,
+          "riderId": 161,
+          "name": "Clément Russo",
+          "team": "Groupama - FDJ United",
+          "gap": "-"
+        },
+        {
+          "rank": 9,
+          "riderId": 39,
+          "name": "Fernando Gaviria",
+          "team": "Caja Rural - Seguros RGA",
+          "gap": "-"
+        },
+        {
+          "rank": 10,
+          "riderId": 33,
+          "name": "Pascal Ackermann",
+          "team": "Team Jayco AlUla",
+          "gap": "-"
+        }
+      ],
+      "gcTop": [],
+      "pointsTop": [],
+      "mountainsTop": [],
+      "youthTop": [],
+      "withdrawals": [
+        {
+          "bib": 173,
+          "riderId": 182,
+          "name": "Chris Harper",
+          "team": "Pinarello-Q36.5 Pro Cycling Team",
           "status": "DNS"
         }
       ]
