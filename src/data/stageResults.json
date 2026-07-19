@@ -1,7 +1,7 @@
 {
   "meta": {
     "source": "https://www.letour.fr/en/rankings en https://www.letour.fr/en/withdrawal",
-    "lastUpdated": "2026-07-18T09:11:41.326Z",
+    "lastUpdated": "2026-07-19T10:06:56.135Z",
     "note": "Automatisch bijgewerkt door .github/workflows/daily-update.yml (scripts/fetchStageResults.mjs). Bevat per etappe de uitslag (etappe-, algemeen-, punten-, berg- en jongerenklassement) en uitvallers/niet-gestarte renners."
   },
   "stages": [
@@ -1154,6 +1154,102 @@
           "name": "Fernando Gaviria",
           "team": "Caja Rural - Seguros RGA",
           "status": "DNS"
+        }
+      ]
+    },
+    {
+      "stageNumber": 14,
+      "date": "2026-07-17",
+      "stageTop": [
+        {
+          "rank": 1,
+          "riderId": 1,
+          "name": "Tadej Pogačar",
+          "team": "UAE Team Emirates - XRG",
+          "gap": "-"
+        },
+        {
+          "rank": 2,
+          "riderId": 3,
+          "name": "Isaac del Toro",
+          "team": "UAE Team Emirates - XRG",
+          "gap": "-"
+        },
+        {
+          "rank": 3,
+          "riderId": 4,
+          "name": "Paul Seixas",
+          "team": "Decathlon CMA CGM Team",
+          "gap": "-"
+        },
+        {
+          "rank": 4,
+          "riderId": 2,
+          "name": "Jonas Vingegaard",
+          "team": "Team Visma | Lease a Bike",
+          "gap": "-"
+        },
+        {
+          "rank": 5,
+          "riderId": 9,
+          "name": "Remco Evenepoel",
+          "team": "Red Bull - BORA - hansgrohe",
+          "gap": "-"
+        },
+        {
+          "rank": 6,
+          "riderId": 8,
+          "name": "Juan Ayuso",
+          "team": "Lidl - Trek",
+          "gap": "-"
+        },
+        {
+          "rank": 7,
+          "riderId": 7,
+          "name": "Florian Lipowitz",
+          "team": "Red Bull - BORA - hansgrohe",
+          "gap": "-"
+        },
+        {
+          "rank": 8,
+          "riderId": 23,
+          "name": "Richard Carapaz",
+          "team": "EF Education - EasyPost",
+          "gap": "-"
+        },
+        {
+          "rank": 9,
+          "riderId": null,
+          "name": "&nbsp; T. JOHANNESSEN",
+          "team": "UNO-X MOBILITY",
+          "gap": "-"
+        },
+        {
+          "rank": 10,
+          "riderId": 43,
+          "name": "Mattias Skjelmose",
+          "team": "Lidl - Trek",
+          "gap": "-"
+        }
+      ],
+      "gcTop": [],
+      "pointsTop": [],
+      "mountainsTop": [],
+      "youthTop": [],
+      "withdrawals": [
+        {
+          "bib": 102,
+          "riderId": 152,
+          "name": "Ramses Debruyne",
+          "team": "Alpecin-Premier Tech",
+          "status": "DNS"
+        },
+        {
+          "bib": 123,
+          "riderId": 104,
+          "name": "Anthon Charmig",
+          "team": "Uno-X Mobility",
+          "status": "outside the time limit"
         }
       ]
     },
