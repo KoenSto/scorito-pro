@@ -1,7 +1,7 @@
 {
   "meta": {
     "source": "https://www.letour.fr/en/rankings en https://www.letour.fr/en/withdrawal",
-    "lastUpdated": "2026-07-20T12:26:17.454Z",
+    "lastUpdated": "2026-07-21T11:21:21.951Z",
     "note": "Automatisch bijgewerkt door .github/workflows/daily-update.yml (scripts/fetchStageResults.mjs). Bevat per etappe de uitslag (etappe-, algemeen-, punten-, berg- en jongerenklassement) en uitvallers/niet-gestarte renners."
   },
   "stages": [
