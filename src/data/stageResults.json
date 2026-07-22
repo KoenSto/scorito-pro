@@ -1,7 +1,7 @@
 {
   "meta": {
     "source": "https://www.letour.fr/en/rankings en https://www.letour.fr/en/withdrawal",
-    "lastUpdated": "2026-07-21T11:21:21.951Z",
+    "lastUpdated": "2026-07-22T11:24:41.506Z",
     "note": "Automatisch bijgewerkt door .github/workflows/daily-update.yml (scripts/fetchStageResults.mjs). Bevat per etappe de uitslag (etappe-, algemeen-, punten-, berg- en jongerenklassement) en uitvallers/niet-gestarte renners."
   },
   "stages": [
@@ -1353,6 +1353,102 @@
           "name": "Tom Van Asbroeck",
           "team": "NSN Cycling Team",
           "status": "withdrawal"
+        }
+      ]
+    },
+    {
+      "stageNumber": 16,
+      "date": "2026-07-19",
+      "stageTop": [
+        {
+          "rank": 1,
+          "riderId": 9,
+          "name": "Remco Evenepoel",
+          "team": "Red Bull - BORA - hansgrohe",
+          "gap": "-"
+        },
+        {
+          "rank": 2,
+          "riderId": 1,
+          "name": "Tadej Pogačar",
+          "team": "UAE Team Emirates - XRG",
+          "gap": "-"
+        },
+        {
+          "rank": 3,
+          "riderId": 43,
+          "name": "Mattias Skjelmose",
+          "team": "Lidl - Trek",
+          "gap": "-"
+        },
+        {
+          "rank": 4,
+          "riderId": 4,
+          "name": "Paul Seixas",
+          "team": "Decathlon CMA CGM Team",
+          "gap": "-"
+        },
+        {
+          "rank": 5,
+          "riderId": 3,
+          "name": "Isaac del Toro",
+          "team": "UAE Team Emirates - XRG",
+          "gap": "-"
+        },
+        {
+          "rank": 6,
+          "riderId": 74,
+          "name": "Mattia Cattaneo",
+          "team": "Red Bull - BORA - hansgrohe",
+          "gap": "-"
+        },
+        {
+          "rank": 7,
+          "riderId": 31,
+          "name": "Thymen Arensman",
+          "team": "INEOS Grenadiers",
+          "gap": "-"
+        },
+        {
+          "rank": 8,
+          "riderId": 46,
+          "name": "Bruno Armirail",
+          "team": "Team Visma | Lease a Bike",
+          "gap": "-"
+        },
+        {
+          "rank": 9,
+          "riderId": 72,
+          "name": "Pablo Castrillo",
+          "team": "Movistar Team",
+          "gap": "-"
+        },
+        {
+          "rank": 10,
+          "riderId": 178,
+          "name": "Joshua Tarling",
+          "team": "INEOS Grenadiers",
+          "gap": "-"
+        }
+      ],
+      "gcTop": [],
+      "pointsTop": [],
+      "mountainsTop": [],
+      "youthTop": [],
+      "withdrawals": [
+        {
+          "bib": 25,
+          "riderId": 7,
+          "name": "Florian Lipowitz",
+          "team": "Red Bull - BORA - hansgrohe",
+          "status": "withdrawal"
+        },
+        {
+          "bib": 154,
+          "riderId": 145,
+          "name": "Lars Craps",
+          "team": "Lotto Intermarché",
+          "status": "DNS"
         }
       ]
     },
