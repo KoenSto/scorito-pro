@@ -1,7 +1,7 @@
 {
   "meta": {
     "source": "https://www.letour.fr/en/rankings en https://www.letour.fr/en/withdrawal",
-    "lastUpdated": "2026-07-22T11:24:41.506Z",
+    "lastUpdated": "2026-07-23T11:22:53.606Z",
     "note": "Automatisch bijgewerkt door .github/workflows/daily-update.yml (scripts/fetchStageResults.mjs). Bevat per etappe de uitslag (etappe-, algemeen-, punten-, berg- en jongerenklassement) en uitvallers/niet-gestarte renners."
   },
   "stages": [
@@ -1451,6 +1451,87 @@
           "status": "DNS"
         }
       ]
+    },
+    {
+      "stageNumber": 17,
+      "date": "2026-07-20",
+      "stageTop": [
+        {
+          "rank": 1,
+          "riderId": 5,
+          "name": "Jasper Philipsen",
+          "team": "Alpecin-Premier Tech",
+          "gap": "-"
+        },
+        {
+          "rank": 2,
+          "riderId": 53,
+          "name": "Mauro Schmid",
+          "team": "Team Jayco AlUla",
+          "gap": "-"
+        },
+        {
+          "rank": 3,
+          "riderId": 12,
+          "name": "Olav Kooij",
+          "team": "Decathlon CMA CGM Team",
+          "gap": "-"
+        },
+        {
+          "rank": 4,
+          "riderId": 108,
+          "name": "Lewis Askey",
+          "team": "NSN Cycling Team",
+          "gap": "-"
+        },
+        {
+          "rank": 5,
+          "riderId": 50,
+          "name": "Rick Pluimers",
+          "team": "Tudor Pro Cycling Team",
+          "gap": "-"
+        },
+        {
+          "rank": 6,
+          "riderId": 161,
+          "name": "Clément Russo",
+          "team": "Groupama - FDJ United",
+          "gap": "-"
+        },
+        {
+          "rank": 7,
+          "riderId": 159,
+          "name": "Huub Artz",
+          "team": "Lotto Intermarché",
+          "gap": "-"
+        },
+        {
+          "rank": 8,
+          "riderId": 6,
+          "name": "Mads Pedersen",
+          "team": "Lidl - Trek",
+          "gap": "-"
+        },
+        {
+          "rank": 9,
+          "riderId": 81,
+          "name": "Michael Matthews",
+          "team": "Team Jayco AlUla",
+          "gap": "-"
+        },
+        {
+          "rank": 10,
+          "riderId": 149,
+          "name": "Aaron Gate",
+          "team": "XDS Astana Team",
+          "gap": "-"
+        }
+      ],
+      "gcTop": [],
+      "pointsTop": [],
+      "mountainsTop": [],
+      "youthTop": [],
+      "withdrawals": []
     },
     {
       "stageNumber": 22,
