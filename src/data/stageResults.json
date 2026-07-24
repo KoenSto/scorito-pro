@@ -1,7 +1,7 @@
 {
   "meta": {
     "source": "https://www.letour.fr/en/rankings en https://www.letour.fr/en/withdrawal",
-    "lastUpdated": "2026-07-23T11:22:53.606Z",
+    "lastUpdated": "2026-07-24T11:14:17.859Z",
     "note": "Automatisch bijgewerkt door .github/workflows/daily-update.yml (scripts/fetchStageResults.mjs). Bevat per etappe de uitslag (etappe-, algemeen-, punten-, berg- en jongerenklassement) en uitvallers/niet-gestarte renners."
   },
   "stages": [
@@ -1532,6 +1532,102 @@
       "mountainsTop": [],
       "youthTop": [],
       "withdrawals": []
+    },
+    {
+      "stageNumber": 18,
+      "date": "2026-07-21",
+      "stageTop": [
+        {
+          "rank": 1,
+          "riderId": 23,
+          "name": "Richard Carapaz",
+          "team": "EF Education - EasyPost",
+          "gap": "-"
+        },
+        {
+          "rank": 2,
+          "riderId": 53,
+          "name": "Mauro Schmid",
+          "team": "Team Jayco AlUla",
+          "gap": "-"
+        },
+        {
+          "rank": 3,
+          "riderId": 17,
+          "name": "Matteo Jorgenson",
+          "team": "Team Visma | Lease a Bike",
+          "gap": "-"
+        },
+        {
+          "rank": 4,
+          "riderId": 77,
+          "name": "Valentin Paret-Peintre",
+          "team": "Soudal Quick-Step",
+          "gap": "-"
+        },
+        {
+          "rank": 5,
+          "riderId": null,
+          "name": "&nbsp; T. JOHANNESSEN",
+          "team": "UNO-X MOBILITY",
+          "gap": "-"
+        },
+        {
+          "rank": 6,
+          "riderId": null,
+          "name": "&nbsp; R. GARCIA",
+          "team": "MOVISTAR TEAM",
+          "gap": "-"
+        },
+        {
+          "rank": 7,
+          "riderId": 72,
+          "name": "Pablo Castrillo",
+          "team": "Movistar Team",
+          "gap": "-"
+        },
+        {
+          "rank": 8,
+          "riderId": 28,
+          "name": "Lenny Martinez",
+          "team": "Bahrain Victorious",
+          "gap": "-"
+        },
+        {
+          "rank": 9,
+          "riderId": 9,
+          "name": "Remco Evenepoel",
+          "team": "Red Bull - BORA - hansgrohe",
+          "gap": "-"
+        },
+        {
+          "rank": 10,
+          "riderId": 20,
+          "name": "Thomas Pidcock",
+          "team": "Pinarello-Q36.5 Pro Cycling Team",
+          "gap": "-"
+        }
+      ],
+      "gcTop": [],
+      "pointsTop": [],
+      "mountainsTop": [],
+      "youthTop": [],
+      "withdrawals": [
+        {
+          "bib": 4,
+          "riderId": 18,
+          "name": "Brandon McNulty",
+          "team": "UAE Team Emirates - XRG",
+          "status": "withdrawal"
+        },
+        {
+          "bib": 228,
+          "riderId": null,
+          "name": "PARRA Jose Felix",
+          "team": "CAJA RURAL-SEGUROS RGA",
+          "status": "DNS"
+        }
+      ]
     },
     {
       "stageNumber": 22,
