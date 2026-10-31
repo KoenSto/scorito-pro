@@ -1,8 +1,8 @@
 {
   "meta": {
     "source": "https://www.oddschecker.com (publieke odds-aggregator, geen losse bookmaker)",
-    "snapshotDate": "2026-10-30",
-    "lastUpdated": "2026-10-30T10:40:26.223Z",
+    "snapshotDate": "2026-10-31",
+    "lastUpdated": "2026-10-31T10:06:07.837Z",
     "note": "Automatisch bijgewerkt door .github/workflows/daily-update.yml (scripts/fetchBookmakerOdds.mjs). Implied-probability gewichten (0..1) afgeleid van fractional odds, genormaliseerd per markt. Geen garanties, alleen indicatief.",
     "classifications": [
       "geel",
